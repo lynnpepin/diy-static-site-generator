@@ -5,9 +5,17 @@ author:
 keywords: [example, blog, lorem ipsum]
 abstract: Another example post.
 date: 2020 Sept 3
+lang: en-US
+subject: Blah blah blah
+description: Hahaha
+category: Lalala
+---
+
 ---
 
 # Let's talk posts!
+
+We will use some [Lorem Ipsum]{.smallcaps}
 
 Dolores eos autem consequuntur. Aut commodi non incidunt molestias repellendus quis. Sint sapiente sit enim vitae. Labore ipsum culpa soluta quaerat tempora fugiat.
 
