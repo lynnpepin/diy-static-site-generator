@@ -1,4 +1,8 @@
-# Another post!
+% Another post!
+% Lynn
+% 2020 September 3rd
+
+# Let's talk posts!
 
 Dolores eos autem consequuntur. Aut commodi non incidunt molestias repellendus quis. Sint sapiente sit enim vitae. Labore ipsum culpa soluta quaerat tempora fugiat.
 

@@ -1,6 +1,12 @@
+% My cool Post
+% Lynn
+% 2020 Sep 3
+
 # This is a cool post.
 
 I mean, it isn't really.
+
+% Is this a comment?
 
 ## Any data embedded in it?
 

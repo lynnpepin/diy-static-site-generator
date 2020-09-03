@@ -62,5 +62,30 @@ pre {
   padding: 1em;
   border-left: 2px solid #c60;
 }
+
+/* TODO -- Style these! Position them! */
+
+h1.title {
+  color: #000;
+}
+
+p.author {
+  color: #666;
+}
+
+p.author:before {
+  content: "Author: ";
+  color: #666;
+}
+
+p.date {
+  color: #666;
+}
+
+p.date:before {
+  content: "Date: ";
+  color: #444;
+}
+
 </style>
 
