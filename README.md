@@ -2,6 +2,12 @@
 
 A do-it-yourself approach to static site generation, using Pandoc.
 
+## Goals
+
+ * Add footer, header, etc. files.
+ * Cheat and do that with PHP instead!
+ * Add tags and metadata
+ * Generate an "index.html" page automatically
 
 ## Questions
 
