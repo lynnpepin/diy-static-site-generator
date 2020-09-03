@@ -1,6 +1,11 @@
-% My cool Post
-% Lynn
-% 2020 Sep 3
+---
+title: "My cool post!"
+author:
+ - Lynn
+keywords: [example, blog, lorem ipsum]
+abstract: An example post.
+date: 2020 Sept 3
+---
 
 # This is a cool post.
 

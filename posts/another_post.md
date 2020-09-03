@@ -1,6 +1,11 @@
-% Another post!
-% Lynn
-% 2020 September 3rd
+---
+title: "Another post!"
+author:
+ - Lynn
+keywords: [example, blog, lorem ipsum]
+abstract: Another example post.
+date: 2020 Sept 3
+---
 
 # Let's talk posts!
 
@@ -15,4 +20,10 @@ Amet incidunt eius sed. A saepe provident iusto id aut. Delectus ab aperiam repr
 Ipsa architecto sunt sint laborum. Aut voluptatem perferendis natus. Tenetur quas quod sit. Non et commodi dolores maiores cum incidunt. Fugit excepturi quam reiciendis autem autem a. Quis consequuntur accusamus voluptatem.
 
 **Lorem** the *ipsum* to [eternity](duck.com) and beyond.
+
+What is the value of $s(n)$ for three values of $n$?
+
+$s(n)$ $\sum_{i=0}^n$ $\int_0^1$ $\frac{x^n}{n}$ $dx$
+
+$$s(n) = \sum_{i=0}^n \int_0^1 \frac{x^n}{n} dx$$
 
