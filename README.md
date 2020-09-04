@@ -20,6 +20,8 @@ True! In fact, this would take much more than 10 Minutes if we didn't use Pandoc
 
 Because I like Python! It's easier for me to extend Python!
 
+That said, I actually haven't used Python here yet, sooo.... ;)
+
 ### But you call Pandoc from Python!
 
 Yeah! It's easier that way!
