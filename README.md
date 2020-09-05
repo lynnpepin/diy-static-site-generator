@@ -13,6 +13,7 @@ Write posts in markdown in `./source/posts/` and run the build script.
  * Render Math in a pretty manner
  * Make a new Pandoc template
  * Make a small assortment of Pandoc templates and CSS themes.
+ * The auto-generated index.html needs proper metadata.
 
 ## Requirements
 

@@ -23,4 +23,4 @@ done
 python generate_index.py
 
 # build index.html
-pandoc -s -c style.css ./source/index.md -o site/index.html
+pandoc -s -c style.css -H site/header.html -B site/bodybar.html -A site/footer.html ./source/index.md -o site/index.html
