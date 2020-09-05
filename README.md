@@ -7,12 +7,18 @@ Write posts in markdown in `./source/posts/` and run the build script.
 ## Goals
 
  * Add footer, header, and `<aside>` sidebar
- * Cheat and do that with PHP instead!
  * Generate an "index.html" page automatically
     * Index page should organize by category and then by date
     * List most recent 10 posts
+ * Clean up style
  * Render Math in a pretty manner
- * ToC to link to headers; add hoverover to said links.
+ * Make some cool Pandoc templates!
+
+## Requirements
+
+ * **Pandoc** is used to convert markdown files to HTML.
+ * **Python 3.6** or greater is used. (f-strings were introduced in 3.6.)
+ * Python package **lxml** is used to read titles when generating index.html.
 
 ## Questions
 
@@ -20,16 +26,6 @@ Write posts in markdown in `./source/posts/` and run the build script.
 
 True! In fact, this would take much more than 10 Minutes if we didn't use Pandoc. This is many layers of abstraction lower than using something like Jekyll or Hugo though.
 
-### Why do you use Python and not Bash?
+### Why do you use Python and not Bash or Perl or my favorite scripting language?
 
 Because I like Python! It's easier for me to extend Python!
-
-That said, I actually haven't used Python here yet, sooo.... ;)
-
-### But you call Pandoc from Python!
-
-Yeah! It's easier that way!
-
-### Gross!
-
-Sorry (but not really.)

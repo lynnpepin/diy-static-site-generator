@@ -7,9 +7,16 @@ mkdir site
 mkdir site/posts
 cp style.css site/style.css
 
+# header is the top of the document
+pandoc -c ../style.css ./source/header.md -o site/header.html
+# bodybar comes right before the body
+pandoc -c ../style.css ./source/bodybar.md -o site/bodybar.html
+# footer comes right after the body
+pandoc -c ../style.css ./source/footer.md -o site/footer.html
+
 # build all the source files
 for filename in ./source/posts/*.md; do
-    pandoc -s -c ../style.css $filename -o site/posts/$(basename $filename md)html
+    pandoc -s -c ../style.css -H site/header.html -B site/bodybar.html -A site/footer.html $filename -o site/posts/$(basename $filename md)html
 done
 
 # build index.md

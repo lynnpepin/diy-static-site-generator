@@ -3,7 +3,7 @@ html {
 }
 body {
   margin: 0 auto;
-  max-width: 42em;
+  max-width: 40em;
   font-family: "Helvetica", "Arial", sans-serif;
   line-height: 1.4;
   padding: 4em 1em;
@@ -19,12 +19,19 @@ a:hover {
   color: #d20;
 }
 
+/*
 code {
   padding: 2px 4px;
   vertical-align: text-bottom;
 }
+*/
 
-code,
+/*code,*/
+
+code {
+  background: #ddd;
+}
+
 pre {
   background: #ddd;
   border-bottom: 2px solid #fff;
@@ -34,28 +41,41 @@ pre {
   color: #444;
 }
 
+h1.title {
+  color: #000;
+  font-size: 2.5em;
+}
+
+h1 {
+  font-size: 1.6em;
+}
+
 h2 {
+  font-size: 1.4em;
   margin-top: .2em;
   padding-top: .2em;
 }
 
 h1,
 h2,
+h3,
+h4,
 strong {
   color: #111;
 }
 
-h3,
-h4 {
-  color: #222;
+h3 {
+  padding-top: .1em;
+  margin-top: .1em;
+  font-size: 1.20em;
 }
 
 hr {
-  border-top: 2px solid #fff;
-  border-left: 4px solid #fff;
-  border-bottom: 2px solid #888;
-  border-right: 4px solid #888;
-  size: 4px;
+  border-top: 1px solid #888;
+  border-left: 1px solid #888;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+  size: 2px;
 }
 
 pre {
@@ -64,14 +84,6 @@ pre {
 }
 
 
-h1.title {
-  color: #000;
-  font-size: 3em;
-}
-
-h1.title:hover {
-  color: #000;
-}
 
 p.author {
   color: #666;

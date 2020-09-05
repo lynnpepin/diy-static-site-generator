@@ -11,8 +11,6 @@ description: Hahaha
 category: Lalala
 ---
 
----
-
 # Let's talk posts!
 
 We will use some [Lorem Ipsum]{.smallcaps}

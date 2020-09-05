@@ -11,7 +11,6 @@ description: Hahaha
 category: Lalala
 ---
 
----
 
 # This is a cool post.
 
@@ -29,3 +28,27 @@ Nope! No titles, no keywords, not even a date. After all, this takes only 10 min
 | 2 | A table | Cool! |
 | 3 | Oh boy | Rad |
 
+### Posts?
+
+`owo`? What's `this` this?
+
+    # take user input
+    username = input("What are you?")
+    
+    # print out their username!
+    if len(username) > 0:
+        print(f"Hello world, I am {username}")
+    else:
+        print("Rude of you not to tell me your username...")
+    
+```
+# take user input
+username = input("What are you?")
+
+# print out their username!
+if len(username) > 0:
+    print(f"Hello world, I am {username}")
+else:
+    print("Rude of you not to tell me your username...")
+```
+#### Oh no
