@@ -6,13 +6,13 @@ Write posts in markdown in `./source/posts/` and run the build script.
 
 ## Goals
 
- * Add footer, header, and `<aside>` sidebar
  * Generate an "index.html" page automatically
     * Index page should organize by category and then by date
     * List most recent 10 posts
- * Clean up style
+ * Clean up CSS style
  * Render Math in a pretty manner
- * Make some cool Pandoc templates!
+ * Make a new Pandoc template
+ * Make a small assortment of Pandoc templates and CSS themes.
 
 ## Requirements
 
