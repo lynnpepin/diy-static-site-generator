@@ -1,0 +1,95 @@
+<style>
+html {
+}
+body {
+  margin: 0 auto;
+  max-width: 42em;
+  font-family: "Helvetica", "Arial", sans-serif;
+  line-height: 1.4;
+  padding: 4em 1em;
+  color: #333;
+  background: #fffbf8;
+}
+
+a {
+  color: #c60;
+}
+
+a:hover {
+  color: #d20;
+}
+
+code {
+  padding: 2px 4px;
+  vertical-align: text-bottom;
+}
+
+code,
+pre {
+  background: #ddd;
+  border-bottom: 2px solid #fff;
+  border-top: 2px solid #888;
+  border-right: 2px solid #fff;
+  border-left: 2px solid #888;
+  color: #444;
+}
+
+h2 {
+  margin-top: .2em;
+  padding-top: .2em;
+}
+
+h1,
+h2,
+strong {
+  color: #111;
+}
+
+h3,
+h4 {
+  color: #222;
+}
+
+hr {
+  border-top: 2px solid #fff;
+  border-left: 4px solid #fff;
+  border-bottom: 2px solid #888;
+  border-right: 4px solid #888;
+  size: 4px;
+}
+
+pre {
+  padding: 1em;
+  border-left: 2px solid #c60;
+}
+
+
+h1.title {
+  color: #000;
+  font-size: 3em;
+}
+
+h1.title:hover {
+  color: #000;
+}
+
+p.author {
+  color: #666;
+}
+
+p.author:before {
+  content: "Author: ";
+  color: #666;
+}
+
+p.date {
+  color: #666;
+}
+
+p.date:before {
+  content: "Date: ";
+  color: #444;
+}
+
+</style>
+

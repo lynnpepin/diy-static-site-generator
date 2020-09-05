@@ -2,11 +2,15 @@
 
 A do-it-yourself approach to static site generation, using Pandoc.
 
+Write posts in markdown in `./source/posts/` and run the build script.
+
 ## Goals
 
- * Add footer, header, etc. files.
+ * Add footer, header, and `<aside>` sidebar
  * Cheat and do that with PHP instead!
  * Generate an "index.html" page automatically
+    * Index page should organize by category and then by date
+    * List most recent 10 posts
  * Render Math in a pretty manner
  * ToC to link to headers; add hoverover to said links.
 
