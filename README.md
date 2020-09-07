@@ -15,6 +15,12 @@ Write posts in markdown in `./source/posts/` and run the build script.
  * Make a small assortment of Pandoc templates and CSS themes.
  * The auto-generated index.html needs proper metadata.
 
+### Longer-term goals
+
+ * Move entire build to Python or to Bash
+ * Introduce RSS feed
+ * Rename project -- maybe '1000 minutes'? :)
+
 ## Requirements
 
  * **Pandoc** is used to convert markdown files to HTML.
