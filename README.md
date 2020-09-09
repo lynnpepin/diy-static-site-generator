@@ -16,6 +16,7 @@ Write posts in markdown in `./source/posts/` and run the build script.
  * Move entire build either to Python or to Bash.
  * Introduce RSS feed generator
  * Themes, combining CSS and Pandoc templates.
+   * Considering [Google Fonts](https://fonts.google.com/attribution) -- add script to download and self-host?
  * Make use of Pandoc's "filters" feature.
  * Improve `index.html`
    * Index page should organize by category and then by date
