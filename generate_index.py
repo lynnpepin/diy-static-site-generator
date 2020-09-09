@@ -33,7 +33,7 @@ lang: en-US
 ---
 
 """)
-        f.write("# All posts, by date.\n\n")
+        #f.write("# All posts, by date.\n\n")
         for html_post in html_posts:
             # e.g. link_to_post = ./posts/my_cool_post.html
             link_to_post = "./" + "/".join(html_post.parts[1:])
