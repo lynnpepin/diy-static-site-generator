@@ -6,12 +6,8 @@ Write posts in markdown in `./source/posts/` and run the build script.
 
 ## Goals
 
- * Generate an "index.html" page automatically
-    * Index page should organize by category and then by date
-    * List most recent 10 posts
  * Clean up CSS style
  * Proper metadata on every page, including index, about, etc.
- * Subpages -- contact, about, etc.
  * Rename project -- maybe '1000 minutes'? :)
 
 ### Longer-term goals
@@ -20,6 +16,9 @@ Write posts in markdown in `./source/posts/` and run the build script.
  * Introduce RSS feed generator
  * Themes, combining CSS and Pandoc templates.
  * Make use of Pandoc's "filters" feature.
+ * Improve `index.html`
+   * Index page should organize by category and then by date
+   * List most recent 10 posts
 
 ## Requirements
 
@@ -31,8 +30,8 @@ Write posts in markdown in `./source/posts/` and run the build script.
 
 ### It's not DIY if you use Pandoc!
 
-True! In fact, this would take much more than 10 Minutes if we didn't use Pandoc. This is many layers of abstraction lower than using something like Jekyll or Hugo though.
+True! Pandoc is most of the work! This is many layers of abstraction lower than using something like Jekyll or Hugo though.
 
-### Why do you use Python and not Bash or Perl or my favorite scripting language?
+### Why do you use Python? Why not entirely Bash?
 
-Because I like Python! It's easier for me to extend Python!
+Because I like Python! It's easier for me to extend Python because I already know it.
