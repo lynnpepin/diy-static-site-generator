@@ -4,8 +4,8 @@ html {
 body {
   margin: 0 auto;
   max-width: 40em;
-  font-family: "Helvetica", "Arial", sans-serif;
-  line-height: 1.4;
+  font-family: "Monaco", monospace;
+  line-height: 1.3;
   padding: 4em 1em;
   color: #333;
   background: #fffbf8;
@@ -41,19 +41,15 @@ pre {
   color: #444;
 }
 
+#lynns-cool-blog {
+  color: #666;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
 h1.title {
   color: #000;
-  font-size: 2.5em;
-}
-
-h1 {
-  font-size: 1.6em;
-}
-
-h2 {
-  font-size: 1.4em;
-  margin-top: .2em;
-  padding-top: .2em;
+  font-size: 2.0em;
 }
 
 h1,
@@ -62,13 +58,24 @@ h3,
 h4,
 strong {
   color: #111;
+  font-weight: bold;
 }
 
-h3 {
-  padding-top: .1em;
-  margin-top: .1em;
-  font-size: 1.20em;
+h1 {
+  color: #111;
+  font-size: 1.6em;
+  border-bottom: 4px solid #666;
+  padding-top: .3em;
+  margin-top: .3em;
 }
+
+h2 {
+  font-size: 1.2em;
+  margin-top: .2em;
+  padding-top: .2em;
+  border-bottom: 2px solid #666;
+}
+
 
 hr {
   border-top: 1px solid #888;
@@ -87,6 +94,7 @@ pre {
 
 p.author {
   color: #666;
+  font-size: 0.8em;
 }
 
 p.author:before {
@@ -96,6 +104,7 @@ p.author:before {
 
 p.date {
   color: #666;
+  font-size: 0.8em;
 }
 
 p.date:before {

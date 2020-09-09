@@ -1,7 +1,3 @@
 # Lynn's Cool Blog
 
-[Index](./index.html)
-
-[About](./about.html)
-
----
+<p style="font-size:0.8em;"> [Index](/index.html) - [About](/about.html) </p>

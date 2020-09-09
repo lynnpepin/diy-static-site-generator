@@ -6,6 +6,7 @@ Write posts in markdown in `./source/posts/` and run the build script.
 
 ## Goals
 
+ * Make proper 'absolute' URL linkage
  * Clean up CSS style
  * Proper metadata on every page, including index, about, etc.
  * Rename project -- maybe '1000 minutes'? :)
