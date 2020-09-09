@@ -2,4 +2,6 @@
 
 [Index](../index.html)
 
+[About](../about.html)
+
 ---
