@@ -16,7 +16,7 @@ pandoc -c style.css ./source/footer.md   -o ./site/footer.html
 
 # build all the source files
 for filename in ./source/posts/*.md; do
-    pandoc -s -c ../style.css -H site/header.html -B site/bodybar.html -A site/footer.html $filename -o site/posts/$(basename $filename md)html
+    pandoc -c ../style.css -H site/header.html -B site/bodybar.html -A site/footer.html --mathjax $filename -o site/posts/$(basename $filename md)html
 done
 
 # build index.md

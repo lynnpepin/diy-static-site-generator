@@ -6,7 +6,6 @@ Write posts in markdown in `./source/posts/` and run the build script.
 
 ## Goals
 
- * Render Math in a pretty manner
  * Generate an "index.html" page automatically
     * Index page should organize by category and then by date
     * List most recent 10 posts
@@ -20,6 +19,7 @@ Write posts in markdown in `./source/posts/` and run the build script.
  * Move entire build either to Python or to Bash.
  * Introduce RSS feed generator
  * Themes, combining CSS and Pandoc templates.
+ * Make use of Pandoc's "filters" feature.
 
 ## Requirements
 
