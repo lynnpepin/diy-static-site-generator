@@ -1,25 +1,25 @@
 # Static Site Generator in 10 Minutes
 
-A do-it-yourself approach to static site generation, using Pandoc.
+A DIY approach to static site generation, using Pandoc.
 
 Write posts in markdown in `./source/posts/` and run the build script.
 
 ## Goals
 
+ * Render Math in a pretty manner
  * Generate an "index.html" page automatically
     * Index page should organize by category and then by date
     * List most recent 10 posts
  * Clean up CSS style
- * Render Math in a pretty manner
- * Make a new Pandoc template
- * Make a small assortment of Pandoc templates and CSS themes.
- * The auto-generated index.html needs proper metadata.
+ * Proper metadata on every page, including index, about, etc.
+ * Subpages -- contact, about, etc.
+ * Rename project -- maybe '1000 minutes'? :)
 
 ### Longer-term goals
 
- * Move entire build to Python or to Bash
- * Introduce RSS feed
- * Rename project -- maybe '1000 minutes'? :)
+ * Move entire build either to Python or to Bash.
+ * Introduce RSS feed generator
+ * Themes, combining CSS and Pandoc templates.
 
 ## Requirements
 
