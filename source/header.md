@@ -1,7 +1,7 @@
 # Lynn's Cool Blog
 
-[Index](../index.html)
+[Index](./index.html)
 
-[About](../about.html)
+[About](./about.html)
 
 ---
