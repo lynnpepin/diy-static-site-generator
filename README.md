@@ -24,6 +24,7 @@ Write posts in markdown in `./source/posts/` and run the build script.
    * Index page should organize by category and then by date
    * List most recent 10 posts
  * Make a "version 1.0" release :)
+ * Make appropriate "defaults" for release (and not just as my personal blog!)
 
 ## Requirements
 
