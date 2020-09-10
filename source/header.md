@@ -1,3 +1,3 @@
 # Lynn's Cool Blog
 
-<p style="font-size:0.8em;"> [Index](/index.html) - [About](/about.html) </p>
+<p id="header"> [Index](/index.html) - [About](/about.html) </p>

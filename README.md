@@ -10,6 +10,8 @@ Write posts in markdown in `./source/posts/` and run the build script.
  * Clean up CSS style
  * Proper metadata on every page, including index, about, etc.
  * Rename project -- maybe '1000 minutes'? :)
+ * Style 'About', etc. in CSS (not inline source.)
+ * Style title properly, not as id `lynns-cool-blog`.
 
 ### Longer-term goals
 
