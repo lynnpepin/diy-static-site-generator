@@ -11,7 +11,7 @@ Write posts in markdown in `./source/posts/` and run the build script.
  * Rename project -- maybe '1000 minutes'? :)
  * Style 'About', etc. in CSS (not inline source.)
  * Style title properly, not as id `lynns-cool-blog`.
- * Style blockquotes
+ * Parse args in bash (e.g. 'delete helper html files', etc.)
 
 ### Longer-term goals
 
