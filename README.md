@@ -1,4 +1,4 @@
-# Static Site Generator in 10 Minutes
+# DIY Static Site Generator
 
 A DIY approach to static site generation, using Pandoc.
 
@@ -6,8 +6,6 @@ Write posts in markdown in `./source/posts/` and run the build script.
 
 ## TODOs
 
- * Make proper 'absolute' URL linkage
- * Proper metadata on every page, including index, about, etc.
  * Rename project -- maybe '1000 minutes'? :)
  * Parse args in bash (e.g. 'delete helper html files', etc.)
 

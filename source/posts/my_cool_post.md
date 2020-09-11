@@ -11,7 +11,6 @@ description: Hahaha
 category: Lalala
 ---
 
-
 # This is a cool post.
 
 I mean, it isn't really.
