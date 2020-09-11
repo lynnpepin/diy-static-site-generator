@@ -46,6 +46,11 @@ blockquote blockquote blockquote blockquote blockquote blockquote { border-left:
 
 code {
   background: #ddd;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  margin: 0.2em;
 }
 
 pre {

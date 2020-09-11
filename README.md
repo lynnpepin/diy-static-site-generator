@@ -9,8 +9,6 @@ Write posts in markdown in `./source/posts/` and run the build script.
  * Make proper 'absolute' URL linkage
  * Proper metadata on every page, including index, about, etc.
  * Rename project -- maybe '1000 minutes'? :)
- * Style 'About', etc. in CSS (not inline source.)
- * Style title properly, not as id `lynns-cool-blog`.
  * Parse args in bash (e.g. 'delete helper html files', etc.)
 
 ### Longer-term goals
@@ -19,7 +17,8 @@ Write posts in markdown in `./source/posts/` and run the build script.
  * Introduce RSS feed generator
  * Themes, combining CSS and Pandoc templates.
    * Considering [Google Fonts](https://fonts.google.com/attribution) -- add script to download and self-host?
- * Make use of Pandoc's "filters" feature.
+   * Style title properly, not as id `lynns-cool-blog`. (Using templates!)
+   * Make use of Pandoc's "filters" feature.
  * Improve `index.html`
    * Index page should organize by category and then by date
    * List most recent 10 posts
