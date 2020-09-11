@@ -10,21 +10,12 @@ html {
   --accent_cr: #1C6FEB;
   --accent_cl: #4BEBD5;
   --pagewidth: 40em;
-/* Light
   --bgstrong:   #fff;
   --bgcolor:    #eee;
   --bgweak:     #ddd;
   --fontweak:   #444;
   --fontcolor:  #222;
   --fontstrong: #000;
-*/
-  --bgstrong:   #000;
-  --bgcolor:    #222;
-  --bgweak:     #444;
-  --middle:     #888;
-  --fontweak:   #aaa;
-  --fontcolor:  #ccc;
-  --fontstrong: #fff;
 }
 
 /*Import Lato*/

@@ -2,13 +2,9 @@
 title: "Another post!"
 author:
  - Lynn
-keywords: [example, blog, lorem ipsum]
-abstract: Another example post.
 date: 2020 Sept 3
 lang: en-US
-subject: Blah blah blah
-description: Hahaha
-category: Lalala
+category: opinion
 ---
 
 This is yet another post. Here, we look at LaTeX and whatnot, and a bunch of Lorem Ipsum garbage. Lorem ipsum garbage, it really is something, garbage lorem ipsum la la la. Also, a bunch of Lorem Ipsum garbage. Lorem ipsum garbage, it really is something, garbage lorem ipsum la la la .

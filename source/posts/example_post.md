@@ -1,14 +1,11 @@
 ---
-title: "An example post!"
+title: "How to Write a Good Example Post"
+subtitle: "Or, a Quick Walkthrough to a Bunch of HTML Tags"
 author:
  - Lynn Pepin
-keywords: [example, blog, lorem ipsum]
-abstract: Another example post for formatting.
 date: 2020 Sept 10
 lang: en-US
-subject: Posting
-description: An example post with vacuous content.
-category: how_to
+category: how-to
 ---
 
 This is a simple static site generator. Posts are written with Markdown, and then exported to HTML and CSS. It uses Bash, Python, and relies very heavily on Pandoc. For LaTeX, it uses Mathjax and Javascript.
@@ -17,11 +14,11 @@ Pandoc does most of the heavily lifting here. The point of this was to learn a l
 
 Here's an example file for y'all.
 
-# Heading one.
+# You should have some text, an abstract, before the first heading.
 
 Dolores eos autem consequuntur. Aut commodi non incidunt molestias repellendus quis. Sint sapiente sit enim vitae. Labore ipsum culpa soluta quaerat tempora fugiat. Sint laborum numquam itaque sint asperiores non est saepe. Perspiciatis voluptas ut natus nulla. Eos et fugiat reprehenderit laborum expedita. Sunt sunt qui est et alias voluptatem. Dicta expedita non rem ut et. Est alias fugiat quis.
 
-## Heading two.
+## Heading two
 
 In this section, we look at a bunch of tags.
 
@@ -111,7 +108,7 @@ Qui non inventore sequi molestias sequi aut quod nihil. Adipisci rerum doloribus
 
 Quis enim ipsum pariatur architecto magnam atque aspernatur magni. Sunt commodi eligendi autem. Ut voluptatibus laborum consequatur facilis iusto. Quidem aut dolor soluta et aut minima ex. Omnis aut omnis quaerat et ut quaerat doloribus expedita. Id maiores esse ipsum soluta quo earum.
 
-### No, do not lorem ipsum.
+### No, do not lorem ipsum
 
 > Note: This section adapts content from the Wikipedia article for Lorem Ipsum. It is licensed under the "[Creative Commons Attribution-ShareAlike 3.0 Unported License](https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License)"
 
@@ -147,7 +144,7 @@ The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the 
 > 
 > 恵比毛勢須
 
-##### Bottom text.
+##### Bottom text
 
 Etaoin shrdlu cmfwyp vbgkqj xz Mavis Beacon Teaches Typing.
 

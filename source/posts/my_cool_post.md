@@ -2,13 +2,9 @@
 title: "My cool post!"
 author:
  - Lynn
-keywords: [example, blog, lorem ipsum]
-abstract: An example post.
 date: 2020 Sept 3
 lang: en-US
-subject: Blah blah blah
-description: Hahaha
-category: Lalala
+category: opinion
 ---
 
 # This is a cool post.
