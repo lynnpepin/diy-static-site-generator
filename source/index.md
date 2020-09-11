@@ -8,6 +8,8 @@ date: 2020 Sept 4
 lang: en-US
 ---
 
+[README](./posts/README.html)
+
 [Another post!](./posts/another_post.html)
 
 [An example post!](./posts/example_post.html)

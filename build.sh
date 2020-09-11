@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# how to loop over files:
-# https://stackoverflow.com/questions/20796200/
+# 0. Copy 'README.md' into posts! (You will probably prefer not to have this.)
+cp README.md ./source/posts/README.md
 
 # 1. Create directories and copy over style
 mkdir site
