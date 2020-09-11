@@ -24,21 +24,16 @@ A DIY approach to static site generation, using Pandoc.
 
 ## Things this could still use
 
- * Everything necessary to build the site should be outside of `site/`.
-    * Font stuff
-    * Image stuff
- * Turn off (or make optional) auto-generated `<figcaption>` from `<img>` alt text.
  * Make this pretty for "public release".
- * RSS feed generator
  * Command-line arguments to build.sh (cleanup, style/layout).
- * Theming
-   * Make CSS + Pandoc-template packs
+ * RSS feed generator
  * Improve `index.html`
-   * Index page should organize by category and then by date
-   * List most recent 10 posts
-   * List dates next to posts
-    * Pull titles, etc. directly from markdown for index. (No `lxml)`.
- * Build a by-category / keywords page.
+   * Parse date, title without `lxml`.
+   * Parse date.
+   * Index page should organize by category and then by date.
+   * Build a by-category page..
+ * More themes
+   * Make CSS + Pandoc-template packs
 
 ## Requirements
 

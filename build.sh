@@ -1,6 +1,6 @@
 #!/bin/sh
 
-style="minimalist_dark.css"
+style="minimalist.css"
 template="layout.html"
 
 # 0. Copy 'README.md' into posts! (You will probably prefer not to have this.)
@@ -10,9 +10,11 @@ cp README.md ./source/posts/README.md
 mkdir site
 mkdir site/posts
 mkdir site/images
+mkdir site/fonts
 
 cp $style site/style.css
-cp screenshot.png site/images/screenshot.png
+cp images/screenshot.png site/images/screenshot.png
+cp fonts/ site/fonts
 
 # 2. Build header, footer, body preamble, to be put in each document
 # header is the top of the document
