@@ -39,7 +39,6 @@ body {
 }
 
 
-
 a {
   color: var(--accent);
   text-decoration: none;
@@ -72,27 +71,21 @@ code {
   margin: 0.2em;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
+h1, h2, h3, h4, h5, h6,
 strong {
   color: var(--fontstrong);
   font-weight: bold;
 }
 
-h1.title {
-  font-size: 3.0em;
+h1 {
+  border-bottom: 1px solid var(--bgweak);
+  font-size: 2.0em;
   padding-top: 0.4em;
   margin-top: 0.4em;
 }
 
-
-h1 {
-  border-bottom: 1px solid var(--bgweak);
-  font-size: 2.0em;
+h1.title {
+  font-size: 3.0em;
   padding-top: 0.4em;
   margin-top: 0.4em;
 }
@@ -137,7 +130,6 @@ pre {
   font-size: 1.0em;
   font-weight: bold;
 }
-
 
 p.author {
   color: var(--fontcolor);

@@ -24,6 +24,9 @@ A DIY approach to static site generation, using Pandoc.
 
 ## Things this could still use
 
+ * Everything necessary to build the site should be outside of it.
+    * Font stuff
+    * Image stuff
  * Turn off (or make optional) auto-generated `<figcaption>` from `<img>` alt text.
  * Prepare for "public" release
  * Introduce RSS feed generator

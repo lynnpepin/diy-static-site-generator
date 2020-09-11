@@ -6,7 +6,7 @@ cp README.md ./source/posts/README.md
 # 1. Create directories and copy over style
 mkdir site
 mkdir site/posts
-cp  style.css site/style.css
+cp  minimalist.css site/style.css
 
 # 2. Build header, footer, body preamble, to be put in each document
 # header is the top of the document
