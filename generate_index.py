@@ -10,6 +10,29 @@ import os
 from pathlib import Path
 import lxml.html
 
+def parse_markdown_for_html(filename, default="Untitled post"):
+    """
+    This function doesn't actually work yet!
+    Yeah I'm pushing code that won't work to master, what's wrong?
+    
+    Loads a Markdown file, and looks for a line of the form `Title:`.
+    
+    :param filename: String or Path, pointing to a Markdown file to be parsed.
+    :param default: String or Path. Return this if no filename is found.
+    :returns: string; Title of post.
+    """
+    with open(filename, "r") as f:
+        line = f.readline()
+        while line is not '':
+            if "title:" in line:
+                # cheap way to process the 'title:' out of a line.
+                return line.split("title:")[-1].strip()
+            
+            line = f.readline()
+     
+    return default
+    
+
 def main(out_file = "source/index.md", target_folder = "./site/posts/"):
     """
     :param out_file: String; path to place the index markdown in.
@@ -37,6 +60,8 @@ lang: en-US
         for html_post in html_posts:
             # e.g. link_to_post = ./posts/my_cool_post.html
             link_to_post = "./" + "/".join(html_post.parts[1:])
+            #get post title:
+            #post_title = parse_markdown_for_html(html_post) -- doesn't work!
             post_title = lxml.html.parse(str(html_post)).find(".//title").text
             f.write(f"[{post_title}]({link_to_post})\n\n")
 
