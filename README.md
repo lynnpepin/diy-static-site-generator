@@ -25,15 +25,21 @@ A DIY approach to static site generation, using Pandoc.
 ## Things this could still use
 
  * Make this pretty for "public release".
- * Command-line arguments to build.sh (cleanup, style/layout).
+ * Improve `build.py`:
+    * Finish it-- it must run without errors!
+    * Make all paths, etc. optional.
+    * Should raise descriptive errors.
+    * Plus an extra "verbosity" command.
+    * Use OS-agnostic path handling.
+    * Fix linter and lint.
  * RSS feed generator
  * Improve `index.html`
-   * Parse date, title without `lxml`.
-   * Parse date.
-   * Index page should organize by category and then by date.
-   * Build a by-category page..
- * More themes
-   * Make CSS + Pandoc-template packs
+    * Parse date?
+    * Parse date, title without `lxml`.
+    * Index page should organize by category and then by date.
+    * Build a by-category page.
+ * More themes!
+    * Make CSS + Pandoc-template packs
 
 ## Requirements
 

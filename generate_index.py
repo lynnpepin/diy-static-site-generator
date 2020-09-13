@@ -50,7 +50,8 @@ def get_attribute_from_html(filename, attribute="title", default="Untitled post"
         return default
 
 
-def main(out_file = "source/index.md", target_folder = "./site/posts/"):
+def generate_index(out_file = "source/index.md",
+                   target_folder = "./site/posts/"):
     """
     :param out_file: String; path to place the index markdown in.
     :param target_folder: String; folder to look for posts in.
@@ -65,14 +66,10 @@ def main(out_file = "source/index.md", target_folder = "./site/posts/"):
         f.write("""
 ---
 title: "Blog index"
-author:
- - Lynn
-abstract: Site homepage
-date: 2020 Sept 4
 lang: en-US
 ---
-
 """)
+        # todo- lang param?
         #f.write("# All posts, by date.\n\n")
         for html_post in html_posts:
             # e.g. link_to_post = ./posts/my_cool_post.html
@@ -80,7 +77,7 @@ lang: en-US
             #get post title:
             #post_title = parse_markdown_for_html(html_post) -- doesn't work!
             post_title = get_attribute_from_html(html_post, "title", "Untitled post")
-            post_date = get_attribute_from_html(html_post, "date", "-")
+            #post_date = get_attribute_from_html(html_post, "date", "-")
             f.write(f"{post_date}: [{post_title}]({link_to_post})\n\n")
 
 
