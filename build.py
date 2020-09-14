@@ -1,5 +1,6 @@
 #!/bin/sh
 import os
+import subprocess
 import shutil
 from pathlib import Path
 import argparse
@@ -47,10 +48,10 @@ def generate_index(out_file = "source/index.md",
     with open(out_file, "w") as f:
         # todo: automate date
         # todo: there are better ways to do this in Python
-        f.write("---")
-        f.write("title: \"Blog index\"")
-        f.write("lang: en-US")
-        f.write("---")
+        f.write("---\n")
+        f.write("title: \"Blog index\"\n")
+        f.write("lang: en-US\n")
+        f.write("---\n")
         
         # todo- lang param?
         #f.write("# All posts, by date.\n\n")
@@ -105,7 +106,8 @@ def main(style="source/themes/minimalist.css",
     _vprint(verbose, "Copying over style and fonts!")
     shutil.copy(style, "site/style.css")
     # TODO: Make this OS agnostic
-    os.system("cp fonts/ site/fonts")
+    #os.system("cp fonts/ site/fonts")
+    subprocess.call(["cp", "-r", "fonts/", "site/fonts"])
     if copy_readme:
         shutil.copy("images/screenshot.png", "site/images/screenshot.png")
     
@@ -113,11 +115,10 @@ def main(style="source/themes/minimalist.css",
     # Build header, footer, body preamble, to be put in each document
     # header is the top of the document
     _vprint(verbose, "Building extra files.")
-    os.system("pandoc -c style.css ./source/header.md   -o ./site/header.html")
-    # bodybar comes right before the body
-    os.system("pandoc -c style.css ./source/bodybar.md  -o ./site/bodybar.html")
-    # footer comes right after the body
-    os.system("pandoc -c style.css ./source/footer.md   -o ./site/footer.html")
+    # bodybar, footer, header
+    subprocess.call(["pandoc", "-c", "style.css", "./source/header.md", "-o", "./site/header.html"])
+    subprocess.call(["pandoc", "-c", "style.css", "./source/bodybar.md", "-o", "./site/bodybar.html"])
+    subprocess.call(["pandoc", "-c", "style.css", "./source/footer.md", "-o", "./site/footer.html"])
 
     # Build any post ending in .md
     # TODO: FROM HERE
@@ -125,7 +126,13 @@ def main(style="source/themes/minimalist.css",
     for filename in os.listdir("source/posts/"):
         _vprint(verbose, f"... Building {filename}")
         if filename[-3:] == ".md":
-            os.system(f"pandoc -c ../style.css -H site/header.html -B site/bodybar.html -A site/footer.html --mathjax $filename --template {template} -o site/posts/{filename[:3]}.html")
+            subprocess.call(["pandoc", "-c", "../style.css",
+                             "-H", "site/header.html",
+                             "-B", "site/bodybar.html",
+                             "-A", "site/footer.html",
+                             "--mathjax", f"./source/posts/{filename}",
+                             "--template", f"{template}",
+                             "-o", f"site/posts/{filename[:-3]}.html"])
 
     # Create the index.html file
     if build_index:
@@ -133,11 +140,25 @@ def main(style="source/themes/minimalist.css",
         generate_index()
         
         # build index.html
-        os.system("pandoc -s -c style.css -H site/header.html -B site/bodybar.html -A site/footer.html ./source/index.md --template {template} -o site/index.html")
+        subprocess.call(["pandoc", "-s", "-c", "style.css",
+                         "-H", "site/header.html",
+                         "-B", "site/bodybar.html",
+                         "-A", "site/footer.html",
+                         "./source/index.md",
+                         "--template", f"{template}",
+                         "-o", "site/index.html"])
+        #os.system(f"pandoc -s -c style.css -H site/header.html -B site/bodybar.html -A site/footer.html ./source/index.md --template {template} -o site/index.html")
 
     # Build about page
     _vprint(verbose, "Building about...")
-    os.system("pandoc -s -c style.css -H site/header.html -B site/bodybar.html -A site/footer.html ./source/about.md --template {template} -o site/about.html")
+    subprocess.call(["pandoc", "-s", "-c", "style.css",
+                     "-H", "site/header.html",
+                     "-B", "site/bodybar.html",
+                     "-A", "site/footer.html",
+                     "./source/about.md",
+                     "--template", f"{template}",
+                     "-o", "site/about.html"])
+    #os.system(f"pandoc -s -c style.css -H site/header.html -B site/bodybar.html -A site/footer.html ./source/about.md --template {template} -o site/about.html")
 
     # 6. Cleanup: Remove header.html, bodybar.html, footer.html
     if cleanup:
