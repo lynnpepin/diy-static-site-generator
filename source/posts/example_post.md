@@ -42,6 +42,14 @@ def fizzbuzz(ii=0):
     return ii
 ```
 
+But what happens if we have overly long blocks?
+
+```
+fizzbuzz_oneliner = lambda ii: "Fizzbuzz!" if ii % 15 == 0 else "Fizz!" if ii % 3 == 0 else "Buzz!" if ii % 5 == 0 else ii
+```
+
+:)
+
 We also have nested blockquotes that can be quite colorful.
 
 > Nesting

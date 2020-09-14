@@ -6,9 +6,14 @@ from pathlib import Path
 import argparse
 import lxml.html
 
-## TODOS:
-# 1. Make OS agnostic
-# 2. Avoid subprocess.call(); prefer os/system/shutil copy functions.
+# todo: use pandoc package instead of subprocess?
+# todo: use just os, or just subprocess, or just shutil? seems messy
+# todo: go OS-agnostic using pathlib
+
+def _copytree_and_overwrite(src, dst):
+    if os.path.exists(dst):
+        shutil.rmtree(dst)
+    shutil.copytree(src, dst)
 
 def makedirs_if_not_exist(path):
     """
@@ -45,7 +50,6 @@ def generate_index(out_file = "source/index.md",
     :param target_folder: String; folder to look for posts in.
     """
     html_posts = sorted(Path(target_folder).iterdir(), key=os.path.getmtime)
-    # https://stackoverflow.com/questions/168409/
     out_path = Path(out_file)
     # create / blank index.md if it does not exist
     with open(out_file, "w") as f:
@@ -62,8 +66,8 @@ def generate_index(out_file = "source/index.md",
             # e.g. link_to_post = ./posts/my_cool_post.html
             link_to_post = "./" + "/".join(html_post.parts[1:])
             #get post title:
-            #post_title = parse_markdown_for_html(html_post) -- doesn't work!
             post_title = get_attribute_from_html(html_post, "title", "Untitled post")
+            # can't get post_date yet! todo
             post_date = get_attribute_from_html(html_post, "date", "-")
             f.write(f"{post_date}: [{post_title}]({link_to_post})\n\n")
 
@@ -108,9 +112,7 @@ def main(style="source/themes/minimalist.css",
     # copy over files
     _vprint(verbose, "Copying over style and fonts!")
     shutil.copy(style, "site/style.css")
-    # TODO: Make this OS agnostic
-    #os.system("cp fonts/ site/fonts")
-    subprocess.call(["cp", "-r", "fonts/", "site/fonts"])
+    _copytree_and_overwrite("fonts/", "site/fonts/")
     if copy_readme:
         shutil.copy("images/screenshot.png", "site/images/screenshot.png")
     
@@ -119,9 +121,15 @@ def main(style="source/themes/minimalist.css",
     # header is the top of the document
     _vprint(verbose, "Building extra files.")
     # bodybar, footer, header
-    subprocess.call(["pandoc", "-c", "style.css", "./source/header.md", "-o", "./site/header.html"])
-    subprocess.call(["pandoc", "-c", "style.css", "./source/bodybar.md", "-o", "./site/bodybar.html"])
-    subprocess.call(["pandoc", "-c", "style.css", "./source/footer.md", "-o", "./site/footer.html"])
+    subprocess.call(["pandoc", "-c", "style.css",
+                     "./source/header.md",
+                     "-o", "./site/header.html"])
+    subprocess.call(["pandoc", "-c", "style.css",
+                     "./source/bodybar.md",
+                     "-o", "./site/bodybar.html"])
+    subprocess.call(["pandoc", "-c", "style.css",
+                     "./source/footer.md",
+                     "-o", "./site/footer.html"])
 
     # Build any post ending in .md
     # TODO: FROM HERE
@@ -150,8 +158,6 @@ def main(style="source/themes/minimalist.css",
                          "./source/index.md",
                          "--template", f"{template}",
                          "-o", "site/index.html"])
-        #os.system(f"pandoc -s -c style.css -H site/header.html -B site/bodybar.html -A site/footer.html ./source/index.md --template {template} -o site/index.html")
-
     # Build about page
     _vprint(verbose, "Building about...")
     subprocess.call(["pandoc", "-s", "-c", "style.css",
@@ -161,7 +167,6 @@ def main(style="source/themes/minimalist.css",
                      "./source/about.md",
                      "--template", f"{template}",
                      "-o", "site/about.html"])
-    #os.system(f"pandoc -s -c style.css -H site/header.html -B site/bodybar.html -A site/footer.html ./source/about.md --template {template} -o site/about.html")
 
     # 6. Cleanup: Remove header.html, bodybar.html, footer.html
     if cleanup:
