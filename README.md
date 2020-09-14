@@ -12,25 +12,28 @@ A DIY approach to static site generation, using Pandoc.
 
 ### Filestructure
 
- * `build.sh` -- Renders files in `source/` and puts them in `site/`!
- * `style.css` -- A simple theme for the blog.
+ * `build.sh` -- (Old). Renders files in `source/` and puts them in `site/`!
+ * `build.py` -- (WIP). Renders files in `source/` and puts them in `site/`!
+ * `source/themes/minimalist.css` -- A simple theme for the blog.
+ * `source/themes/template.html` -- Pandoc HTML template.
  * `source/` -- Edit these files!
     * `header.md` -- Appended to the top of every page
     * `footer.md` -- Appended to the bottom of every page
     * `bodybar.md` -- Placed just before the body of each page
     * `about.md` -- Custom "about" page.
     * `posts/`-- Markdown posts go here!
- * `site/` -- Site is hosted here. (Point your 
+ * `site/` -- Site is hosted here. (Point your HTTP server hre!)
 
 ## Things this could still use
 
  * Make this pretty for "public release".
  * Improve `build.py`:
     * Finish it-- it must run without errors!
-    * Make all paths, etc. optional.
+    * Make all paths, etc. as parameters. (`source`, `site`, etc.)
     * Should raise descriptive errors.
     * Plus an extra "verbosity" command.
-    * Use OS-agnostic path handling.
+    * Use OS-agnostic path handling. 
+    * Avoid using subprocess.call for copying; fix!
     * Fix linter and lint.
  * RSS feed generator
  * Improve `index.html`

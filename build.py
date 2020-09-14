@@ -6,6 +6,9 @@ from pathlib import Path
 import argparse
 import lxml.html
 
+## TODOS:
+# 1. Make OS agnostic
+# 2. Avoid subprocess.call(); prefer os/system/shutil copy functions.
 
 def makedirs_if_not_exist(path):
     """
