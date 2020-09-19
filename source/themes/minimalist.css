@@ -153,13 +153,13 @@ p.date {
   font-size: 0.8em;
   padding: 0em;
   margin: 0em;
-  display: none;
+  /* display: none; */
 }
 
 p.date:before {
   content: "Date: ";
   color: var(--middle);
-  display: none;
+  /* display: none; */
 }
 
 </style>

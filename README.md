@@ -37,7 +37,7 @@ I want to replace `build.sh` entirely with a Python script, `build.py`.
 
 ### Improve `index.html`
 
-* Parse dates (stored as actual dates, not strings)
+* Parse and sort by dates
 * Parse dates and titles without `lxml`; draw from Markdown instead.
 * Index page should organize by category and then by date.
 * Build a by-category page.
@@ -46,11 +46,11 @@ I want to replace `build.sh` entirely with a Python script, `build.py`.
 ### Other
 
  * Make this pretty for "public release".
- copying; fix!
  * RSS feed generator
  * Make optional "table of contents" jump in posts.
  * More themes!
     * Make CSS + Pandoc-template packs
+ * Less fragile theming?
  * Code boxes in CSS should scroll when overwidth.
  * Make a "sanity check" test 
 

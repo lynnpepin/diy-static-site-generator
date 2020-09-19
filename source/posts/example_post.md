@@ -3,7 +3,7 @@ title: "How to Write a Good Example Post"
 subtitle: "Or, a Quick Walkthrough to a Bunch of HTML Tags"
 author:
  - Lynn Pepin
-date: 2020 Sept 10
+date: 2020-09-19
 lang: en-US
 category: how-to
 ---

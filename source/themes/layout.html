@@ -39,6 +39,12 @@ $endfor$
 $for(include-before)$
 $include-before$
 $endfor$
+
+$if(date)$
+<time datetime=$date$>
+<p class="date">$date$</p>
+$endif$
+
 $if(title)$
 <header>
 <h1 class="title">$title$</h1>
@@ -46,25 +52,15 @@ $if(subtitle)$
 <p class="subtitle">$subtitle$</p>
 $endif$
 
-$if(date-meta)$
-  <meta name="dcterms.date" content="$date-meta$" />
-$endif$
-$if(date)$
-<p class="date">$date$</p>
-$endif$
-
 $for(author)$
 <p class="author">$author$</p>
 $endfor$
-$if(date)$
-<p class="date">$date$</p>
-$endif$
 $if(keywords)$
 <p class="keywords">$keywords$</p>
 $endif$
-
 </header>
 $endif$
+
 $if(toc)$
 <nav id="$idprefix$TOC">
 $table-of-contents$

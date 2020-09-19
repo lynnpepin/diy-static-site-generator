@@ -2,7 +2,7 @@
 title: "My cool post!"
 author:
  - Lynn
-date: 2020 Sept 3
+date: 2020-09-03
 lang: en-US
 category: opinion
 ---

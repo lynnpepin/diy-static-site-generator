@@ -45,7 +45,6 @@ def get_title(filename, default="Untitled post"):
     Read an HTML file for the title, returning 'default' if it doesn't work.
 
     :param filename: String or Path, pointing to a Markdown file to be parsed.
-    :param attribute: String, the attribute that is to be found.
     :param default: String. Return this if no attribute is found.
     :returns: String. Title of post.
     """
@@ -57,6 +56,19 @@ def get_title(filename, default="Untitled post"):
     else:
         return default
 
+def get_date(filename, default="-"):
+    """
+    Read an HTML file for the date, returning 'default' if it doesn't work.
+
+    :param filename: String or Path, pointing to a Markdown file to be parsed.
+    :param default: String. Return this if no attribute is found.
+    :returns: String. Title of post.
+    """
+    try:
+        return lxml.html.parse(str(filename)).find(f".//time").values()[0]
+    except:
+        return "-"
+
 
 def generate_index(out_file = "source/index.md",
                    target_folder = "./site/posts/"):
@@ -64,7 +76,8 @@ def generate_index(out_file = "source/index.md",
     :param out_file: String; path to place the index markdown in.
     :param target_folder: String; folder to look for posts in.
     """
-    html_posts = sorted(Path(target_folder).iterdir(), key=os.path.getmtime)
+    # TODO: Properly parse by time
+    html_posts = reversed(sorted(Path(target_folder).iterdir(), key=os.path.getmtime))
     out_path = Path(out_file)
     # create / blank index.md if it does not exist
     with open(out_file, "w") as f:
@@ -83,8 +96,8 @@ def generate_index(out_file = "source/index.md",
             #get post title:
             post_title = get_title(html_post, "Untitled post")
             # can't get post_date yet! todo
-            post_date = "-"
-            f.write(f"{post_date}: [{post_title}]({link_to_post})\n\n")
+            post_date = get_date(html_post, "-")
+            f.write(f"{post_date} ... [{post_title}]({link_to_post})\n\n")
 
 
 
