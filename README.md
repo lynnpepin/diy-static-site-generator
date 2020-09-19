@@ -24,7 +24,7 @@ A DIY approach to static site generation, using Pandoc.
     * `posts/`-- Markdown posts go here!
  * `site/` -- Site is hosted here. (Point your HTTP server hre!)
 
-## Things this could still use
+## Improvements and TODOs
 
 ### Improve `build.py`:
 
@@ -33,9 +33,7 @@ I want to replace `build.sh` entirely with a Python script, `build.py`.
 * Make all paths, etc. as parameters. (`source`, `site`, etc.)
 * Should raise descriptive errors.
 * Plus an extra "verbosity" command.
-* Use OS-agnostic path handling. 
-* Avoid using subprocess.call for
-* Fix linter and lint.
+* Use OS-agnostic path handling.
 
 ### Improve `index.html`
 
@@ -43,7 +41,7 @@ I want to replace `build.sh` entirely with a Python script, `build.py`.
 * Parse dates and titles without `lxml`; draw from Markdown instead.
 * Index page should organize by category and then by date.
 * Build a by-category page.
- * "Featured" blogposts
+   * "Featured" blogposts
 
 ### Other
 
