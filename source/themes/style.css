@@ -4,11 +4,11 @@ html {
 
 /* Accent color, complements, splits */
 :root {
-  --accent: #EB8F34;
-  --accent_sr: #EB4A06;
-  --accent_sl: #EBC16E;
-  --accent_cr: #1C6FEB;
-  --accent_cl: #4BEBD5;
+  --accent: #6967E6;
+  --accent_sr: #B35CE6;
+  --accent_sl: #5CACE6;
+  --accent_cr: #E6AC57;
+  --accent_cl: #CCE65A;
   --pagewidth: 40em;
 }
 

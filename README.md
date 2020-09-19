@@ -28,9 +28,8 @@ A DIY approach to static site generation, using Pandoc.
 
 ### Improve `build.py`:
 
-I want to replace `build.sh` entirely with a Python script.
+I want to replace `build.sh` entirely with a Python script, `build.py`.
 
-* Finish it-- it must run without errors!
 * Make all paths, etc. as parameters. (`source`, `site`, etc.)
 * Should raise descriptive errors.
 * Plus an extra "verbosity" command.
