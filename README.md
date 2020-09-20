@@ -4,16 +4,30 @@ A DIY approach to static site generation, using Pandoc.
 
 ![Screenshot of a this README, without the screenshot, rendered using this blog.](/images/screenshot.png)
 
-## How to use
+## How to use this
+
+1. Don't
+
+This project was made for my own education! It's an unfinished static site generator made by someone (me) with no experience in webdesign. It fulfilled those goals and I'm proud of the experience! But as a piece of software engineering, it's got a few cludges and issues.
+
+### No, seriously, how could I use this?
 
 1. Put your Markdown posts in `posts/`,
-2. run `./build.sh`,
-3. and point your HTTP server to `site/`!
+2. run `python build.py`,
+3. and point your HTTP server at `site/`!
+
+
+### Requirements
+
+ * **Pandoc** is used to convert markdown files to HTML.
+ * **Python 3.6** or greater is used. (f-strings were introduced in 3.6.)
+ * Python package **lxml** is used to read titles when generating index.html.
+ * This code makes assumptions that you're on a Unix-like system-- paths and whatnot probably won't work with Windows!
+
 
 ### Filestructure
 
- * `build.sh` -- (Old). Renders files in `source/` and puts them in `site/`!
- * `build.py` -- (WIP). Renders files in `source/` and puts them in `site/`!
+ * `build.py` -- Renders files in `source/` and puts them in `site/`!
  * `source/themes/minimalist.css` -- A simple theme for the blog.
  * `source/themes/template.html` -- Pandoc HTML template.
  * `source/` -- Edit these files!
@@ -21,8 +35,8 @@ A DIY approach to static site generation, using Pandoc.
     * `footer.md` -- Appended to the bottom of every page
     * `bodybar.md` -- Placed just before the body of each page
     * `about.md` -- Custom "about" page.
-    * `posts/`-- Markdown posts go here!
- * `site/` -- Site is hosted here. (Point your HTTP server hre!)
+    * `posts/`-- Markdown posts go here! (Most important directory.)
+ * `site/` -- The site files are placed here. (Point your HTTP server hre!)
 
 ## Improvements and TODOs
 
@@ -53,11 +67,5 @@ I want to replace `build.sh` entirely with a Python script, `build.py`.
  * Less fragile theming?
  * Code boxes in CSS should scroll when overwidth.
  * Make a "sanity check" test 
-
-## Requirements
-
- * **Pandoc** is used to convert markdown files to HTML.
- * **Python 3.6** or greater is used. (f-strings were introduced in 3.6.)
- * Python package **lxml** is used to read titles when generating index.html.
- * This code makes assumptions that you're on a Unix-like system-- paths and whatnot probably won't work with Windows!
+ * This codebase is about 300 lines long. Might consider rewriting it from a TDD approach!
 
