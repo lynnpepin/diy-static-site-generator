@@ -6,7 +6,7 @@ A DIY approach to static site generation, using Pandoc.
 
 ## How to use this
 
-1. Don't
+**Step 1: Don't use this.**
 
 This project was made for my own education! It's an unfinished static site generator made by someone (me) with no experience in webdesign. It fulfilled those goals and I'm proud of the experience! But as a piece of software engineering, it's got a few cludges and issues.
 

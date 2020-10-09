@@ -10,10 +10,6 @@ import lxml.html
 # todo: use just os, or just subprocess, or just shutil? seems messy
 # todo: go OS-agnostic using pathlib
 
-def _vprint(verbose=True, x=""):
-    if verbose:
-        print(x)
-
 def _copytree_and_overwrite(src, dst):
     if os.path.exists(dst):
         shutil.rmtree(dst)
@@ -125,19 +121,19 @@ def main(style="source/themes/minimalist.css",
 
     # copy readme file over as a post
     if copy_readme:
-        _vprint(verbose, "Copying README to build as post.")
+        _vprint("Copying README to build as post.")
         shutil.copy("README.md", "./source/posts/README.md")
 
     # initialize empty site/ directory
-    _vprint(verbose, "Initializing directories.")
+    _vprint("Initializing directories.")
     makedirs_if_not_exist("site")
     makedirs_if_not_exist("site/posts")
     makedirs_if_not_exist("site/images")
     makedirs_if_not_exist("site/fonts")
 
     # copy over theme files.
-    _vprint(verbose, "Copying over style and fonts!")
-    _vprint(verbose, f"... Using {style}")
+    _vprint("Copying over style and fonts!")
+    _vprint(f"... Using {style}")
     shutil.copy(style, "site/style.css")
     _copytree_and_overwrite("fonts/", "site/fonts/")
     # cludge to get the screenshot used in README.md
@@ -146,7 +142,7 @@ def main(style="source/themes/minimalist.css",
 
     # Build header, footer, body preamble, to be put in each document
     # header is the top of the document
-    _vprint(verbose, "Building extra files.")
+    _vprint("Building extra files.")
     # bodybar, footer, header
     subprocess.call(["pandoc", "-c", "style.css",
                      "./source/header.md",
@@ -160,9 +156,9 @@ def main(style="source/themes/minimalist.css",
 
     # Build any post ending in .md
     # TODO: FROM HERE
-    _vprint(verbose, "Building posts!")
+    _vprint("Building posts!")
     for filename in os.listdir("source/posts/"):
-        _vprint(verbose, f"... Building {filename}")
+        _vprint(f"... Building {filename}")
         if filename[-3:] == ".md":
             subprocess.call(["pandoc", "-c", "../style.css",
                              "-H", "site/header.html",
@@ -174,7 +170,7 @@ def main(style="source/themes/minimalist.css",
 
     # Create the index.html file
     if build_index:
-        _vprint(verbose, "Building index...")
+        _vprint("Building index...")
         generate_index()
 
         # build index.html
@@ -186,7 +182,7 @@ def main(style="source/themes/minimalist.css",
                          "--template", f"{template}",
                          "-o", "site/index.html"])
     # Build about page
-    _vprint(verbose, "Building about...")
+    _vprint("Building about...")
     subprocess.call(["pandoc", "-s", "-c", "style.css",
                      "-H", "site/header.html",
                      "-B", "site/bodybar.html",
@@ -197,7 +193,7 @@ def main(style="source/themes/minimalist.css",
 
     # 6. Cleanup: Remove header.html, bodybar.html, footer.html
     if cleanup:
-        _vprint(verbose, "Cleaning up!")
+        _vprint("Cleaning up!")
         os.remove("./site/header.html")
         os.remove("./site/bodybar.html")
         os.remove("./site/footer.html")
@@ -222,9 +218,13 @@ if __name__ == '__main__':
     parser.add_argument("--copy_readme", default=False,
                         help="Build `README.md` as a post; site/posts/README.html",
                         action="store_true")
-
+    parser.add_argument("--verbose", "-v", default=False,
+                        help="Print extra information.", action="store_true")
+    
     args = parser.parse_args()
 
+    _vprint = print if args.verbose else lambda *a, **k: None
+    
     main(style=args.style[0],
          template=args.template[0],
          build_index=not args.ignore_index,
