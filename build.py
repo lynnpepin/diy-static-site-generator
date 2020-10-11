@@ -1,4 +1,10 @@
-#!/bin/sh
+"""
+build.py
+
+The primary script used to build the static site.
+
+
+"""
 import os
 import subprocess
 import shutil
@@ -10,7 +16,11 @@ import lxml.html
 # todo: use just os, or just subprocess, or just shutil? seems messy
 # todo: go OS-agnostic using pathlib
 
+
 def _copytree_and_overwrite(src, dst):
+    # helper function
+    # copy the entire tree  from src,
+    # overwriting the ENTIRE destination if it exists
     if os.path.exists(dst):
         shutil.rmtree(dst)
     shutil.copytree(src, dst)
@@ -52,13 +62,13 @@ def get_title(filename, default="Untitled post"):
     else:
         return default
 
-def get_date(filename, default="-"):
+def get_date(filename, default="----/--/--"):
     """
     Read an HTML file for the date, returning 'default' if it doesn't work.
 
     :param filename: String or Path, pointing to a Markdown file to be parsed.
     :param default: String. Return this if no attribute is found.
-    :returns: String. Title of post.
+    :returns: String representing date of post.
     """
     try:
         return lxml.html.parse(str(filename)).find(f".//time").values()[0]
@@ -69,6 +79,10 @@ def get_date(filename, default="-"):
 def generate_index(out_file = "source/index.md",
                    target_folder = "./site/posts/"):
     """
+    Generates an index Markdown file at `out_file`, to later be compiled by pandoc.
+    
+    Combs through all the posts in `target_folder`, to be placed in the index.
+    
     :param out_file: String; path to place the index markdown in.
     :param target_folder: String; folder to look for posts in.
     """
@@ -93,7 +107,7 @@ def generate_index(out_file = "source/index.md",
             post_title = get_title(html_post, "Untitled post")
             # can't get post_date yet! todo
             post_date = get_date(html_post, "-")
-            f.write(f"{post_date} ... [{post_title}]({link_to_post})\n\n")
+            f.write(f"{post_date} : [{post_title}]({link_to_post})\n\n")
 
 
 
