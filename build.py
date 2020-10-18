@@ -2,8 +2,6 @@
 build.py
 
 The primary script used to build the static site.
-
-
 """
 import os
 import subprocess
@@ -12,10 +10,13 @@ from pathlib import Path
 import argparse
 import lxml.html
 
-# todo: use pandoc package instead of subprocess?
-# todo: use just os, or just subprocess, or just shutil? seems messy
-# todo: go OS-agnostic using pathlib
-
+### Helper functions
+# _copytree_and_overwrite(src, dst)
+# makedirs_if_not_exist(path)
+# remove_if_exists(path)
+# get_title(filename, default="Untitled post")
+# get_date(filename, default="----/--/--")
+# generate_index(out_file = "source/index.md", target_folder = "./site/posts/")
 
 def _copytree_and_overwrite(src, dst):
     # helper function
@@ -46,6 +47,7 @@ def remove_if_exists(path):
         elif os.path.isdir(path):
             shutil.rmtree(path)
 
+
 def get_title(filename, default="Untitled post"):
     """
     Read an HTML file for the title, returning 'default' if it doesn't work.
@@ -73,11 +75,9 @@ def get_date(filename, default="----/--/--"):
     try:
         return lxml.html.parse(str(filename)).find(f".//time").values()[0]
     except:
-        return "-"
+        return default
 
-
-def generate_index(out_file = "source/index.md",
-                   target_folder = "./site/posts/"):
+def generate_index(out_file = "source/index.md", target_folder = "./site/posts/"):
     """
     Generates an index Markdown file at `out_file`, to later be compiled by pandoc.
     
@@ -86,31 +86,31 @@ def generate_index(out_file = "source/index.md",
     :param out_file: String; path to place the index markdown in.
     :param target_folder: String; folder to look for posts in.
     """
-    # TODO: Properly parse by time
     html_posts = reversed(sorted(Path(target_folder).iterdir(), key=os.path.getmtime))
     out_path = Path(out_file)
     # create / blank index.md if it does not exist
+    
+    # build index.md by line
     with open(out_file, "w") as f:
-        # todo: automate date
-        # todo: there are better ways to do this in Python
+        # todo: automate date; there are better ways to do this in Python
         f.write("---\n")
         f.write("title: \"Blog index\"\n")
-        f.write("lang: en-US\n")
+        f.write("lang:  en-US\n")
         f.write("---\n")
-
-        # todo- lang param?
-        #f.write("# All posts, by date.\n\n")
+        
         for html_post in html_posts:
+            # todo- lang param?
+            #f.write("# All posts, by date.\n\n")
             # e.g. link_to_post = ./posts/my_cool_post.html
             link_to_post = "./" + "/".join(html_post.parts[1:])
             #get post title:
             post_title = get_title(html_post, "Untitled post")
             # can't get post_date yet! todo
             post_date = get_date(html_post, "-")
-            f.write(f"{post_date} : [{post_title}]({link_to_post})\n\n")
+            f.write(f"{post_date}: [{post_title}]({link_to_post})\n\n")
 
 
-
+# Main
 def main(style="source/themes/minimalist.css",
          template="source/themes/layout.html",
          build_index=True,

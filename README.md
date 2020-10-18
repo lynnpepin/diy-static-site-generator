@@ -40,6 +40,18 @@ This project was made for my own education! It's an unfinished static site gener
 
 ## Improvements and TODOs
 
+### Things to style:
+* `<aside>`
+* `<abbr>`
+* `<cite>`
+* `<del>`
+* `<ins>`
+* `<sub>`
+* `<sup>`
+* `<var>`
+* `<mark>`
+* `<kbd>`
+
 ### Improve `build.py`:
 
 I want to replace `build.sh` entirely with a Python script, `build.py`.
