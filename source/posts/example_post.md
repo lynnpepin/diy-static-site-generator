@@ -101,7 +101,6 @@ I'd show off headers, but they look ugly without a proper lot of text to separat
 Now let's consider something denser.
 
 ## Lorem Ipsum 2: Lorem More
-
 Rerum id quia voluptatem dignissimos velit omnis. Perspiciatis illum sapiente nemo omnis quam veniam. Eos eaque impedit itaque commodi voluptas. Excepturi odio ex recusandae aut est sequi. Adipisci rerum sed perferendis odio cupiditate est. Tempore fuga dolorem aut eos nam.
 
 Vel non quidem nulla qui et. Perferendis autem consequatur minus nisi rerum illum. Ut officiis eum delectus voluptas esse sed vel. Quo repellat quod eveniet velit ex magni occaecati ut. Ex nemo veritatis dolorem. Autem voluptatem molestias maxime dolorem.
@@ -109,7 +108,6 @@ Vel non quidem nulla qui et. Perferendis autem consequatur minus nisi rerum illu
 Similique doloremque soluta libero ipsum ratione. Deleniti voluptatibus nihil eum aliquid ex perspiciatis maiores ipsa. Sunt dolorem quo a et sit. Dolorem similique eveniet optio perferendis molestiae ex aspernatur. Adipisci at sint at eligendi.
 
 ### Lorem Ipsum?
-
 Lorem ipsum quia voluptatem dignissimos velit omnis. Perspiciatis illum sapiente nemo omnis quam veniam. Eos eaque impedit itaque commodi voluptas. Excepturi odio ex recusandae aut est sequi. Adipisci rerum sed perferendis odio cupiditate est. Tempore fuga dolorem aut eos nam.
 
 Qui non inventore sequi molestias sequi aut quod nihil. Adipisci rerum doloribus non. Odio maxime recusandae omnis molestias.
@@ -117,7 +115,6 @@ Qui non inventore sequi molestias sequi aut quod nihil. Adipisci rerum doloribus
 Quis enim ipsum pariatur architecto magnam atque aspernatur magni. Sunt commodi eligendi autem. Ut voluptatibus laborum consequatur facilis iusto. Quidem aut dolor soluta et aut minima ex. Omnis aut omnis quaerat et ut quaerat doloribus expedita. Id maiores esse ipsum soluta quo earum.
 
 ### No, do not lorem ipsum
-
 > Note: This section adapts content from the Wikipedia article for Lorem Ipsum. It is licensed under the "[Creative Commons Attribution-ShareAlike 3.0 Unported License](https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License)"
 
 In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used before final copy is available, but it may also be used to temporarily replace copy in a process called greeking, which allows designers to consider form without the meaning of the text influencing the design.
@@ -127,7 +124,6 @@ Lorem ipsum is typically a corrupted version of De finibus bonorum et malorum, a
 Versions of the Lorem ipsum text have been used in typesetting at least since the 1960s, when it was popularized by advertisements for Letraset transfer sheets. Lorem ipsum was introduced to the digital world in the mid-1980s when Aldus employed it in graphic and word-processing templates for its desktop publishing program PageMaker. Other popular word processors including Pages and Microsoft Word have since adopted Lorem ipsum as well.
 
 #### Example Text
-
 A common form of Lorem ipsum reads:
 
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -135,7 +131,6 @@ A common form of Lorem ipsum reads:
 Let's break it down.
 
 ##### Lorem
-
 The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. Portez ce vieux whisky au juge blond qui fume. 
 
 > 以呂波耳本部止
@@ -154,7 +149,7 @@ The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the 
 
 ##### Bottom text
 
-Etaoin shrdlu cmfwyp vbgkqj xz Mavis Beacon Teaches Typing.
+Etaoin shrdlu cmfwyp vbgkqj xz... Mavis Beacon Teaches Typing.
 
 # Conclusion
 

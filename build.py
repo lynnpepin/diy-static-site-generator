@@ -10,14 +10,6 @@ from pathlib import Path
 import argparse
 import lxml.html
 
-### Helper functions
-# _copytree_and_overwrite(src, dst)
-# makedirs_if_not_exist(path)
-# remove_if_exists(path)
-# get_title(filename, default="Untitled post")
-# get_date(filename, default="----/--/--")
-# generate_index(out_file = "source/index.md", target_folder = "./site/posts/")
-
 def _copytree_and_overwrite(src, dst):
     # helper function
     # copy the entire tree  from src,
@@ -77,6 +69,17 @@ def get_date(filename, default="    -  -  "):
     except:
         return default
 
+
+def _get_and_sort_posts(target_folder = "./site/posts/"):
+    """
+    Find all the HTML files in  target_folder, sorted by the time metadata.
+    # html_posts: list of posix_path
+    """
+    html_posts = list(reversed(list(Path(target_folder).iterdir())))
+    dates = [get_date(post) for post in html_posts]
+    html_posts_by_date = {date : post for date, post in list(zip(dates, html_posts))}
+
+
 def generate_index(out_file = "source/index.md", target_folder = "./site/posts/"):
     """
     Generates an index Markdown file at `out_file`, to later be compiled by pandoc.
@@ -86,11 +89,12 @@ def generate_index(out_file = "source/index.md", target_folder = "./site/posts/"
     :param out_file: String; path to place the index markdown in.
     :param target_folder: String; folder to look for posts in.
     """
-    html_posts = reversed(sorted(Path(target_folder).iterdir(), key=os.path.getmtime))
+    # TODO
     out_path = Path(out_file)
     # create / blank index.md if it does not exist
     
     # build index.md by line
+    #TODO: Sort by date?
     with open(out_file, "w") as f:
         # todo: automate date; there are better ways to do this in Python
         f.write("---\n")
