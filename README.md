@@ -6,8 +6,6 @@ A DIY approach to static site generation, using Pandoc.
 
 ## How to use this
 
----
-
 **Step 1: Don't use this.** I made this for my own education. It's unfinished and lacks features! I'm not a web developer! It's full of cludges!
 
 ### But seriously, how can I use this?
@@ -39,8 +37,6 @@ A DIY approach to static site generation, using Pandoc.
  * `site/` -- The site files are placed here. (Point your HTTP server here!)
 
 ## Improvements and TODOs
-
----
 
 ### Things to style:
 * `<aside>`
