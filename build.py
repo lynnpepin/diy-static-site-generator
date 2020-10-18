@@ -106,7 +106,7 @@ def generate_index(out_file = "source/index.md", target_folder = "./site/posts/"
             #get post title:
             post_title = get_title(html_post, "Untitled post")
             # can't get post_date yet! todo
-            post_date = get_date(html_post, "-")
+            post_date = get_date(html_post)
             f.write(f"{post_date}: [{post_title}]({link_to_post})\n\n")
 
 
@@ -229,7 +229,7 @@ if __name__ == '__main__':
     parser.add_argument("--no_cleanup", default=False,
                         help="Do not remove intermediary files (footer.md, etc.)",
                         action="store_true")
-    parser.add_argument("--copy_readme", default=False,
+    parser.add_argument("--copy_readme", "-r", default=False,
                         help="Build `README.md` as a post; site/posts/README.html",
                         action="store_true")
     parser.add_argument("--verbose", "-v", default=False,

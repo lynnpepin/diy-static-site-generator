@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <h1 id="blog-title">
+  A real cool DIY blog
+  </h1>
+  <p id="header">
+  <a href="/index.html">Index</a> - <a href="/about.html">About</a>
+  </p>
+</head>
+<body>
+<hr />
+
+
+
+<h1 id="diy-static-site-generator">DIY Static Site Generator</h1>
+<p>A DIY approach to static site generation, using Pandoc.</p>
+<figure>
+<img src="/images/screenshot.png" alt="Screenshot of a this README, without the screenshot, rendered using this blog." /><figcaption>Screenshot of a this README, without the screenshot, rendered using this blog.</figcaption>
+</figure>
+<h2 id="how-to-use-this">How to use this</h2>
+<hr />
+<p><strong>Step 1: Don’t use this.</strong> I made this for my own education. It’s unfinished and lacks features! I’m not a web developer! It’s full of cludges!</p>
+<h3 id="but-seriously-how-can-i-use-this">But seriously, how can I use this?</h3>
+<ol type="1">
+<li>Put your Markdown posts in <code>posts/</code>,</li>
+<li>run <code>python build.py</code>,</li>
+<li>and point your HTTP server at <code>site/</code>!</li>
+</ol>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li><strong>Pandoc</strong> is used to convert markdown files to HTML.</li>
+<li><strong>Python 3.6</strong> or greater is used. (f-strings were introduced in 3.6.)</li>
+<li>Python package <strong>lxml</strong> is used to read titles when generating index.html.</li>
+<li>This code makes assumptions that you’re on a Unix-like system– paths and whatnot probably won’t work with Windows!</li>
+</ul>
+<h3 id="filestructure">Filestructure</h3>
+<ul>
+<li><code>build.py</code> – Renders files in <code>source/</code> and puts them in <code>site/</code>!</li>
+<li><code>source/themes/minimalist.css</code> – A simple theme for the blog.</li>
+<li><code>source/themes/template.html</code> – Pandoc HTML template.</li>
+<li><code>source/</code> – Edit these files!
+<ul>
+<li><code>header.md</code> – Appended to the top of every page</li>
+<li><code>footer.md</code> – Appended to the bottom of every page</li>
+<li><code>bodybar.md</code> – Placed just before the body of each page</li>
+<li><code>about.md</code> – Custom “about” page.</li>
+<li><code>posts/</code>– Markdown posts go here! (Most important directory.)</li>
+</ul></li>
+<li><code>site/</code> – The site files are placed here. (Point your HTTP server here!)</li>
+</ul>
+<h2 id="improvements-and-todos">Improvements and TODOs</h2>
+<hr />
+<h3 id="things-to-style">Things to style:</h3>
+<ul>
+<li><code>&lt;aside&gt;</code></li>
+<li><code>&lt;abbr&gt;</code></li>
+<li><code>&lt;cite&gt;</code></li>
+<li><code>&lt;del&gt;</code></li>
+<li><code>&lt;ins&gt;</code></li>
+<li><code>&lt;sub&gt;</code></li>
+<li><code>&lt;sup&gt;</code></li>
+<li><code>&lt;var&gt;</code></li>
+<li><code>&lt;mark&gt;</code></li>
+<li><code>&lt;kbd&gt;</code></li>
+</ul>
+<h3 id="improve-build.py">Improve <code>build.py</code>:</h3>
+<p>I want to replace <code>build.sh</code> entirely with a Python script, <code>build.py</code>.</p>
+<ul>
+<li>Make all paths, etc. as parameters. (<code>source</code>, <code>site</code>, etc.)</li>
+<li>Should raise descriptive errors.</li>
+<li>Plus an extra “verbosity” command.</li>
+<li>Use OS-agnostic path handling.</li>
+</ul>
+<h3 id="improve-index.html">Improve <code>index.html</code></h3>
+<ul>
+<li>Parse and sort by dates</li>
+<li>Parse dates and titles without <code>lxml</code>; draw from Markdown instead.</li>
+<li>Index page should organize by category and then by date.</li>
+<li>Build a by-category page.
+<ul>
+<li>“Featured” blogposts</li>
+</ul></li>
+</ul>
+<h3 id="other">Other</h3>
+<ul>
+<li>Make this pretty for “public release”.</li>
+<li>RSS feed generator</li>
+<li>Make optional “table of contents” jump in posts.</li>
+<li>More themes!
+<ul>
+<li>Make CSS + Pandoc-template packs</li>
+</ul></li>
+<li>Less fragile theming?</li>
+<li>Code boxes in CSS should scroll when overwidth.</li>
+<li>Make a “sanity check” test</li>
+<li>This codebase is about 300 lines long. Might consider rewriting it from a TDD approach!</li>
+</ul>
+<hr />
+<p id="footer">
+By <a href="https://gitlab.com/lynnpepin/">Lynn</a>, 2020. Posts are <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a> except if otherwise specified.
+</p>
+</body>
+</html>
