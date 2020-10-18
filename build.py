@@ -64,7 +64,7 @@ def get_title(filename, default="Untitled post"):
     else:
         return default
 
-def get_date(filename, default="----/--/--"):
+def get_date(filename, default="    -  -  "):
     """
     Read an HTML file for the date, returning 'default' if it doesn't work.
 
