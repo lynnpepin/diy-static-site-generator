@@ -2,7 +2,6 @@
 title: "About this blog"
 author:
  - Lynn
-keywords: [about, meta]
 abstract: About page
 date: 2020 Sept 9
 lang: en-US
