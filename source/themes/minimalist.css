@@ -77,6 +77,10 @@ strong {
   color: var(--fontcolor);
 }
 
+h1, h2 {
+  border-bottom: 1px solid var(--fontweak);
+}
+
 #blog-title{
   color: var(--fontweak);
   font-size: 1.5em;
@@ -85,6 +89,7 @@ strong {
   margin-top:  1em;
   padding-bottom: 0.0em;
   margin-bottom: 0.0em;
+  border-bottom: 0px solid var(--fontweak);
 }
 
 h1.title {
@@ -92,6 +97,7 @@ h1.title {
   padding-bottom: 0.25em;
   margin-bottom: 0.25em;
   line-height: 1.0;
+  border-bottom: 0px solid var(--fontweak);
 }
 
 p.subtitle {  
