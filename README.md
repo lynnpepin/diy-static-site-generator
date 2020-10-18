@@ -68,7 +68,10 @@ I want to replace `build.sh` entirely with a Python script, `build.py`.
 * Index page should organize by category too...
 * And then list the top 10 posts.
 * Build a by-category page.
-   * "Featured" blogposts
+   * Modify generate_index to first sort by category
+   * Then sort those by date
+   * And also list the 10 latest posts.
+* List tags under post title?
 
 ### Other
 
