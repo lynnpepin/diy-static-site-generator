@@ -74,11 +74,23 @@ def _get_and_sort_posts(target_folder = "./site/posts/"):
     """
     Find all the HTML files in  target_folder, sorted by the time metadata.
     # html_posts: list of posix_path
+    
+    returns a list of tuple of string (date), PosixPath
     """
+    # get List of Posix Path
     html_posts = list(reversed(list(Path(target_folder).iterdir())))
+    # get matching list of dates (strings)
     dates = [get_date(post) for post in html_posts]
+    # make dict of date : post, we'll use this later...
     html_posts_by_date = {date : post for date, post in list(zip(dates, html_posts))}
-
+    # now sort dates from newest to oldest
+    dates.sort()
+    dates.reverse()
+    # now reindex html_posts by date so that it's sorted too!
+    html_posts = [html_posts_by_date[date] for date in dates]
+    return zip(dates, html_posts)
+    
+   
 
 def generate_index(out_file = "source/index.md", target_folder = "./site/posts/"):
     """
@@ -102,16 +114,11 @@ def generate_index(out_file = "source/index.md", target_folder = "./site/posts/"
         f.write("lang:  en-US\n")
         f.write("---\n")
         
-        for html_post in html_posts:
-            # todo- lang param?
-            #f.write("# All posts, by date.\n\n")
-            # e.g. link_to_post = ./posts/my_cool_post.html
-            link_to_post = "./" + "/".join(html_post.parts[1:])
-            #get post title:
-            post_title = get_title(html_post, "Untitled post")
-            # can't get post_date yet! todo
-            post_date = get_date(html_post)
-            f.write(f"{post_date}: [{post_title}]({link_to_post})\n\n")
+        for date, post in _get_and_sort_posts(target_folder=target_folder):
+            link_to_post = "./" + "/".join(post.parts[1:])
+            #get post title
+            post_title = get_title(post)
+            f.write(f"{date}: [{post_title}]({link_to_post})\n\n")
 
 
 # Main
