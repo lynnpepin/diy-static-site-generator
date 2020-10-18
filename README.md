@@ -6,7 +6,9 @@ A DIY approach to static site generation, using Pandoc.
 
 ## How to use this
 
-**Step 1: Don't use this.** I made this for my own education. It's unfinished and lacks features! I'm not a web developer! It's full of cludges!
+**Step 1: Don't use this.** I made this for my own education. It's unfinished and lacks features! I'm not a web developer!
+
+Also, it's full of cludges! *This is not a good piece of software engineering!* Marvel at the lack of tests! See how it is not properly portable!
 
 ### But seriously, how can I use this?
 
@@ -61,9 +63,10 @@ I want to replace `build.sh` entirely with a Python script, `build.py`.
 
 ### Improve `index.html`
 
-* Parse and sort by dates
-* Parse dates and titles without `lxml`; draw from Markdown instead.
-* Index page should organize by category and then by date.
+* Parse dates and titles without `lxml`; draw from Markdown instead!
+   * Would require refactoring the workflow...
+* Index page should organize by category too...
+* And then list the top 10 posts.
 * Build a by-category page.
    * "Featured" blogposts
 

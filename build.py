@@ -70,7 +70,7 @@ def get_date(filename, default="    -  -  "):
         return default
 
 
-def _get_and_sort_posts(target_folder = "./site/posts/"):
+def _get_and_sort_posts(target_folder = "./site/posts/", newest_first=True):
     """
     Find all the HTML files in  target_folder, sorted by the time metadata.
     # html_posts: list of posix_path
@@ -81,14 +81,12 @@ def _get_and_sort_posts(target_folder = "./site/posts/"):
     html_posts = list(reversed(list(Path(target_folder).iterdir())))
     # get matching list of dates (strings)
     dates = [get_date(post) for post in html_posts]
-    # make dict of date : post, we'll use this later...
-    html_posts_by_date = {date : post for date, post in list(zip(dates, html_posts))}
-    # now sort dates from newest to oldest
-    dates.sort()
-    dates.reverse()
-    # now reindex html_posts by date so that it's sorted too!
-    html_posts = [html_posts_by_date[date] for date in dates]
-    return zip(dates, html_posts)
+    dates_and_posts = list(zip(dates, html_posts))
+    dates_and_posts.sort(key = lambda pair: pair[0])
+    if newest_first:
+        dates_and_posts.reverse()
+
+    return dates_and_posts
     
    
 
