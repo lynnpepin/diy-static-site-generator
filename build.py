@@ -146,6 +146,8 @@ def main(style="source/themes/minimalist.css",
     if copy_readme:
         _vprint("Copying README to build as post.")
         shutil.copy("README.md", "./source/posts/README.md")
+    else:
+        remove_if_exists("./source/posts/README.md")
 
     # initialize empty site/ directory
     _vprint("Initializing directories.")
