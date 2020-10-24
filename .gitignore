@@ -1,0 +1,5 @@
+*.pyc
+*pycache*
+short_about.md
+medium_about.md
+long_about.md

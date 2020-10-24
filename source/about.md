@@ -2,51 +2,45 @@
 title: "About"
 author:
  - Lynn
-abstract: About page
-date: 2020 Sept 9
+date: 2020 Oct 31
 lang: en-US
 ---
 
-## About this blog
+## About the Author and Blog
 
-This blog is where I will post about my hobbies and career.
+> **TLDR:** Software dev and researcher! I like Python, Gamedev, Digital art. This is my personal blog, opinions are my own!
 
-* *Tutorials* for things I know how to do!
-* *Journals* and *updates* on projects I'm undertaking!
-* My *life experiences*!
-* *Opinions*! Sorry :(
+I'm a computer scientist grad student seeking my PhD at the Univerity of Connecticut! This is my personal blog.
 
+Here are some fun facts about me that will influence this blog:
 
-## About the Author
+* My hobbies and career are all ✨digital✨!
+* I have a lot of 😬opinions😬!
+* I value 🎓tutorials🎓 and misc informative posts! So I'll write some!
+* I have accumulated some 🍃life experiences🍃!
+* This is my personal blog: All opinions are my own!
 
-I'm a graduate student seeking my PhD at the University of Connecticut. 
+And here are some website opinions I should have that'll influence this site:
 
+* JavaScript should be minimal!
+    * This is easy because I'm not so good at JavaScript.
+* Tracking should also be minimal!
+* The smaller the memory footprint, the better!
+* Eventually have an RSS feed! (Mine doesn't!)
 
-### Software I like to use and how long I've used it.
+And here are some software things I think are really cool or fascinating or fun or generally worth blogging about:
 
-I'm not trying to brag, but these softwares been the center of my career / hobbies. I might post about them sometime. When I list years of experience, I'm estimating how many 400 hours I've spent using the tool (i.e. 10 hours a week, 40 weeks a year.)
-
-| Software | Relevance | Years of experience |
-| - | - | - |
-| [GameMaker](https://www.yoyogames.com/gamemaker) | is how I started learning to program! I made some projects in it when I was young. | 6 years |
-| [Godot game engine](https://godotengine.org/) | is what I generally use for game projects nowadays. | 2 years |
-| [GNU Image Manipulation Program](https://www.gimp.org/) | is a photo-editing / art software that I use extensively! | 6 years |
-| [AutoCAD](https://www.autodesk.com/) | was my first 3D modeling experience. I learned this in highschool! | 4 years |
-| | Also, AutoDesk Inventor and Solidworks. I don't use them anymore though. | |
-| [Blender](https://www.blender.org/) | is what I use now, but I'm still a novice. | 1 years
-| [Signal Messenger](https://signal.org/) | is an easy-to-use end-to-end encrypted messenger using the Whisper protocol. | N/A |
-
-
-Other:
- * Audacity
- * BFXR
- * Anvil Studio
- * LMMS
- * Nvim
- * Git
+* Linux and its ecosystem. Bash! Git! SSH! All that jazz!
+* The GNU Image Manipulation Program!
+* HTML, CSS
+* System administration!
+* Functional programming languages.
+* Game development (particularly, the Godot engine!)
 
 
+### Contact me!
 
-## About the site
+You can get to me on [Twitter](https://twitter.com/lynndotpy) and [Mastodon.Social](https://mastodon.social/web/accounts/1086597#) at `lynndotpy`.
 
-This is a simple static-site generator written in Python and Bash, using Pandoc. This is the "about" page. It can be written in Markdown like any other post!
+I'll be setting up an email and a PGP public key eventually!
+
