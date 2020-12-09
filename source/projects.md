@@ -1,5 +1,5 @@
 ---
-title: "Lynn's Projects"
+title: "My Projects"
 author:
  - Lynn
 lang: en-US
