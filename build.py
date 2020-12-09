@@ -215,6 +215,16 @@ def main(style="source/themes/minimalist.css",
                      "./source/about.md",
                      "--template", f"{template}",
                      "-o", "site/about.html"])
+                     
+    # Build projects page
+    _vprint("Building projects...")
+    subprocess.call(["pandoc", "-s", "-c", "style.css",
+                     "-H", "site/header.html",
+                     "-B", "site/bodybar.html",
+                     "-A", "site/footer.html",
+                     "./source/about.md",
+                     "--template", f"{template}",
+                     "-o", "site/projects.html"])
     
     # Put in favicon
     _vprint("Copying favicon...")
