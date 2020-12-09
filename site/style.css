@@ -40,6 +40,10 @@ body {
   line-height: 1.25;
 }
 
+h1, h2, h3, h4, h5, h6,
+strong {
+  color: var(--fontcolor);
+}
 
 a {
   color: var(--accent);
@@ -73,10 +77,7 @@ code {
   margin: 0.2em;
 }
 
-h1, h2, h3, h4, h5, h6,
-strong {
-  color: var(--fontcolor);
-}
+
 
 h1, h2 {
   border-bottom: 1px solid var(--fontweak);
