@@ -215,6 +215,10 @@ def main(style="source/themes/minimalist.css",
                      "./source/about.md",
                      "--template", f"{template}",
                      "-o", "site/about.html"])
+    
+    # Put in favicon
+    _vprint("Copying favicon...")
+    shutil.copy("./source/favicon.png", "./site/favicon.png")
 
     # 6. Cleanup: Remove header.html, bodybar.html, footer.html
     if cleanup:
