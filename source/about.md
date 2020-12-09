@@ -7,8 +7,7 @@ lang: en-US
 
 ## About the Author and Blog
 
-I'm a computer scientist grad student seeking my PhD at the Univerity of Connecticut! Software development and research. I like Python, information security, writing good code, gamedev, digital art, and social justice.. This is my personal blog, opinions are my own! I have a lot of 😬opinions😬 but I'll also write some 🎓tutorials🎓.
-
+This is the blog of Lynn Pepin (they/them), a computer scientist grad student seeking my PhD at the Univerity of Connecticut! Software development and research. I like Python, information security, writing good code, gamedev, digital art, and social justice.. This is my personal blog, opinions are my own! I have a lot of 😬opinions😬 but I'll also write some 🎓tutorials🎓.
 
 And here are some software things I think are really cool or fascinating or fun or generally worth blogging about:
 
