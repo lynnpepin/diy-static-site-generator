@@ -222,7 +222,7 @@ def main(style="source/themes/minimalist.css",
                      "-H", "site/header.html",
                      "-B", "site/bodybar.html",
                      "-A", "site/footer.html",
-                     "./source/about.md",
+                     "./source/projects.md",
                      "--template", f"{template}",
                      "-o", "site/projects.html"])
     
