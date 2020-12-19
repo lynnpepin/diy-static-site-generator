@@ -3,11 +3,12 @@ title: "About me"
 author:
  - Lynn
 lang: en-US
+date: 2020 Dec 19
 ---
 
 ## About the Author and Blog
 
-This is the blog of Lynn Pepin (they/them), a computer scientist grad student seeking my PhD at the Univerity of Connecticut! Software development and research. I like Python, information security, writing good code, gamedev, digital art, and social justice.. This is my personal blog, opinions are my own! I have a lot of 😬opinions😬 but I'll also write some 🎓tutorials🎓.
+My name is Lynn Pepin (they/them). I'm a computer scientist grad student seeking my PhD at the Univerity of Connecticut! I do research and work a lot in Python, and I think software development skills are important for research. I like information security, writing good code, gamedev, digital art, and social justice. This is my personal blog! I have a lot of 😬opinions😬 (my own) but I also write some 🎓tutorials🎓.
 
 And here are some software things I think are really cool or fascinating or fun or generally worth blogging about:
 
@@ -23,3 +24,5 @@ And here are some software things I think are really cool or fascinating or fun 
 You can get to me on [Twitter](https://twitter.com/lynndotpy) and [Mastodon.Social](https://mastodon.social/web/accounts/1086597#) at `lynndotpy`.
 
 You can also get to me at [GitLab](https://gitlab.com/lynnpepin) (and my mirrors on GitHub) at [GitHib](https://github.com/lynnpepin).
+
+I should probably set up an 'email server' and some 'pgp keys' or at the very least a Matrix sometime.
