@@ -4,45 +4,48 @@ html {
 
 /* Accent color, complements, splits */
 :root {
-  --accent: #EB8F34;
-  --accent_sr: #EB4A06;
-  --accent_sl: #EBC16E;
-  --accent_cr: #1C6FEB;
-  --accent_cl: #4BEBD5;
+  --accent: #EB8F34;    /* orange */
+  --accent_sr: #EB4A06; /* yellow */
+  --accent_sl: #EBC16E; /* teal */
+  --accent_cr: #1C6FEB; /* blue */
+  --accent_cl: #4BEBD5; /* red */
   --pagewidth: 40em;
-/* Light */ /*
-  --bgstrong:   #fff;
-  --bgcolor:    #eee;
-  --bgweak:     #ddd;
-  --fontweak:   #444;
-  --fontcolor:  #222;
-  --fontstrong: #000;
-*/ /* Dark */
-  --bgstrong:   #000;
-  --bgcolor:    #222;
-  --bgweak:     #444;
-  --middle:     #888;
-  --fontweak:   #aaa;
-  --fontcolor:  #ccc;
-  --fontstrong: #fff;
+  
+  --m0: #000;   /* Pure black*/
+  --m1: #111;   /* bg color  */
+  --m2: #222;
+  --m3: #333;   /* lighter bg color */
+  --m4: #444;
+  --m5: #555;
+  --m6: #666;
+  --m7: #777;
+  --m8: #888;
+  --m9: #999;
+  --ma: #aaa;  /* monochrome accent color */
+  --mb: #bbb;  
+  --mc: #ccc;  /* font color */
+  --md: #ddd;
+  --me: #eee; 
+  --mf: #fff;  /* Pure white */
+
 }
 
 /*Import Lato*/
 @import url('fonts/lato.css');
 
 body {
-  color: var(--fontcolor);
-  background: var(--bgcolor);
+  color: var(--mc);
+  background: var(--m1);
   font-family: "Lato", sans-serif;
   margin: 1em auto;
   padding: 0em 1em;
   max-width: var(--pagewidth);
-  line-height: 1.25;
+  line-height: 1.618131242069666;
 }
 
 h1, h2, h3, h4, h5, h6,
 strong {
-  color: var(--fontcolor);
+  color: var(--mc);
 }
 
 a {
@@ -69,8 +72,8 @@ blockquote blockquote blockquote blockquote blockquote { border-left: 2px solid 
 blockquote blockquote blockquote blockquote blockquote blockquote { border-left: 2px solid var(--accent); }
 
 code {
-  background: var(--bgweak);
-  color: var(--fontstrong);
+  background: var(--m3);
+  color: var(--me);
   padding-left: 0.3em;
   padding-right: 0.3em;
   padding-top: 0.1em;
@@ -86,14 +89,14 @@ h1, h2 {
 */
 
 #blog-title{
-  color: var(--fontweak);
+  color: var(--ma);
   font-size: 1.0em;
   font-weight: bold;
   padding-top: 0.5em;
   margin-top:  0.5em;
   padding-bottom: 0.0em;
   margin-bottom: 0.0em;
-  border-bottom: 0px solid var(--fontweak);
+  border-bottom: 0px solid var(--ma);
 }
 
 h1.title {
@@ -101,7 +104,7 @@ h1.title {
   padding-bottom: 0.25em;
   margin-bottom: 0.25em;
   line-height: 1.0;
-  border-bottom: 0px solid var(--fontweak);
+  border-bottom: 0px solid var(--ma);
 }
 
 p.subtitle {  
@@ -115,7 +118,7 @@ p.subtitle {
 }
 
 hr {
-  border-bottom: 1px solid var(--bgweak);
+  border-bottom: 1px solid var(--m3);
 }
 
 img {
@@ -128,9 +131,9 @@ figcaption {
 }
 
 pre {
-  background: var(--bgweak);
+  background: var(--m3);
   border-left: 2px solid var(--accent);
-  color:var(--fontstrong);
+  color:var(--me);
   margin-left: .2em;
   padding: .8em;
 }
@@ -145,7 +148,7 @@ pre {
 }
 
 p.author {
-  color: var(--fontweak);
+  color: var(--ma);
   font-size: 0.8em;
   padding: 0em;
   margin: 0em;
@@ -154,12 +157,12 @@ p.author {
 
 p.author:before {
   content: "Author: ";
-  color: var(--middle);
+  color: var(--m8);
   display: none;
 }
 
 p.date {
-  color: var(--fontweak);
+  color: var(--ma);
   font-size: 0.8em;
   padding: 0em;
   margin: 0em;
@@ -168,7 +171,7 @@ p.date {
 
 p.date:before {
   content: "Date: ";
-  color: var(--middle);
+  color: var(--m8);
   /* display: none; */
 }
 

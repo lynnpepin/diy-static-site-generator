@@ -165,6 +165,13 @@ def main(style="source/themes/minimalist.css",
     if copy_readme:
         shutil.copy("images/screenshot.png", "site/images/screenshot.png")
 
+    # copy image files
+    # i should really decide if it's gonna be `source/images` or `images/`
+    _vprint("Copying images!")
+    for filename in os.listdir("source/images/"):
+        _vprint(f"... Building {filename}")
+        shutil.copy(f"source/images/{filename}", f"site/images/{filename}")
+
     # Build header, footer, body preamble, to be put in each document
     # header is the top of the document
     _vprint("Building extra files.")
