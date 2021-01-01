@@ -11,7 +11,7 @@ numbersections: true
 
 > **TLDR:** 
 >
-> Open the Python-Fu console (Filters > Python-Fu > Console) and reference GIMP's `pdb` library found (Help > Procedure browser). Note that `pdb` is GIMP's "procedural database" and *not* the Python debugger. A simple 'hello world' is presented below.
+> Open the Python-Fu console (Filters > Python-Fu > Console) and reference GIMP's built-in `pdb` documentation (Help > Procedure browser).  A simple 'hello world' is presented below.
 > 
 
 For those unfamiliar with [GIMP (gimp.org)](https://www.gimp.org/), it is a free and open-source image editor, and one of my favorite tools.
