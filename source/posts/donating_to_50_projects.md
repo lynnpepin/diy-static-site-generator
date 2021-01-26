@@ -1,5 +1,5 @@
 ---
-title: Donating $25 per week to different causes and shaming the ones that send me spam: 5 / 50
+title: Donating to 50 projects (and shaming the ones that send me spam.)
 author:
  - Lynn Pepin
 date: 2021-1-25
