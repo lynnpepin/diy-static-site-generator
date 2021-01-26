@@ -26,3 +26,4 @@ You can get to me on [Twitter](https://twitter.com/lynndotpy) and [Mastodon.Soci
 You can also get to me at [GitLab](https://gitlab.com/lynnpepin) (and my mirrors on GitHub) at [GitHib](https://github.com/lynnpepin).
 
 I should probably set up an 'email server' and some 'pgp keys' or at the very least a Matrix sometime.
+
