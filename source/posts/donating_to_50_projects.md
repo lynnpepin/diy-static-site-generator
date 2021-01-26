@@ -21,7 +21,7 @@ The focus will be on small projects or single developers. This will give me the 
 
 I'll update this blogpost with links to other blogposts as well.
 
-**This blogpost will be updated throughout the year, highlighting different projects, and the amount of communications / spam I receive after donating to them.** "Spam" will be any communications beyond a receipt and thank-you that I didn't explicitly and obviously consent to receive.
+**I'll update this with new blogposts throughout the year, highlighting different projects, and the amount of communications / spam I receive after donating to them.** "Spam" will be any communications beyond a receipt and thank-you that I didn't explicitly and obviously consent to receive.
 
 I noticed that Ko-Fi, PayPal, and Librepay were the most common donation sources, and most of these were non tax-exempt.
 
