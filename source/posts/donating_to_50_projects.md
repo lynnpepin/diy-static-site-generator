@@ -9,7 +9,7 @@ numbersections: true
 
 > **Tldr:** In 2020, I did a lot of charitable giving but got a lot of spam in return, so in 2021 I am focusing on small projects that I don't expect to spam me. This also makes a good opportunity to showcase smaller projects that I use! Most of them (so far) use LibrePay, Ko-Fi, or PayPal. As of 2021 January 25th, I've donated  **$125** across **five different projects**, with **no spam received!** Just standard receipts/thank-yous received shortly after the donation. :)
 
-# Introduction
+---
 
 Over the course of 2020, I donated a sum of about $3000 to a lot of different organizations and projects that I consider to be useful, good, or important. I came to regret this as many of them sent me spam, both digitally to my email address and physically to my home address.
 
@@ -25,7 +25,7 @@ I'll update this blogpost with links to other blogposts as well.
 
 I noticed that Ko-Fi, PayPal, and Librepay were the most common donation sources, and most of these were non tax-exempt.
 
-## Donation 1: StreetComplete
+# Donation 1: StreetComplete
 
 ![A screenshot of an Android app with a perspective view of a map. A roadway is selected, and a question is asked, "Is there a cycleway here? What type?" with further details, "Tap the question marks and select an answer for the given side of the road."](../images/streetcomplete_screenshot.png "A screenshot of an Android app with a perspective view of a map. A roadway is selected, and a question is asked, 'Is there a cycleway here? What type?" with further details, 'Tap the question marks and select an answer for the given side of the road.'")
 
@@ -38,7 +38,7 @@ I made my  first donation of 2021 on January 13th to westnordost, the developer 
 **Communications received as of January 20th:**
 1. Email address verification from Liberapay
 
-## Donation 2: NextCloud Notes (Android app)
+# Donation 2: NextCloud Notes (Android app)
 
 ![A screenshot of a text-editor with a monospace font, showing this section of the blog post. In place of the image is a marker saying '(todo - screenshot here)'.](../images/nextcloud_notes_screenshot.png "A screenshot of a text-editor with a monospace font, showing this section of the blog post. In place of the image is a marker saying '(todo - screenshot here)'.")
 
@@ -52,7 +52,7 @@ As a side note, I paid €25 to this project by mistake, which is about $32. I m
 1. PayPal receipt
 2. Thank you email for donation
 
-## Donation 3: LiberaPay
+# Donation 3: LiberaPay
 
 I've been using LiberaPay so far for most of these developers, which seems to be a popular alternative to Patreon which does not take cuts. I also noticed that I paid €25 (about $32) on the last project. I want to support LiberaPay and keep it existing, so I'm cutting the difference and paying $18 to support LiberaPay. Again, I do this with a $25/year manually recurring donation.
 
@@ -60,7 +60,7 @@ I've been using LiberaPay so far for most of these developers, which seems to be
 
  * *None!* No communications were received for this donation. Very refreshing.
 
-## Donation 4: Signal
+# Donation 4: Signal
 
 On January 15th, Signal suffered a major outage after gaining tens of millions of followers over the course of a few days. While Signal is certainly a "big player", I'm very invested in it, so I donated $25 to it. You can do so as well at [signal.org/donate](https://signal.org/donate/)
 
@@ -68,7 +68,7 @@ On January 15th, Signal suffered a major outage after gaining tens of millions o
 
 1. Donorbox Receipt
 
-## Donation 5: GrapheneOS
+# Donation 5: GrapheneOS
 
 On January 25th, I paid a donation to support GrapheneOS. GrapheneOS is a hardened de-Googled Android. Unlike many custom roms, Graphene offers the ability to lock the bootloader on Google Pixel phones. (The only other project that I know of which does that is CalyxOS.) You can check out the project at [grapheneos.org](https://grapheneos.org/).
 
