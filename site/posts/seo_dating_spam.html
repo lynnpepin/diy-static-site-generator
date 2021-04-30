@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Dating Spam sites Abusing Improperly-Configured Search Engines</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <h1 id="blog-title">
+  Lynn Pepin
+  </h1>
+  <p id="header">
+  <a href="/index.html">Index</a> - <a href="/about.html">About</a> - <a href="/projects.html">Projects</a>
+  </p>
+</head>
+<body>
+<hr />
+
+<time datetime=2021-04-30>
+<p class="date">2021-04-30</p>
+
+<header>
+<h1 class="title">Dating Spam sites Abusing Improperly-Configured Search Engines</h1>
+
+<p class="author">Lynn Pepin</p>
+</header>
+
+<blockquote>
+<p><strong>TLDR:</strong></p>
+<p>Malicious entities are abusing sites internal search engines to promote their own URLs. This effectively allows them to advertise using the target site’s domain in the search results of major search engines. If you own such a site, fix this by putting a <code>disallow</code> entry in your <code>robots.txt</code>, or adding the <code>noindex</code> meta tag.</p>
+</blockquote>
+<h1 data-number="1" id="a-mystery-of-malware-in-my-schools-search-results"><span class="header-section-number">1</span> A Mystery of Malware in My School’s Search Results</h1>
+<p>Recently, a colleague of mine was trying to see if our university had any carbon dating expertise. A search on Google for <code>uconn carbon dating</code> yielded some results she considered sus:</p>
+<figure>
+<img src="../images/datego-edu-spam-uconn.png" title="A screenshot of a Google Search for &#39;UConn Carbon Dating&#39;, showing some malicious looking results promoting some malicious dating sites." alt="A screenshot of a Google Search for ‘UConn Carbon Dating’, showing some malicious looking results promoting some malicious dating sites." /><figcaption aria-hidden="true">A screenshot of a Google Search for ‘UConn Carbon Dating’, showing some malicious looking results promoting some malicious dating sites.</figcaption>
+</figure>
+<p>Like any fool, I clicked through the link to see what was going on. Here’s that first link, with linebreaks to make it easier to interpret:</p>
+<pre><code>https://chemistry.uconn.edu/?s=
+%F0%9F%AA%80%E2%9D%A4%EF%B8%8F%EF%B8%8Fwww.datego.xyz
+%F0%9F%AA%80%E2%9D%A4%EF%B8%8F%EF%B8%8Fcarbon+dating+past+50000+years+year+
+%F0%9F%AA%80%E2%9D%A4%EF%B8%8F%EF%B8%8F+BEST+DATING+SITE+
+%F0%9F%AA%80%E2%9D%A4%EF%B8%8F%EF%B8%8F
++carbon+dating+past+50000+years+year+carbon+dating+past+50000+years+year+
+carbon+dating+past+50000+years+year+carbon+dating+past+50000+years+year+
+carbon+dating+past+50000+years+year+carbon+dating+past+50000+years+year+
+%F0%9F%AA%80%E2%9D%A4%EF%B8%8F%EF%B8%8Fwww.datego.xyz
+%F0%9F%AA%80%E2%9D%A4%EF%B8%8F%EF%B8%8F+BEST+DATING+SITE</code></pre>
+<p>Ugly! Let’s use Python’s <code>urllib.parse.unquote(string)</code> function to clean this up. This gives us:</p>
+<pre><code>https://chemistry.uconn.edu/?s=
+🪀❤️️www.datego.xyz
+🪀❤️️carbon+dating+past+50000+years+year+
+🪀❤️️+BEST+DATING+SITE+
+🪀❤️️
++carbon+dating+past+50000+years+year+carbon+dating+past+50000+years+year+
+carbon+dating+past+50000+years+year+carbon+dating+past+50000+years+year+
+carbon+dating+past+50000+years+year+carbon+dating+past+50000+years+year+
+🪀❤️️www.datego.xyz
+🪀❤️️+BEST+DATING+SITE</code></pre>
+<p>where ‘🪀’ and ‘❤️️’, if you can’t see it, are Yo-Yo and Heart emojis, respectively. Upon inspection, it seems that these are just searches abusing the sites internal search engine. They become emoji in the URL.</p>
+<p>It’s pretty standard, you can make searches for arbitrary text. For example, <code>chemistry.uconn.edu/?s=some+arbitrary+text</code> yields such a URL: <a href="chemistry.uconn.edu/?s=some+arbitrary+text">https://chemistry.uconn.edu/?s=some+arbitrary+text</a></p>
+<p>It seems UConn isn’t the only one impacted. While not exclusive to .edu domains, it looks like they’re the primary targets. Here, we see the same thing for other .edu domains:</p>
+<figure>
+<img src="../images/datego-edu-spam.png" title="A screenshot of a Google Search for &#39;datego.xyz site:edu&#39;, showing some malicious looking results promoting some malicious dating sites." alt="A screenshot of a Google Search for ‘datego.xyz site:edu’, showing some malicious looking results promoting some malicious dating sites." /><figcaption aria-hidden="true">A screenshot of a Google Search for ‘datego.xyz site:edu’, showing some malicious looking results promoting some malicious dating sites.</figcaption>
+</figure>
+<p>So, what’s going on here? I think I have an idea.</p>
+<h1 data-number="2" id="an-explanation-for-these-egregious-search-results"><span class="header-section-number">2</span> An Explanation for these Egregious Search Results</h1>
+<p>So, my guess here is that the attack works like this:</p>
+<ol type="1">
+<li>Find websites with ‘search’ boxes following the convention of <code>{url}/s={search text}</code>.</li>
+<li>Enter a search pointing to your very cool and totally legit dating site.</li>
+<li>Abuse search engine optimization so this malicious search result hits the top!</li>
+<li>???</li>
+<li>… Profit?</li>
+</ol>
+<p>There’s surely a name for this kind of attack, but this is my first time seeing it! Please let me know if you’ve seen this before.</p>
+<p>And now, a curious mind might wonder, does this work for big search engines? Can one abuse this to do <code>google.com/search?q=some+arbitrary+text</code> or <code>duckduckgo.com/q=some+arbitrary+text</code>? No! Why? Let’s see.</p>
+<h1 data-number="3" id="a-stop-for-this-salacious-shady-search-meta-seo"><span class="header-section-number">3</span> A Stop for this Salacious Shady Search Meta-SEO</h1>
+<p>I’m not a web developer, but one usually doesn’t want their search results to be indexed on other search engines. They clutter up results for the end-user, and, as we see here, it opens you up for a rather ugly attack. As far as I can tell, there are two main ways to fix this. Luckily, they’re both easy!</p>
+<ol type="1">
+<li><strong>Fix the <code>robots.txt</code></strong></li>
+<li><strong>Add the <code>noindex</code> metatag.</strong></li>
+</ol>
+<p>We can see both of these in action by observing Google (which uses <code>robots.txt</code>) and DuckDuckGo (which uses both <code>robots.txt</code> and the <code>noindex</code>.) While not strictly required, major search engines will respect these tags.</p>
+<h2 data-number="3.1" id="fix-this-using-robots.txt"><span class="header-section-number">3.1</span> Fix this using robots.txt</h2>
+<p>First, let’s look at <a href="https://google.com/robots.txt">google.com/robots.txt</a>. The first few lines are copied below:</p>
+<pre><code>User-agent: *
+Disallow: /search
+Allow: /search/about
+Allow: /search/static
+Allow: /search/howsearchworks
+Disallow: /sdch
+Disallow: /groups
+Disallow: /index.html?
+Disallow: /?
+...</code></pre>
+<p>And let’s also take a look at <a href="https://duckduckgo.com/robots.txt">duckduckgo.com/robots.txt</a>. Their entire <code>robots.txt</code> is copied verbatim here:</p>
+<pre><code>User-agent: *
+Disallow: /lite
+Disallow: /html
+
+# No search result pages
+Disallow: /*?
+
+# chrome new tab page
+Disallow: /chrome_newtab
+
+User-agent: ia_archiver
+Disallow: /
+
+Sitemap: https://duckduckgo.com/sitemap.xml</code></pre>
+<p>The syntax is pretty clear! Observing other sites impacted by this show that <code>robots.txt</code> does <em>not</em> disallow search. For example, <a href="https://upike.edu/robots.txt">upike.edu/robots.txt</a> is listed verbatim below:</p>
+<pre><code>User-agent: * 
+Crawl-Delay: 20</code></pre>
+<p>Here, they don’t block crawlers from any part of the site, but will ask crawlers to slow down a little and crawl a page only once every 20 seconds.</p>
+<p><strong>A heads up!</strong> You need to set up your <code>robots.txt</code> properly <strong>for every subdomain</strong>. For example, I noticed at least 25 UConn subdomains that had this problem. But the robots.txt at <code>uconn.edu/robots.txt</code> had the correct entry, <code>Disallow: /*?s=</code>/</p>
+<h2 data-number="3.2" id="alternatively-fix-this-using-noindex."><span class="header-section-number">3.2</span> Alternatively, fix this using ‘noindex’.</h2>
+<p>If one searches on DuckDuckGo and were to inspect the page, would see this in the <code>&lt;head&gt;</code> section of the page:</p>
+<pre><code>&lt;meta name=&quot;robots&quot; content=&quot;noindex,nofollow&quot;&gt;</code></pre>
+<p>Now, because of DuckDuckGo’s <code>robots.txt</code> file, an indexer won’t even see this. But if it did, it would know not to index it (per <code>noindex</code>) and not to index any links on the page (per <code>nofollow</code>).</p>
+<p>One can also, alternatively, add <code>X-Robots-Tag: noindex</code> to the HTTP response header. Google has more information on their page <a href="https://developers.google.com/search/docs/advanced/crawling/block-indexing">“Block Search indexing with ‘noindex’” at developers.google.com/search/docs/advanced/crawling/block-indexing</a></p>
+<h1 data-number="4" id="neat-so-did-you-disclose-this-disaster"><span class="header-section-number">4</span> Neat! So, Did you disclose this disaster?</h1>
+<p>Regarding responsible disclosure, I did give a heads up to UConn’s IT department, since I am a UConn student and employee. But given the low impact of this attack and how widespread it is, I figured a blogpost would be more than appropriate.</p>
+<hr />
+<p id="footer">
+By <a href="https://gitlab.com/lynnpepin/">Lynn Pepin</a>, 2020 - 2021. Posts are <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a> except if otherwise specified.
+</p>
+<p id="footer">
+[<a href="https://mastodon.social/@lynndotpy">Mastodon</a> / <a href="https://twitter.com/lynndotpy">Twitter</a> / <a href="https://gitlab.com/lynnpepin/">Gitlab</a> / <a href="https://gitlab.com/lynnpepin/diy-static-site-generator">Blog source code</a> ]
+</p>
+</body>
+</html>
