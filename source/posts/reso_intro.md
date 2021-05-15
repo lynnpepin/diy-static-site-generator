@@ -1,12 +1,11 @@
 ---
-title: Reso: My pixel-y circuit design language and simulator where the inputs and outputs are bitmap images!
+title: Reso! My pixel-y circuit design language and simulator where the inputs and outputs are bitmap images
 author:
  - Lynn Pepin
-date: 2020-05-15
+date: 2021-05-15
 category: project
 numbersections: true
 ---
-
 
 # Reso is a circuit design language and simulator where the inputs and outputs are bitmap images
 
