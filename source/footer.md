@@ -4,4 +4,4 @@
 
 <p id="footer">\[[Mastodon](https://mastodon.social/@lynndotpy) / [Twitter](https://twitter.com/lynndotpy) / [Gitlab](https://gitlab.com/lynnpepin/) / [Blog source code](https://gitlab.com/lynnpepin/diy-static-site-generator) ]</p>
 
-<p id="footer">[← Prev](https://lynndotpy.xyz) [~Welcome to the !!Con webring!~](https://bangbangcon.com/) | [Next→](https://lynndotpy.xyz) </p> 
+<p id="footer">[← Prev](https://lynndotpy.xyz) | [~Welcome to the !!Con webring!~](https://bangbangcon.com/) | [Next→](https://lynndotpy.xyz) </p> 
