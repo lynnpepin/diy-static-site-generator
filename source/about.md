@@ -25,5 +25,4 @@ You can get to me on [Twitter](https://twitter.com/lynndotpy) and [Mastodon.Soci
 
 You can also get to me at [GitLab](https://gitlab.com/lynnpepin) (and my mirrors on GitHub) at [GitHib](https://github.com/lynnpepin).
 
-You can also contact me at `lynn@lynndotpy.xyz` (or `admin@lynndotpy.xyz`).
-
+You can also contact me through email at [&#108;&#121;&#110;&#110;&#064;&#108;&#121;&#110;&#110;&#100;&#111;&#116;&#112;&#121;&#046;&#120;&#121;&#122;](mailto:&#108;&#121;&#110;&#110;&#064;&#108;&#121;&#110;&#110;&#100;&#111;&#116;&#112;&#121;&#046;&#120;&#121;&#122;).
