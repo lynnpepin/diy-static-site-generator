@@ -2,7 +2,7 @@
 title: "Blog index"
 lang:  en-US
 ---
-    -  -  : [linear_sorting](./posts/linear_sorting.html)
+2022-1-7: [you can sort in linear time](./posts/linear_sorting.html)
 
 2021-05-15: [Reso! My pixel-y circuit design language and simulator where the inputs and outputs are bitmap images](./posts/reso_intro.html)
 
