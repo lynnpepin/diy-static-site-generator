@@ -37,41 +37,34 @@
 <p><strong>TLDR:</strong> Yes– you can sort numbers in linear time. Yes, including floats. The proof that you can sort in O(n log n) time is still true, but that assumes you’re sorting on the set of real numbers or integers. We can sort in linear time because we work with finite sets: Floats and ints. The algorithm is very simple, and is called counting sort (or bin sort or radix sort.)</p>
 <p>To address common suspicions:</p>
 <ul>
-<li><p>Counting sort is not a randomized algorithm, it always outputs the correct solution.</p></li>
-<li><p>Counting sort is not a parallelized algorithm. (And you can’t use parallelism to speed past a worst-case big-O run time anyway!)</p></li>
-<li><p>Counting sort is not an amortized algorithm. It is truly O(n), not ‘expected’ or ‘amortized’ O(n).</p></li>
-<li><p>Counting sort is technically Θ(n), that is, the worst and best case running time is linear.</p></li>
-<li><p>This can be used in the real world.</p></li>
-<li><p>However, it is not an in-place sorting algorithm.</p></li>
+<li>Counting sort is not a randomized algorithm, it always outputs the correct solution.</li>
+<li>Counting sort is not a parallelized algorithm. (And you can’t use parallelism to speed past a worst-case big-O run time anyway!)</li>
+<li>Counting sort is not an amortized algorithm. It is truly O(n), not ‘expected’ or ‘amortized’ O(n).</li>
+<li>Counting sort is technically Θ(n), that is, the worst and best case running time is linear.</li>
+<li>This can be used in the real world.</li>
+<li>However, it is not an in-place sorting algorithm.</li>
 </ul>
 <h1 data-number="1" id="ok-how-does-counting-sort-work"><span class="header-section-number">1</span> ok, how does counting sort work?</h1>
 <p>The idea of the algorithm is that you count how many times a number appears in a list.</p>
 <ol type="1">
-<li><p>Get input a list <code>L</code> of numbers from some finite set <code>K</code>.</p></li>
-<li><p>Instantiate a dictionary <code>S</code> with zeros, with one element for each item in <code>K</code>.</p></li>
-<li><p>For each item in <code>L</code>, increment the corresponding element in <code>S</code> by one.</p></li>
-<li><p>Then, for each item <code>k in K</code>, output <code>k</code> a total of <code>L[k]</code> times each.</p></li>
+<li>Get input a list <code>L</code> of numbers from some finite set <code>K</code>.</li>
+<li>Instantiate a dictionary <code>S</code> with zeros, with one element for each item in <code>K</code>.</li>
+<li>For each item in <code>L</code>, increment the corresponding element in <code>S</code> by one.</li>
+<li>Then, for each item <code>k in K</code>, output <code>k</code> a total of <code>L[k]</code> times each.</li>
 </ol>
 <p>Here’s a simple implementation in Python.</p>
 <pre><code>
 set_of_numbers_to_sort = list(range(0, 256)) 
-
 counted_numbers = {kk : 0 for kk in set_of_numbers_to_sort}
 
 numbers_in = input(&quot;Enter values in [0, 255] separated by space:\n&quot;)
-
 numbers_in = numbers_in.split(&#39; &#39;)
-
 for number in numbers_in:
-
     counted_numbers[int(number)] += 1
 
 for number in set_of_numbers_to_sort:
-
     for _ in range(counted_numbers[number]):
-
-        print(number)
-</code></pre>
+        print(number)</code></pre>
 <blockquote>
 <p>Note: This example implementation uses a dict for clarity and generality, so it’s technically not guaranteed Θ(k+n)!</p>
 </blockquote>
@@ -96,8 +89,8 @@ for number in set_of_numbers_to_sort:
 <p>So far we assume you need to perfectly sort an arbitrary list of values.</p>
 <p>You can speed things up if:</p>
 <ol type="1">
-<li><p>You know something about the distribution of values, or</p></li>
-<li><p>You know something about the application of the sort.</p></li>
+<li>You know something about the distribution of values, or</li>
+<li>You know something about the application of the sort.</li>
 </ol>
 <p>If you’re sorting floats, but you know most of your values are NaN or 0.0, you can use counting-sort for NaN and 0.0, and use a traditional sort on the rest.</p>
 <p>What if your sort doesn’t need to be super accurate? Say, for a very niche case, you want to sort a histogram on the logarithm of some list of values. Then, you can sort your float64s on the 11-bit exponent, which means k = 2^11 = 2048, which means you can use counting-sort!</p>
@@ -106,9 +99,9 @@ for number in set_of_numbers_to_sort:
 <p>There is a small rift between the model of computing used in computer-science and the actual computers we use. The space between that rift is really cool, and leads to fun facts like “you can sort in linear time”.</p>
 <p>Remember to like, comment, and subscribe* for more fun blog-posts, such as:</p>
 <ol type="1">
-<li><p>“Sorry Amdahl, but parallel computing DOES give you superlinear speedup”</p></li>
-<li><p>“P and NP don’t matter if you’re not in aerospace because randomized algorithms are magic”</p></li>
-<li><p>“Moore’s Law isn’t exponential, and it’s not sigmoidal either. It’s a distribution, I’m afraid we’re nearing it’s peak, and I’m frightened about the world beyond it: A Short Treatise on Why 640KB ought to be enough for anyone because you won’t have a choice in 200 years”</p></li>
+<li>“Sorry Amdahl, but parallel computing DOES give you superlinear speedup”</li>
+<li>“P and NP don’t matter if you’re not in aerospace because randomized algorithms are magic”</li>
+<li>“Moore’s Law isn’t exponential, and it’s not sigmoidal either. It’s a distribution, I’m afraid we’re nearing it’s peak, and I’m frightened about the world beyond it: A Short Treatise on Why 640KB ought to be enough for anyone because you won’t have a choice in 200 years”</li>
 </ol>
 <hr />
 <p>*This is a joke, I’m not actually writing these blogposts, and you can’t like, comment, or subscribe.</p>

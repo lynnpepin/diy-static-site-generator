@@ -13,27 +13,19 @@ category: post
 To address common suspicions:
 
  - Counting sort is not a randomized algorithm, it always outputs the correct solution.
-
  - Counting sort is not a parallelized algorithm. (And you can't use parallelism to speed past a worst-case big-O run time anyway!)
-
  - Counting sort is not an amortized algorithm. It is truly O(n), not 'expected' or 'amortized' O(n).
-
  - Counting sort is technically Θ(n), that is, the worst and best case running time is linear. 
-
  - This can be used in the real world.
-
-- However, it is not an in-place sorting algorithm.
+ - However, it is not an in-place sorting algorithm.
 
 # ok, how does counting sort work?
 
 The idea of the algorithm is that you count how many times a number appears in a list.
 
 1. Get input a list `L` of numbers from some finite set `K`.
-
 2. Instantiate a dictionary `S` with zeros, with one element for each item in `K`.
-
 3. For each item in `L`, increment the corresponding element in `S` by one.
-
 4. Then, for each item `k in K`, output `k` a total of `L[k]` times each.
 
 Here's a simple implementation in Python.
@@ -41,23 +33,16 @@ Here's a simple implementation in Python.
 ```
 
 set_of_numbers_to_sort = list(range(0, 256)) 
-
 counted_numbers = {kk : 0 for kk in set_of_numbers_to_sort}
 
 numbers_in = input("Enter values in [0, 255] separated by space:\n")
-
 numbers_in = numbers_in.split(' ')
-
 for number in numbers_in:
-
     counted_numbers[int(number)] += 1
 
 for number in set_of_numbers_to_sort:
-
     for _ in range(counted_numbers[number]):
-
         print(number)
-
 ```
 
 > Note: This example implementation uses a dict for clarity and generality, so it's technically not guaranteed Θ(k+n)!
@@ -71,15 +56,12 @@ So, counting-sort can be used in the real world when you have to sort a very lar
 For this example, let's say you wanted to see the frequency of letters in a 1-billion-character English text. You can count each character to see how many of the 26 letters appear. This is equivalent to sorting.
 
 1. Get an input `L` which is the 1-billion-character text, where `K = {A, B, C, ..., X, Y, Z}`.
-
 2. Instantiate the dict `S = {A : 0, B : 0, C : 0, ..., Z : 0}`.
-
 3. For each character in in `L`, increase the corresponding element in `S` by one.
 
     - E.g. For 'C', we get `S = {A : 0, B : 0, C : 1, ..., Z : 0}`.
 
     - E.g. And then if we get an A for the next, we get `S = {A : 1, B : 0, C : 1, ... }`.
-
 4. And then print each element from S.
 
 This algorithm is `O(|L| + |K|)`. This is also written as `O(n + k)`, where `k` is the size of the set we want to sort.
@@ -91,7 +73,6 @@ So far we assume you need to perfectly sort an arbitrary list of values.
 You can speed things up if:
 
 1. You know something about the distribution of values, or
-
 2. You know something about the application of the sort.
 
 If you're sorting floats, but you know most of your values are NaN or 0.0, you can use counting-sort for NaN and 0.0, and use a traditional sort on the rest.
@@ -107,13 +88,10 @@ There is a small rift between the model of computing used in computer-science an
 Remember to like, comment, and subscribe\* for more fun blog-posts, such as:
 
 1. "Sorry Amdahl, but parallel computing DOES give you superlinear speedup"
-
 2. "P and NP don't matter if you're not in aerospace because randomized algorithms are magic"
-
 3. "Moore's Law isn't exponential, and it's not sigmoidal either. It's a distribution, I'm afraid we're nearing it's peak, and I'm frightened about the world beyond it: A Short Treatise on Why 640KB ought to be enough for anyone because you won't have a choice in 200 years"
 
 ---
 
 \*This is a joke, I'm not actually writing these blogposts, and you can't like, comment, or subscribe.
-
 
