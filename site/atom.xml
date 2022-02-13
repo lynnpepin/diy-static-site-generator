@@ -4,6 +4,12 @@
   <id>https://lynndotpy.xyz</id>
   <updated>TODO</updated>
   <entry>
+    <title>Things I read, 2022</title>
+    <link href="https://lynndotpy.xyz/posts/reading_2022.html" rel="alternate"/>
+    <updated>2023-02-13T00:00:00Z</updated>
+    <id>https://lynndotpy.xyz/posts/reading_2022.html</id>
+  </entry>
+  <entry>
     <title>Python on your phone sucks less with ooo.py and the -i flag.</title>
     <link href="https://lynndotpy.xyz/posts/python_mobile.html" rel="alternate"/>
     <updated>2022-05-22T00:00:00Z</updated>
@@ -14,12 +20,6 @@
     <link href="https://lynndotpy.xyz/posts/linear_sorting.html" rel="alternate"/>
     <updated>2022-01-07T00:00:00Z</updated>
     <id>https://lynndotpy.xyz/posts/linear_sorting.html</id>
-  </entry>
-  <entry>
-    <title>reso, a colorful pixel-art circuit simulator</title>
-    <link href="https://lynndotpy.xyz/posts/example.html" rel="alternate"/>
-    <updated>2021-05-15T00:00:00Z</updated>
-    <id>https://lynndotpy.xyz/posts/example.html</id>
   </entry>
   <entry>
     <title> reso, a colorful pixel-art circuit simulator</title>
