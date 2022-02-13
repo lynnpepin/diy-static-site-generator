@@ -8,7 +8,7 @@ category: how-to
 
 > **tldr:**  Open the Python-Fu console (Filters > Python-Fu > Console) and reference GIMP's built-in `pdb` documentation (Help > Procedure browser).  A simple 'hello world' is presented:
 > 
-> > ```
+> > ```python
 > > img = gimp.image_list()[0]
 > > title_layer = pdb.gimp_image_get_layer_by_name(img, 'Title')
 > > pdb.gimp_text_layer_set_text(title_layer, "Hello world!")
@@ -64,7 +64,7 @@ As a quick "hello world" example, consider the following steps:
 3. Open the Python console (Filters > Python-Fu > Console)
 4. Enter the below lines into the console! Your text layer will be modified to say 'Hello world!".
 
-> ```
+> ```python
 > img = gimp.image_list()[0]
 > title_layer = pdb.gimp_image_get_layer_by_name(img, 'Title')
 > pdb.gimp_text_layer_set_text(title_layer, "Hello world!")

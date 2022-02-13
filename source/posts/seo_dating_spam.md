@@ -133,7 +133,7 @@ Here, they don't block crawlers from any part of the site, but will ask crawlers
 
 If one searches on DuckDuckGo and were to inspect the page, would see this in the `<head>` section of the page:
 
-```
+```html
 <meta name="robots" content="noindex,nofollow">
 ```
 

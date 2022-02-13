@@ -30,8 +30,7 @@ The idea of the algorithm is that you count how many times a number appears in a
 
 Here's a simple implementation in Python.
 
-```
-
+```python
 set_of_numbers_to_sort = list(range(0, 256)) 
 counted_numbers = {kk : 0 for kk in set_of_numbers_to_sort}
 

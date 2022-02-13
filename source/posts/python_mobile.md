@@ -10,7 +10,7 @@ numbersections: true
 > **TLDR:** Copy the script below, and run it as `python -i ooo.py`. This will give you a bunch of useful imports with short aliases, and throw you into an interactive shell.
 
 
-```
+```python
 '''Run as `python3 -i ooo.py`
 
 I use this when writing Python scripts on my phone (through Termux). The point is to minimize the keypresses needed when writing Python on a phone.
