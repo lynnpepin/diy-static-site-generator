@@ -4,124 +4,183 @@
 @import url('fonts/montserrat.css');
 @import url('fonts/Libertinus/libertinus.css');
 
+:root {
+  /* polar night */
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a;
+
+  /* snow storm */
+  --nord4: #d8dee9;
+  --nord5: #e5e9f0;
+  --nord6: #eceff4;
+
+  /* frost */
+  --nord7: #8fbcbb;
+  --nord8: #88c0d0;
+  --nord9: #81a1c1;
+  --norda: #5e81ac;
+
+  /* aurora */
+  --nordb: #bf616a;
+  --nordc: #d08770;
+  --nordd: #ebcb8b;
+  --norde: #a3be8c;
+  --nordf: #b48ead;
+}
 
 h1, h2, h3, h4, h5, h6, #blog-title, h1.title  {
   font-family: 'Libertinus Sans', sans-serif;
-  color: #333;
-  text-shadow: 0px -2px 0px #2221, 0px 2px 0px #fff8;
 }
 
-html, body{
+html, body, a {
   font-family: 'Libertinus Sans', sans-serif;
-  max-width: 80ch;
-  margin: 2ch;
-  color: #444;
-  background: #fefdff;
-  text-shadow: 0px -1px 0px #2221, 0px 1px 0px #fff8;
-  line-height: 1.25;
-  font-size: 1.125em;
+}
+
+html {
+  max-width: 72ch;
+  padding: 1em;
+  margin: auto;
+  line-height: 1.75;
+  font-size: 1.2em;
+}
+
+body {
+  margin: auto;
+  color: var(--nord1);
+  line-height: 1.5;
+  margin-bottom: 1em;
+  background: var(--nord6); /*linear-gradient(
+    var(--nord4), var(--nord5), var(--nord6), var(--nord4)
+  );*/
+  background-color: var(--nord4);
+}
+
+
+p.date {
+  color: var(--nord3);
+  font-size: 0.6em;
+  padding: 0em;
+  margin: 0em;
+  line-height: 1;
+  font-style: italic;
+}
+
+#footer{
+  font-size: 0.6em;
+}
+
+#blog-title, h1.title, h1,h2,h3,h4,h5,h6 {
+  line-height: 1;
+  font-weight: bold;
+  text-shadow: 0px -2px 0px #0001, 0px 2px 0px #fff8;
+  padding: 0.3em;
+}
+
+#blog-title{
+  color: var(--nord1);
+  font-size: 1.8em;
+  font-weight: 400;
+  padding: 0.2em;
+  border-radius: 4px;
+}
+#blog-title:hover{ 
+  background: linear-gradient(30deg, var(--norda), var(--nordb), var(--nordc), var(--nordd));
+  color: var(--nord6);
+  box-shadow: 0px 4px 8px #0004;
+}
+#blog-title:active{
+  background: linear-gradient(30deg, var(--norda), var(--nordb), var(--nordc), var(--nordd));
+  color: var(--nord6);
+}
+
+h1.title {
+  color: var(--nord0);
+  font-size: 2.4rem;
+  font-weight: 400;
+}
+h1, h2, h3, h4, h5, h6 { color: var(--nord1); }
+h1 { font-size: 2.4rem; }
+h2 { font-size: 2.1rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.35rem; }
+h6 { font-size: 1.2rem; }
+
+a {
+  color: var(--norda);
+  text-decoration: none;
+  border-radius: 2px;
+  text-shadow: 0px -1px 0px #0002, 0px 1px 0px #fff8;
+}
+a:hover{
+  background: var(--nord1);
+  color: var(--nord6);
+}
+a:active{
+  background: var(--nord1);
+  color: var(--nord6);
 }
 
 body::selection, p::selection,
 h1::selection, h1.title::selection,
 h2::selection, h3::selection, h4::selection, h5::selection,
-em::selection, a::selection, strong::selection,
-ol::selection, ul::selection, li::selection {
-  background-color: #fc0;
+em::selection {
+  /*background-color: linear-gradient(#5f3dc4, #364fc7);*/
+  background-color: var(--norda);
+  color: var(--nord5);
+}
+strong::selection {
+  background-color: var(--nord0);
+  color: var(--nord6);
 }
 code::selection, pre::selection {
   /*background-color: linear-gradient(#5f3dc4, #364fc7);*/
-  background-color: #222;
-  color: #fc0;
-  text-shadow: none;
+  background-color: var(--nord1);
+  color: var(--norde);
 }
-img::selection {
-  background-color: #fc02;
-}
-
-a {
-  color: #420;
-  text-decoration-thickness: 1px;
-}
-a:hover{
-  color: #868;
-  transition: 0.125s;
-}
-a:visited {
-  color: #204;
-}
-
-
-
 pre {
-  border-left: 2px solid #420;
+  border-left: 2px solid var(--nord3);
   margin-left: .25em;
   padding: 1ch;
   border-radius: .25em;
-  background: #dddeee;
+  background: var(--nord5);
 }
-
-/*
-#blog-title{
-  font-size: 1.8em;
-  border-radius: 4px;
-  padding: 0ch 0ch 0ch 0.5ch;
-  text-decoration: none;
+a::selection {
+  /*background-color: linear-gradient(#5f3dc4, #364fc7);*/
+  background-color: var(--nord1);
+  color: var(--nord6);
 }
-#blog-title:hover{ 
-  background: linear-gradient(60deg, #fc08, #f808, #c0f8);
-  box-shadow: 0px 0px 2px 2px #fc08;
-  text-shadow: 0px 0px 2px #dff8; 
-  transition: 0.25s;
-}
-#blog-title:active{
-  background: linear-gradient(60deg, #c0f8, #c0f8, #c0f8);
-  box-shadow: none;
-  color: #fff;
-  transition: 0.25s;
-}
-*/
-#blog-title{ font-size: 1.8em; }
-#blog-title-link { text-decoration: none; }
-#blog-title:hover{ 
-  color: #906;
-  transition: 0.25s;
-}
-#blog-title:active{
-  color: #069;
-  transition: 0.25s;
-}
-p.date {
-  color: #444;
-  font-size: 0.6em;
-  font-style: italic;
-}
-#footer{
-  font-size: 0.6em;
-}
-
 
 img {
-  border: 1px solid #8888;
+  border: 1px solid #ffffff80;
   max-width: 100%;
   margin: auto;
 }
 img:hover {
-  border: 1px solid #fd08;
-  box-shadow: 4px 4px 0px 0px #2222;
+  border: 1px solid var(--nord3);
+  box-shadow: 3px 6px 0px 2px #343a4020;
 }
 img:active {
-  border: 1px solid #fc0;
-  box-shadow: 0px 0px 0px 2px #2222;
-}
-figcaption {
-  display: none;
+  border: 1px solid var(--nord2);
+  box-shadow: 0px 0px 0px 2px ;
 }
 
 
 blockquote {
-  border-left: 2px solid #333;
-  padding-left: 1ch;
-  margin-left: 1ch;
+  border-left: 2px solid var(--nord2);
+  padding-left: .8em;
+  margin-left: .2em;
 }
 /* color nested blockquotes */
+/* One can use jquery to make this pattern extend past 6. */
+blockquote blockquote { border-left: 2px solid var(--nord8); }
+blockquote blockquote blockquote { border-left: 2px solid var(--nord9); }
+blockquote blockquote blockquote blockquote { border-left: 2px solid var(--norda); }
+blockquote blockquote blockquote blockquote blockquote { border-left: 2px solid var(--nord7); }
+blockquote blockquote blockquote blockquote blockquote blockquote { border-left: 2px solid var(--nordb); }
+
+figcaption {
+  display: none;
+}
