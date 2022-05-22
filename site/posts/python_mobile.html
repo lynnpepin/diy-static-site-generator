@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>A little script I use to make Python easier to use on-the-go</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <h1 id="blog-title">
+  Lynn Pepin
+  </h1>
+  <p id="header">
+  <a href="/index.html">Index</a> - <a href="/about.html">About</a> - <a href="/projects.html">Projects</a>
+  </p>
+</head>
+<body>
+<hr />
+
+<time datetime=2022-5-22>
+<p class="date">2022-5-22</p>
+
+<header>
+<h1 class="title">A little script I use to make Python easier to use on-the-go</h1>
+
+<p class="author">lynndotpy</p>
+</header>
+
+<p>Python in the terminal has effectively replaced my graphing calculator for quick calculations. Its REPL allows for interactive coding, so there is no compile-run-debug loop. The great thing is, I can also use this on my phone! (I used Termux on Android, but this might work on iOS through iSH.)</p>
+<p>But coding on a phone sucks. But Python lets you bind anything into almost anything, so you can make it suck a bit less. I use a little script to set up a Python environment that is much more comfortable on the phone.</p>
+<p>I call it <code>ooo.py</code> because it’s fast to type. It imports a bunch of useful tools, and with short names (e.g. <code>np</code> instead of <code>numpy</code>, <code>it</code> instead of <code>itertools</code>). It also binds common functions and constants to shorter names. e.g. <code>A(...)</code> instead of <code>np.array(...)</code>, <code>PI</code> instead of <code>math.pi</code>. It also prints all these shortcuts out, so you don’t need to remember how they work.</p>
+<p>This works by using the interactive <code>-i</code> flag. Running the script as <code>python -i ooo.py</code> will run all of <code>ooo.py</code>, but instead of returning to shell, it’ll throw you into a REPL!</p>
+<p>Here’s a video of it in action, writing a Monte Carlo simulation to estimate Pi. The whole script is pasted below!</p>
+<figure>
+<video src="../images/ooopy.webm" title="asdf" width="240" controls=""><a href="../images/ooopy.webm">A screenrecording</a></video><figcaption aria-hidden="true">A screenrecording</figcaption>
+</figure>
+<p>And the script:</p>
+<pre><code>&#39;&#39;&#39;Run as `python3 -i ooo.py`
+
+I use this when writing Python scripts on my phone (through Termux). The point is to minimize the keypresses needed when writing Python on a phone.
+
+This will start Python, import a bunch of modules with short names, and then throw you into an interpreter.
+&#39;&#39;&#39;
+
+import numpy as np
+import pandas as pd
+import math as mt
+import random as rd
+import time
+import itertools as it
+import functools as ft
+import re
+import os
+import sys
+import glob
+import pickle as pl
+import hashlib as hl
+import secrets as ss
+import socket as sk
+
+print(&quot;imported numpy as np, pandas as pd, math as mt, random as rd, time, itertools as it, functools as ft, re, os, sys, glob, pickle as pl, hashlib as hl, secrets as ss, and socket as sk!&quot;)
+
+A = np.array
+
+PI = mt.pi
+TAU = mt.tau
+E = mt.e
+
+print(&quot;Constants available: PI, TAU, E .&quot;)
+
+H = help
+Q = quit
+
+print(&quot;Functions `help(...)` and `quit()` available as `H(...)` and `Q()`.&quot;)</code></pre>
+<hr />
+<p id="footer">
+By <a href="https://gitlab.com/lynnpepin/">Lynn Pepin</a>, (since 2020). Posts are <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a> except if otherwise specified.
+</p>
+<p id="footer">
+[ Email: <code>lynn[at]lynndotpy[dit]xyz</code> / <a href="https://mastodon.social/@lynndotpy">Mastodon</a> / <a href="https://twitter.com/lynndotpy">Twitter</a> / <a href="https://gitlab.com/lynnpepin/">Gitlab</a> / <a href="https://gitlab.com/lynnpepin/diy-static-site-generator">Blog source code</a> ]
+</p>
+</body>
+</html>

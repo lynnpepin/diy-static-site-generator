@@ -2,6 +2,8 @@
 title: "Blog index"
 lang:  en-US
 ---
+2022-5-22: [A little script I use to make Python easier to use on-the-go](./posts/python_mobile.html)
+
 2022-1-7: [you can sort in linear time](./posts/linear_sorting.html)
 
 2021-05-15: [Reso! My pixel-y circuit design language and simulator where the inputs and outputs are bitmap images](./posts/reso_intro.html)
