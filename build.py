@@ -199,7 +199,7 @@ def main(style="source/themes/minimalist.css",
                              "--mathjax", f"./source/posts/{filename}",
                              "--template", f"{template}",
                              "-o", f"site/posts/{filename[:-3]}.html",
-                             "--number-sections"])
+                             ])
 
     # Create the index.html file
     if build_index:
