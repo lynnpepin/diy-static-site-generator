@@ -1,13 +1,12 @@
 ---
-title: Reso! My pixel-y circuit design language and simulator where the inputs and outputs are bitmap images
+title: reso, a colorful pixel-art circuit simulator 
 author:
  - Lynn Pepin
-date: 2021-05-15
+date: 2021-5-15
 category: project
-numbersections: true
 ---
 
-# Reso is a circuit design language and simulator where the inputs and outputs are bitmap images
+Reso is a circuit design language and simulator where the inputs and outputs are bitmap images!
 
 ![Reso logo, incrementing over a truth table in an artistically-crafted circuit. Outputting AND, OR, and XOR to the diamonds.](../images/reso_logo.gif "Reso logo, incrementing over a truth table in an artistically-crafted circuit. Outputting AND, OR, and XOR to the diamonds. ")
 
@@ -16,7 +15,6 @@ Reso is a pet project of mine that I've been working on in my free time for a li
 * For the math nerds: Reso is a circuit design language and simulator that allows you to define an undirected boolean computational graph by connecting contiguous regions of colored elements in a 2D map.
 
 * For the engineering nerds: Reso is a useless, slow, minimal-feature digital logic simulator where you build wires and gates out of pixels! Its only redeeming qualities are that it's fun, pretty, and maybe a fun project to reimpliment in Rust.
-
 
 Reso is inspired by:
 
@@ -86,6 +84,7 @@ Two colors (dark and bright teal) are dedicated to logical-AND and logical-XOR.
 It'd be nice if we could just connect a wire blob to, say, a logical-XOR blob, but then we'd lack directionality! How would we tell input from output wires? Reso circuits are defined by adjacencies of pixel blobs, and that is inherently undirected.
 
 So, to cheat,  we use purple to add input and output nodes for logic. This adds directionality as-needed. With that out of the way...
+
 
 # Logic gates in Reso
 
