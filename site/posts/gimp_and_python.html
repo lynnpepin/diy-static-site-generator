@@ -15,11 +15,14 @@
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
+  <a href="/index.html">
   <h1 id="blog-title">
-  Lynn Pepin
+  lynn pepin //<code>lynndotpy</code>
   </h1>
+  <p></a></p>
   <p id="header">
-  <a href="/index.html">Index</a> - <a href="/about.html">About</a> - <a href="/projects.html">Projects</a>
+  <a href="/index.html">Index</a> | <a href="/about.html">About</a> | <a
+  href="/projects.html">Projects</a>
   </p>
 </head>
 <body>
@@ -31,42 +34,84 @@
 <header>
 <h1 class="title">How I learned to automate GIMP</h1>
 
-<p class="author">Lynn Pepin</p>
 </header>
 
 <blockquote>
 <p><strong>TLDR:</strong></p>
-<p>Open the Python-Fu console (Filters &gt; Python-Fu &gt; Console) and reference GIMP’s built-in <code>pdb</code> documentation (Help &gt; Procedure browser). A simple ‘hello world’ is presented below.</p>
+<p>Open the Python-Fu console (Filters &gt; Python-Fu &gt; Console) and
+reference GIMP’s built-in <code>pdb</code> documentation (Help &gt;
+Procedure browser). A simple ‘hello world’ is presented below.</p>
 </blockquote>
-<h1 data-number="1" id="introduction"><span class="header-section-number">1</span> Introduction</h1>
-<p>For those unfamiliar with <a href="https://www.gimp.org/">GIMP (gimp.org)</a>, it is a free and open-source image editor, and one of my favorite tools.</p>
-<p>I’m a long-time GIMP user and a long-time Python user. GIMP has this nifty feature called “PythonFu” that allows you to modify images using Python code. (GIMP also exposes a Scheme interface.) With GIMP and Python knowledge, it enables one to automatically edit images. There are plenty of tutorials and documentation, but none of them enabled me to “get my hands dirty”, which is why I’m writing this post.</p>
-<p>Automating GIMP was useful for me when making a little Yu-Gi-Oh inspired card game. Instead of editing 60+ cards titles and descriptions by hand, I used a script to read a spreadsheet and do it for me. I’ll edit this post once I have the code ready. :)</p>
-<h1 data-number="2" id="basic-development-setup"><span class="header-section-number">2</span> Basic development setup</h1>
-<p>If you have experience with GIMP and Python and want to learn how to automate GIMP, then let me show you my basic GIMP Python scripting setup:</p>
+<h1 id="introduction">Introduction</h1>
+<p>For those unfamiliar with <a href="https://www.gimp.org/">GIMP
+(gimp.org)</a>, it is a free and open-source image editor, and one of my
+favorite tools.</p>
+<p>I’m a long-time GIMP user and a long-time Python user. GIMP has this
+nifty feature called “PythonFu” that allows you to modify images using
+Python code. (GIMP also exposes a Scheme interface.) With GIMP and
+Python knowledge, it enables one to automatically edit images. There are
+plenty of tutorials and documentation, but none of them enabled me to
+“get my hands dirty”, which is why I’m writing this post.</p>
+<p>Automating GIMP was useful for me when making a little Yu-Gi-Oh
+inspired card game. Instead of editing 60+ cards titles and descriptions
+by hand, I used a script to read a spreadsheet and do it for me. I’ll
+edit this post once I have the code ready. :)</p>
+<h1 id="basic-development-setup">Basic development setup</h1>
+<p>If you have experience with GIMP and Python and want to learn how to
+automate GIMP, then let me show you my basic GIMP Python scripting
+setup:</p>
 <figure>
-<img src="../images/gimp-python-dev-setup.png" title="A screenshot showing four windows open in tiled configuration: (1) A GIMP image-editing window with a card-template reminiscent of Yu-Gi-Oh, (2) A &#39;procedure browser&#39; showing a list of GIMP procedures with corresponding documentation, (3) An interactive Python console that programatically modifies the GIMP image, and (4) A text editor used as a &#39;scratch space&#39; with a list of commands." alt="A screenshot showing four windows open in tiled configuration: (1) A GIMP image-editing window with a card-template reminiscent of Yu-Gi-Oh, (2) A ‘procedure browser’ showing a list of GIMP procedures with corresponding documentation, (3) An interactive Python console that programatically modifies the GIMP image, and (4) A text editor used as a ‘scratch space’ with a list of commands." /><figcaption aria-hidden="true">A screenshot showing four windows open in tiled configuration: (1) A GIMP image-editing window with a card-template reminiscent of Yu-Gi-Oh, (2) A ‘procedure browser’ showing a list of GIMP procedures with corresponding documentation, (3) An interactive Python console that programatically modifies the GIMP image, and (4) A text editor used as a ‘scratch space’ with a list of commands.</figcaption>
+<img src="../images/gimp-python-dev-setup.png"
+title="A screenshot showing four windows open in tiled configuration: (1) A GIMP image-editing window with a card-template reminiscent of Yu-Gi-Oh, (2) A &#39;procedure browser&#39; showing a list of GIMP procedures with corresponding documentation, (3) An interactive Python console that programatically modifies the GIMP image, and (4) A text editor used as a &#39;scratch space&#39; with a list of commands."
+alt="A screenshot showing four windows open in tiled configuration: (1) A GIMP image-editing window with a card-template reminiscent of Yu-Gi-Oh, (2) A ‘procedure browser’ showing a list of GIMP procedures with corresponding documentation, (3) An interactive Python console that programatically modifies the GIMP image, and (4) A text editor used as a ‘scratch space’ with a list of commands." />
+<figcaption aria-hidden="true">A screenshot showing four windows open in
+tiled configuration: (1) A GIMP image-editing window with a
+card-template reminiscent of Yu-Gi-Oh, (2) A ‘procedure browser’ showing
+a list of GIMP procedures with corresponding documentation, (3) An
+interactive Python console that programatically modifies the GIMP image,
+and (4) A text editor used as a ‘scratch space’ with a list of
+commands.</figcaption>
 </figure>
 <p>I keep keep these four windows open on one screen:</p>
 <ol type="1">
 <li>The GIMP image I want to modify.</li>
 <li>The Procedure Browser (under GIMP Help &gt; Procedure Browser)</li>
-<li>A GIMP Python console (under GIMP Filters &gt; Python-Fu &gt; Console)</li>
+<li>A GIMP Python console (under GIMP Filters &gt; Python-Fu &gt;
+Console)</li>
 <li>A text editor as a workspace / scratchpad.</li>
 </ol>
-<p>For those unfamiliar, the GIMP Python console is interactive. <strong>Paste code into the console, hit enter, and the commands will execute within GIMP.</strong></p>
-<h1 data-number="3" id="some-other-tips"><span class="header-section-number">3</span> Some other tips</h1>
-<p>Get your hands dirty, try something out in the console! Most work that one can do manually can also be reproduced in code. (Some exceptions exist, such as text editing). The procedure browser is your friend when exploring and experimenting, and it is the most complete documentation I could find. This hacky workflow was instrumental in a number of small projects I was able to complete, and was one of the best GIMP skills I learned in these past 10 years. :)</p>
-<p>Here are some other small things that I wish someone told me from the start:</p>
+<p>For those unfamiliar, the GIMP Python console is interactive.
+<strong>Paste code into the console, hit enter, and the commands will
+execute within GIMP.</strong></p>
+<h1 id="some-other-tips">Some other tips</h1>
+<p>Get your hands dirty, try something out in the console! Most work
+that one can do manually can also be reproduced in code. (Some
+exceptions exist, such as text editing). The procedure browser is your
+friend when exploring and experimenting, and it is the most complete
+documentation I could find. This hacky workflow was instrumental in a
+number of small projects I was able to complete, and was one of the best
+GIMP skills I learned in these past 10 years. :)</p>
+<p>Here are some other small things that I wish someone told me from the
+start:</p>
 <ul>
-<li>AFAIK, there is no officially-supported method to run <code>pdb</code> headless in Python scripts. Your interactions have to be through the GIMP executable’s bundled Python interpreter.</li>
-<li>GIMP uses the “<code>pdb</code>” library for most interactions. This is <em>not</em> the same as the Python debugger.</li>
-<li>To use a function in the Procedure Browser, say, “<code>gimp-image-set-active-layer</code>”, you want to call “<code>pdb.gimp_image_set_active_layer</code>”.</li>
-<li>The Procedure Browser is the most complete and easy-to-search <code>pdb</code> documentation…</li>
-<li>… But some documented parameters will not match the Python libary. For example, the blur plugin “<code>plug-in-gauss-iir</code>” lists a “<code>run-mode</code>” parameter, but the function “<code>pdb.plug_in_gauss_iir</code>” does not use that parameter.</li>
+<li>AFAIK, there is no officially-supported method to run
+<code>pdb</code> headless in Python scripts. Your interactions have to
+be through the GIMP executable’s bundled Python interpreter.</li>
+<li>GIMP uses the “<code>pdb</code>” library for most interactions. This
+is <em>not</em> the same as the Python debugger.</li>
+<li>To use a function in the Procedure Browser, say,
+“<code>gimp-image-set-active-layer</code>”, you want to call
+“<code>pdb.gimp_image_set_active_layer</code>”.</li>
+<li>The Procedure Browser is the most complete and easy-to-search
+<code>pdb</code> documentation…</li>
+<li>… But some documented parameters will not match the Python libary.
+For example, the blur plugin “<code>plug-in-gauss-iir</code>” lists a
+“<code>run-mode</code>” parameter, but the function
+“<code>pdb.plug_in_gauss_iir</code>” does not use that parameter.</li>
 <li>GIMP uses Python 2.7, but should be using Python 3 in 2021.</li>
 </ul>
-<h1 data-number="4" id="a-quick-hello-world-tutorial"><span class="header-section-number">4</span> A quick “hello world” tutorial:</h1>
+<h1 id="a-quick-hello-world-tutorial">A quick “hello world”
+tutorial:</h1>
 <p>As a quick “hello world” example, consider the following steps:</p>
 <ol type="1">
 <li>Create a new image in GIMP</li>
@@ -78,14 +123,18 @@
 <li><code>title_layer = pdb.gimp_image_get_layer_by_name(img, 'Title')</code></li>
 <li><code>pdb.gimp_text_layer_set_text(title_layer, "Hello world!")</code></li>
 </ol></li>
-<li>Your text layer should now be modified to have the text, “Hello world!”.</li>
+<li>Your text layer should now be modified to have the text, “Hello
+world!”.</li>
 </ol>
 <hr />
 <p id="footer">
-By <a href="https://gitlab.com/lynnpepin/">Lynn Pepin</a>, (since 2020). Posts are <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a> except if otherwise specified.
-</p>
-<p id="footer">
-[ Email: <code>lynn[at]lynndotpy[dit]xyz</code> / <a href="https://mastodon.social/@lynndotpy">Mastodon</a> / <a href="https://twitter.com/lynndotpy">Twitter</a> / <a href="https://gitlab.com/lynnpepin/">Gitlab</a> / <a href="https://gitlab.com/lynnpepin/diy-static-site-generator">Blog source code</a> ]
+<a href="https://gitlab.com/lynnpepin/">lynndotpy</a> since 2020 | <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">cc
+by-nc-sa</a> unless specified | <a
+href="https://mastodon.social/@lynndotpy">mastodon</a> | <a
+href="https://twitter.com/lynndotpy">twitter</a> | <a
+href="https://gitlab.com/lynnpepin/">gitlab</a> | <a
+href="https://gitlab.com/lynnpepin/diy-static-site-generator">source</a>
 </p>
 </body>
 </html>
