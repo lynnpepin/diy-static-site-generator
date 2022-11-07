@@ -120,7 +120,7 @@ def generate_index(out_file = "source/index.md", target_folder = "./site/posts/"
 
 
 # Main
-def main(style="source/themes/minimalist.css",
+def main(style="source/themes/colorful.css",
          template="source/themes/layout.html",
          build_index=True,
          cleanup=True,
@@ -251,7 +251,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Build your blog from what's in `source/`")
 
     # Add arguments
-    parser.add_argument("--style", "-c", default=["source/themes/minimalist.css"],
+    parser.add_argument("--style", "-c", default=["source/themes/colorful.css"],
                         help="Source for the CSS file to use for this site.",
                         type=str, nargs=1)
     parser.add_argument("--template", "-D", default=["source/themes/layout.html"],
