@@ -1,10 +1,10 @@
 Not-legal stuff:
 
-Fonts in `site/fonts` are downloaded from fonts.google.com and are licensed under the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL). I didn't make them.
+Fonts in `site/fonts` are downloaded from fonts.google.com and are licensed under the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL). I didn't make those fonts.
 
-The example posts have a license in the footer-- you'll probably want to change that before publishing.
+The example posts have a license in the footer. You can change that.
 
-This static site generator and its style are licensed under the [MIT license](https://choosealicense.com/licenses/mit/). A site you make using this are not licensed under the MIT license (unless you want them to be.)
+This static site generator and its style are licensed under the [MIT license](https://choosealicense.com/licenses/mit/). This code compiles your posts to a static website, and is not bound to this license.
 
 Legal stuff: MIT License
 
