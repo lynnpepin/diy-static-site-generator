@@ -5,6 +5,7 @@
  - update about me
  - update posts
  - format tables. (center, header, by row)
+ - format videos
 */
 /*Import Lato*/
 @import url('fonts/lato.css');
@@ -79,6 +80,13 @@ h3, h4 {
   color: #e3fafc;
   box-shadow: 0px 4px 8px #0004;
 }
+#blog-title:active{
+  transition: all 0.125s; 
+  background: linear-gradient(-90deg, #0b7285, #1864ab, #5f3dc4, #862e9c);
+  color: #e3fafc;
+  box-shadow: 0px 0px 2px #0004;
+  text-shadow: 0px 0px 0px #0000;
+}
 
 h1.title {
   color: #4c6ef5;
@@ -117,11 +125,18 @@ a {
   border-radius: 2px;
 }
 a:hover{
-  transition: all 0s; 
+  transition: all 0.125s; 
   background: linear-gradient(90deg, #5f3dc4, #364fc7);
   color: #e3fafc;
   text-shadow: 0px 0px 1px #fff4;
   box-shadow: 0px 1px 2px #0004;
+}
+a:active{
+  transition: all 0.125s; 
+  background: linear-gradient(90deg, #5f3dc4, #364fc7);
+  color: #e3fafc;
+  text-shadow: 0px 0px 0px #fff0;
+  box-shadow: 0px 0px 1px #0004;
 }
 body::selection, p::selection, h1::selectio, em::selection {
   /*background-color: linear-gradient(#5f3dc4, #364fc7);*/
