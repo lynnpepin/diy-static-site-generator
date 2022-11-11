@@ -1,5 +1,5 @@
 ---
-title: Dating Spam sites Abusing Improperly-Configured Search Engines
+title: Oh no, dating spam sites are abusing improperly-configured internal search engines
 author:
  - Lynn Pepin
 date: 2021-04-30

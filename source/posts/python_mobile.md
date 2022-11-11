@@ -1,11 +1,13 @@
 ---
-title: A little script I use to make Python easier to use on-the-go
+title: Python on your phone sucks less with `ooo.py` and the `-i` flag.
 author:
  - lynndotpy
 date: 2022-5-22
 category: post
 numbersections: true
 ---
+
+> **TLDR:** Copy the script below, and run it as `python -i ooo.py`. It'll
 
 Python in the terminal has effectively replaced my graphing calculator for quick calculations. Its REPL allows for interactive coding, so there is no compile-run-debug loop. The great thing is, I can also use this on my phone! (I used Termux on Android, but this might work on iOS through iSH.)
 

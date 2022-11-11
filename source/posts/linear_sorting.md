@@ -1,5 +1,5 @@
 ---
-title: you can sort in linear time
+title: You can sort in linear time!
 author:
  - Lynn Pepin
 
@@ -8,7 +8,7 @@ category: post
 ---
 
 
-**TLDR:** Yes-- you can sort numbers in linear time. Yes, including floats. The proof that you can sort in O(n log n) time is still true, but that assumes you're sorting on the set of real numbers or integers. We can sort in linear time because we work with finite sets: Floats and ints.  The algorithm is very simple, and is called counting sort (or bin sort or radix sort.)
+**TLDR:** Yes-- you can sort numbers in linear time. Yes, including floats! The proof that you can sort in O(n log n) time is still true, but that assumes you're sorting on the infinite set of real numbers (or integers.) We can sort in linear time because we work with finite sets: Floats and ints.  The algorithm is very simple, and is called counting sort (or bin sort or radix sort.)
 
 To address common suspicions:
 

@@ -1,10 +1,9 @@
 ---
-title: How I learned to automate GIMP
+title: GIMP <3 Python! Let's make a YuGiOh rip off
 author:
  - Lynn Pepin
 date: 2020-12-31
 category: how-to
-numbersections: true
 ---
 
 > **TLDR:** 

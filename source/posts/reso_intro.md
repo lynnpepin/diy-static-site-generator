@@ -1,5 +1,5 @@
 ---
-title: reso, a colorful pixel-art circuit simulator 
+title: \ `reso`, a colorful pixel-art circuit simulator 
 author:
  - Lynn Pepin
 date: 2021-5-15
@@ -123,4 +123,4 @@ So, you can totally build a computer in this and all sorts of other wacky things
 
 The repository is at [gitlab.com/lynnpepin/reso](https://gitlab.com/lynnpepin/reso). A GitHub mirror is at [github.com/lynnpepin/reso](https://github.com/lynnpepin/reso). Go check it out, run the code, and play around with it!
 
-And if you make something neat, I'd love to know! :) This work is being presented at !!Con 2021, and I'll edit this with a link to the livestream recording once it's up.
+And if you make something neat, I'd love to know! :) This work was presented at !!Con 2021, and you can watch the livestream of that presentation at [youtube.com/watch?v=2Mst6EWqQJc](https://www.youtube.com/watch?v=2Mst6EWqQJc) on YouTube.

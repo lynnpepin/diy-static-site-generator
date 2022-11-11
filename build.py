@@ -114,10 +114,12 @@ def generate_index(out_file = "source/index.md", target_folder = "./site/posts/"
         
         for date, post in _get_and_sort_posts(target_folder=target_folder):
             link_to_post = "./" + "/".join(post.parts[1:])
+            year, month, _ = date.split('-')
+            month_str = ['','jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'][int(month)]
+            link_to_post = "./" + "/".join(post.parts[1:])
             #get post title
             post_title = get_title(post)
-            f.write(f"{date}: [{post_title}]({link_to_post})\n\n")
-
+            f.write(f"`{year} {month_str}`\t::\t[{post_title}]({link_to_post})\n\n")
 
 # Main
 def main(style="source/themes/colorful.css",
