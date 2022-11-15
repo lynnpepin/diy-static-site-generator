@@ -132,10 +132,19 @@ strong::selection {
   background-color: #09325b;
   color: #ffffff;
 }
-code::selection {
+code, pre {
+}
+code::selection, pre::selection {
   /*background-color: linear-gradient(#5f3dc4, #364fc7);*/
   background-color: #212529;
   color: #51Ef66;
+}
+pre {
+  border-left: 2px solid #1864ab80;
+  margin-left: .25em;
+  padding: 1ch;
+  border-radius: .25em;
+  background: #c5f6fa80;
 }
 a::selection {
   /*background-color: linear-gradient(#5f3dc4, #364fc7);*/
