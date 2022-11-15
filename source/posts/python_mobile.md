@@ -7,22 +7,8 @@ category: post
 numbersections: true
 ---
 
-> **TLDR:** Copy the script below, and run it as `python -i ooo.py`. It'll
+> **TLDR:** Copy the script below, and run it as `python -i ooo.py`. This will give you a bunch of useful imports with short aliases, and throw you into an interactive shell.
 
-Python in the terminal has effectively replaced my graphing calculator for quick calculations. Its REPL allows for interactive coding, so there is no compile-run-debug loop. The great thing is, I can also use this on my phone! (I used Termux on Android, but this might work on iOS through iSH.)
-
-But coding on a phone sucks. But Python lets you bind anything into almost anything, so you can make it suck a bit less. I use a little script to set up a Python environment that is much more comfortable on the phone.
-
-I call it `ooo.py` because it's fast to type. It imports a bunch of useful tools, and with short names (e.g. `np` instead of `numpy`, `it` instead of `itertools`). It also binds common functions and constants to shorter names. e.g. `A(...)` instead of `np.array(...)`, `PI` instead of `math.pi`. It also prints all these shortcuts out, so you don't need to remember how they work.
-
-This works by using the interactive `-i` flag. Running the script as `python -i ooo.py` will run all of `ooo.py`, but instead of returning to shell, it'll throw you into a REPL!
-
-
-Here's a video of it in action, writing a Monte Carlo simulation to estimate Pi. The whole script is pasted below! 
-
-![A screenrecording ](../images/ooopy.webm "asdf"){ width=240px }
-
-And the script:
 
 ```
 '''Run as `python3 -i ooo.py`
@@ -63,3 +49,20 @@ Q = quit
 
 print("Functions `help(...)` and `quit()` available as `H(...)` and `Q()`.")
 ```
+
+---
+
+Here is a real-time video of the script in action, used for writing a Monte Carlo simulation to estimate the value of Pi. 
+
+![A screenrecording ](../images/ooopy.webm "asdf"){ width=240px }
+
+---
+
+Python in the terminal has effectively replaced my graphing calculator for quick calculations. Its REPL allows for interactive coding, so there is no compile-run-debug loop. The great thing is, I can also use this on my phone! (I used Termux on Android, but this might work on iOS through iSH.)
+
+But coding on a phone sucks. But Python lets you bind almost anything to almost anything, so you can make it suck a bit less. I use a little script to set up a Python environment that is much more comfortable on the phone.
+
+I call it `ooo.py` because `ooo.py` is fast to type. The script imports a bunch of useful tools, and with short names (e.g. `np` instead of `numpy`, `it` instead of `itertools`). The script also binds common functions and constants to shorter names. e.g. `A(...)` instead of `np.array(...)`, `PI` instead of `math.pi`. The script also prints all these shortcuts out, so you don't need to remember them all.
+
+The real value comes from the `-i` flag. Running the script as `python -i ooo.py` will run all of `ooo.py`, but instead of exiting to shell, it'll throw you into a REPL! 
+

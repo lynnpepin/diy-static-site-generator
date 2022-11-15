@@ -6,11 +6,17 @@ date: 2020-12-31
 category: how-to
 ---
 
-> **TLDR:** 
->
-> Open the Python-Fu console (Filters > Python-Fu > Console) and reference GIMP's built-in `pdb` documentation (Help > Procedure browser).  A simple 'hello world' is presented below.
+> **tldr:**  Open the Python-Fu console (Filters > Python-Fu > Console) and reference GIMP's built-in `pdb` documentation (Help > Procedure browser).  A simple 'hello world' is presented:
+> 
+> > ```
+> > img = gimp.image_list()[0]
+> > title_layer = pdb.gimp_image_get_layer_by_name(img, 'Title')
+> > pdb.gimp_text_layer_set_text(title_layer, "Hello world!")
+> > ```
 
-# Introduction
+---
+
+# gimp is a good image editor, and you can automate it with python
 
 For those unfamiliar with [GIMP (gimp.org)](https://www.gimp.org/), it is a free and open-source image editor, and one of my favorite tools.
 
@@ -18,7 +24,9 @@ I'm a long-time GIMP user and a long-time Python user. GIMP has this nifty featu
 
 Automating GIMP was useful for me when making a little Yu-Gi-Oh inspired card game. Instead of editing 60+ cards titles and descriptions by hand, I used a script to read a spreadsheet and do it for me. I'll edit this post once I have the code ready. :)
 
-# Basic development setup
+# the dev experience is janky! here's how i do it
+
+> **tldr:** In four corners: GIMP editor, GIMP Python procedure browser for documentation, Python console, and a Python editor. Run scripts by copy and pasting them.
 
 If you have experience with GIMP and Python and want to learn how to automate GIMP, then let me show you my basic GIMP Python scripting setup:
 
@@ -47,16 +55,19 @@ Here are some other small things that I wish someone told me from the start:
  * ... But some documented parameters will not match the Python libary. For example, the blur plugin "`plug-in-gauss-iir`" lists a "`run-mode`" parameter, but the function "`pdb.plug_in_gauss_iir`" does not use that parameter.
  * GIMP uses Python 2.7, but should be using Python 3 in 2021.
 
-# A quick "hello world" tutorial:
+# hello world!
 
 As a quick "hello world" example, consider the following steps:
 
 1. Create a new image in GIMP
 2. Add a text layer, with layer title "Title"
 3. Open the Python console (Filters > Python-Fu > Console)
-4. Enter the following commands into the console:
-	 1. `img = gimp.image_list()[0]`
-	 2. `title_layer = pdb.gimp_image_get_layer_by_name(img, 'Title')`
-	 3. `pdb.gimp_text_layer_set_text(title_layer, "Hello world!")`
-5. Your text layer should now be modified to have the text, "Hello world!".
+4. Enter the below lines into the console! Your text layer will be modified to say 'Hello world!".
+
+> ```
+> img = gimp.image_list()[0]
+> title_layer = pdb.gimp_image_get_layer_by_name(img, 'Title')
+> pdb.gimp_text_layer_set_text(title_layer, "Hello world!")
+> ```
+
 

@@ -37,12 +37,20 @@
 </header>
 
 <blockquote>
-<p><strong>TLDR:</strong></p>
-<p>Open the Python-Fu console (Filters &gt; Python-Fu &gt; Console) and
-reference GIMP’s built-in <code>pdb</code> documentation (Help &gt;
-Procedure browser). A simple ‘hello world’ is presented below.</p>
+<p><strong>tldr:</strong> Open the Python-Fu console (Filters &gt;
+Python-Fu &gt; Console) and reference GIMP’s built-in <code>pdb</code>
+documentation (Help &gt; Procedure browser). A simple ‘hello world’ is
+presented:</p>
+<blockquote>
+<pre><code>img = gimp.image_list()[0]
+title_layer = pdb.gimp_image_get_layer_by_name(img, &#39;Title&#39;)
+pdb.gimp_text_layer_set_text(title_layer, &quot;Hello world!&quot;)</code></pre>
 </blockquote>
-<h1 id="introduction">Introduction</h1>
+</blockquote>
+<hr />
+<h1
+id="gimp-is-a-good-image-editor-and-you-can-automate-it-with-python">gimp
+is a good image editor, and you can automate it with python</h1>
 <p>For those unfamiliar with <a href="https://www.gimp.org/">GIMP
 (gimp.org)</a>, it is a free and open-source image editor, and one of my
 favorite tools.</p>
@@ -56,7 +64,13 @@ plenty of tutorials and documentation, but none of them enabled me to
 inspired card game. Instead of editing 60+ cards titles and descriptions
 by hand, I used a script to read a spreadsheet and do it for me. I’ll
 edit this post once I have the code ready. :)</p>
-<h1 id="basic-development-setup">Basic development setup</h1>
+<h1 id="the-dev-experience-is-janky-heres-how-i-do-it">the dev
+experience is janky! here’s how i do it</h1>
+<blockquote>
+<p><strong>tldr:</strong> In four corners: GIMP editor, GIMP Python
+procedure browser for documentation, Python console, and a Python
+editor. Run scripts by copy and pasting them.</p>
+</blockquote>
 <p>If you have experience with GIMP and Python and want to learn how to
 automate GIMP, then let me show you my basic GIMP Python scripting
 setup:</p>
@@ -110,22 +124,20 @@ For example, the blur plugin “<code>plug-in-gauss-iir</code>” lists a
 “<code>pdb.plug_in_gauss_iir</code>” does not use that parameter.</li>
 <li>GIMP uses Python 2.7, but should be using Python 3 in 2021.</li>
 </ul>
-<h1 id="a-quick-hello-world-tutorial">A quick “hello world”
-tutorial:</h1>
+<h1 id="hello-world">hello world!</h1>
 <p>As a quick “hello world” example, consider the following steps:</p>
 <ol type="1">
 <li>Create a new image in GIMP</li>
 <li>Add a text layer, with layer title “Title”</li>
 <li>Open the Python console (Filters &gt; Python-Fu &gt; Console)</li>
-<li>Enter the following commands into the console:
-<ol type="1">
-<li><code>img = gimp.image_list()[0]</code></li>
-<li><code>title_layer = pdb.gimp_image_get_layer_by_name(img, 'Title')</code></li>
-<li><code>pdb.gimp_text_layer_set_text(title_layer, "Hello world!")</code></li>
-</ol></li>
-<li>Your text layer should now be modified to have the text, “Hello
-world!”.</li>
+<li>Enter the below lines into the console! Your text layer will be
+modified to say ’Hello world!“.</li>
 </ol>
+<blockquote>
+<pre><code>img = gimp.image_list()[0]
+title_layer = pdb.gimp_image_get_layer_by_name(img, &#39;Title&#39;)
+pdb.gimp_text_layer_set_text(title_layer, &quot;Hello world!&quot;)</code></pre>
+</blockquote>
 <hr />
 <p id="footer">
 <a href="https://gitlab.com/lynnpepin/">lynndotpy</a> since 2020 | <a

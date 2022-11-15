@@ -123,7 +123,10 @@ a:active{
   background: #5f3dc4;
   color: #e3fafc;
 }
-body::selection, p::selection, h1::selectio, em::selection {
+body::selection, p::selection,
+h1::selection, h1.title::selection,
+h2::selection, h3::selection, h4::selection, h5::selection,
+em::selection {
   /*background-color: linear-gradient(#5f3dc4, #364fc7);*/
   background-color: #364fc7;
   color: #e3fafc;

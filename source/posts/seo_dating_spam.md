@@ -6,9 +6,7 @@ date: 2021-04-30
 category: post
 ---
 
-> **TLDR:**
->
-> Malicious entities are abusing sites internal search engines to promote their own URLs. This effectively allows them to advertise using the target site's domain in the search results of major search engines. If you own such a site, fix this by putting a `disallow` entry in your `robots.txt`, or adding the `noindex` meta tag.
+> **tldr:**  Malicious entities are abusing sites internal search engines to promote their own URLs. This effectively allows them to advertise using the target site's domain in the search results of major search engines. If you own such a site, fix this by putting a `disallow` entry in your `robots.txt`, or adding the `noindex` meta tag.
 
 
 # A Mystery of Malware in My School's Search Results

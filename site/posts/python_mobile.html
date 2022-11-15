@@ -39,37 +39,9 @@
 
 <blockquote>
 <p><strong>TLDR:</strong> Copy the script below, and run it as
-<code>python -i ooo.py</code>. It’ll</p>
+<code>python -i ooo.py</code>. This will give you a bunch of useful
+imports with short aliases, and throw you into an interactive shell.</p>
 </blockquote>
-<p>Python in the terminal has effectively replaced my graphing
-calculator for quick calculations. Its REPL allows for interactive
-coding, so there is no compile-run-debug loop. The great thing is, I can
-also use this on my phone! (I used Termux on Android, but this might
-work on iOS through iSH.)</p>
-<p>But coding on a phone sucks. But Python lets you bind anything into
-almost anything, so you can make it suck a bit less. I use a little
-script to set up a Python environment that is much more comfortable on
-the phone.</p>
-<p>I call it <code>ooo.py</code> because it’s fast to type. It imports a
-bunch of useful tools, and with short names (e.g. <code>np</code>
-instead of <code>numpy</code>, <code>it</code> instead of
-<code>itertools</code>). It also binds common functions and constants to
-shorter names. e.g. <code>A(...)</code> instead of
-<code>np.array(...)</code>, <code>PI</code> instead of
-<code>math.pi</code>. It also prints all these shortcuts out, so you
-don’t need to remember how they work.</p>
-<p>This works by using the interactive <code>-i</code> flag. Running the
-script as <code>python -i ooo.py</code> will run all of
-<code>ooo.py</code>, but instead of returning to shell, it’ll throw you
-into a REPL!</p>
-<p>Here’s a video of it in action, writing a Monte Carlo simulation to
-estimate Pi. The whole script is pasted below!</p>
-<figure>
-<video src="../images/ooopy.webm" title="asdf" width="240"
-controls=""><a href="../images/ooopy.webm">A screenrecording</a></video>
-<figcaption aria-hidden="true">A screenrecording</figcaption>
-</figure>
-<p>And the script:</p>
 <pre><code>&#39;&#39;&#39;Run as `python3 -i ooo.py`
 
 I use this when writing Python scripts on my phone (through Termux). The point is to minimize the keypresses needed when writing Python on a phone.
@@ -107,6 +79,36 @@ H = help
 Q = quit
 
 print(&quot;Functions `help(...)` and `quit()` available as `H(...)` and `Q()`.&quot;)</code></pre>
+<hr />
+<p>Here is a real-time video of the script in action, used for writing a
+Monte Carlo simulation to estimate the value of Pi.</p>
+<figure>
+<video src="../images/ooopy.webm" title="asdf" width="240"
+controls=""><a href="../images/ooopy.webm">A screenrecording</a></video>
+<figcaption aria-hidden="true">A screenrecording</figcaption>
+</figure>
+<hr />
+<p>Python in the terminal has effectively replaced my graphing
+calculator for quick calculations. Its REPL allows for interactive
+coding, so there is no compile-run-debug loop. The great thing is, I can
+also use this on my phone! (I used Termux on Android, but this might
+work on iOS through iSH.)</p>
+<p>But coding on a phone sucks. But Python lets you bind almost anything
+to almost anything, so you can make it suck a bit less. I use a little
+script to set up a Python environment that is much more comfortable on
+the phone.</p>
+<p>I call it <code>ooo.py</code> because <code>ooo.py</code> is fast to
+type. The script imports a bunch of useful tools, and with short names
+(e.g. <code>np</code> instead of <code>numpy</code>, <code>it</code>
+instead of <code>itertools</code>). The script also binds common
+functions and constants to shorter names. e.g. <code>A(...)</code>
+instead of <code>np.array(...)</code>, <code>PI</code> instead of
+<code>math.pi</code>. The script also prints all these shortcuts out, so
+you don’t need to remember them all.</p>
+<p>The real value comes from the <code>-i</code> flag. Running the
+script as <code>python -i ooo.py</code> will run all of
+<code>ooo.py</code>, but instead of exiting to shell, it’ll throw you
+into a REPL!</p>
 <hr />
 <p id="footer">
 <a href="https://gitlab.com/lynnpepin/">lynndotpy</a> since 2020 | <a
