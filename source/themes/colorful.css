@@ -31,7 +31,6 @@ body {
   background: linear-gradient(
     #fff, #f3f0ff, #fff0f6, #fff4e6, #fff
   );
-  text-shadow: 0px -1px 0px #0001, 0px 1px 0px #fff8;
 }
 
 
@@ -52,10 +51,6 @@ p.date {
   font-weight: bold;
   text-shadow: 0px -2px 0px #0001, 0px 2px 0px #fff8;
 }
-h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
-  transition: all .125s;
-  /*text-shadow: 0px 4px 8px #0004; Can't figure out auto-linking... */
-}
 
 #blog-title, h1.title, h1, h2 {
   margin-left: -1.2em;
@@ -74,18 +69,14 @@ h3, h4 {
   padding: 0.2em;
   border-radius: 0.2em;
 }
-#blog-title:hover{
-  transition: all 0.125s; 
+#blog-title:hover{ 
   background: linear-gradient(-90deg, #0b7285, #1864ab, #5f3dc4, #862e9c);
   color: #e3fafc;
   box-shadow: 0px 4px 8px #0004;
 }
 #blog-title:active{
-  transition: all 0.125s; 
   background: linear-gradient(-90deg, #0b7285, #1864ab, #5f3dc4, #862e9c);
   color: #e3fafc;
-  box-shadow: 0px 0px 2px #0004;
-  text-shadow: 0px 0px 0px #0000;
 }
 
 h1.title {
@@ -125,18 +116,12 @@ a {
   border-radius: 2px;
 }
 a:hover{
-  transition: all 0.125s; 
-  background: linear-gradient(90deg, #5f3dc4, #364fc7);
+  background: #364fc7;
   color: #e3fafc;
-  text-shadow: 0px 0px 1px #fff4;
-  box-shadow: 0px 1px 2px #0004;
 }
 a:active{
-  transition: all 0.125s; 
-  background: linear-gradient(90deg, #5f3dc4, #364fc7);
+  background: #5f3dc4;
   color: #e3fafc;
-  text-shadow: 0px 0px 0px #fff0;
-  box-shadow: 0px 0px 1px #0004;
 }
 body::selection, p::selection, h1::selectio, em::selection {
   /*background-color: linear-gradient(#5f3dc4, #364fc7);*/
@@ -184,13 +169,12 @@ img {
   margin: auto;
 }
 img:hover {
-  transition: all .125s;
   border: 1px solid #9775fa;
-  box-shadow: 3px 6px 2px 2px #343a4020;
+  box-shadow: 3px 6px 0px 2px #343a4020;
 }
 img:active {
   border: 1px solid #1864ab;
-  box-shadow: 0px 0px 1px 2px #4dabf7;
+  box-shadow: 0px 0px 0px 2px #4dabf7;
 }
 
 
