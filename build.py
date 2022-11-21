@@ -122,12 +122,14 @@ def generate_index(out_file = "source/index.md", target_folder = "./site/posts/"
             f.write(f"`{year} {month_str}`\t::\t[{post_title}]({link_to_post})\n\n")
 
 # Main
-def main(style="source/themes/colorful.css",
-         template="source/themes/layout.html",
-         build_index=True,
-         cleanup=True,
-         copy_readme=False,
-         verbose=True):
+def main(
+    style="source/themes/colorful.css",
+    template="source/themes/layout.html",
+    build_index=True,
+    cleanup=True,
+    copy_readme=False,
+    verbose=True
+):
     """
     Build the entire site from `source`, into `site`
 
@@ -236,10 +238,12 @@ def main(style="source/themes/colorful.css",
                      "--template", f"{template}",
                      "-o", "site/projects.html"])
     
-    # Put in favicon
+    # Copy every 'favicon' item to 
     _vprint("Copying favicon...")
-    shutil.copy("./source/favicon.png", "./site/favicon.png")
-    shutil.copy("./source/favicon.ico", "./site/favicon.ico")
+    makedirs_if_not_exist("site/favicon_package/")
+    _copytree_and_overwrite("source/favicon_package/", "site/favicon_package/")
+    shutil.copy("source/favicon_package/favicon.ico", "site/favicon.ico")
+
 
     # 6. Cleanup: Remove header.html, bodybar.html, footer.html
     if cleanup:
