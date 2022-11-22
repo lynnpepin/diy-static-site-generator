@@ -1,5 +1,5 @@
 ---
-title: "My Projects"
+title: ""
 author:
  - Lynn
 lang: en-US
@@ -7,11 +7,10 @@ date: 2020 Dec 19
 ---
 
 
-# Projects That I've Done
-
 <!-- TODO: Photos, goal of <100KB each, 1MB max, or optional load-photos -->
 
-This is an incomplete list of projects that I've worked on, and think are nice enough to mention here. :)
+> This is a dynamic list and may never be able to satisfy particular standards for completeness. You can help by adding [missing items](https://gitlab.com/users/lynnpepin/starred) with [reliable sources](https://github.com/lynnpepin).
+
 
 ## Ongoing Projects
 
