@@ -1,8 +1,6 @@
+""" build.py -- This builds the static site! 
 """
-build.py
 
-The primary script used to build the static site.
-"""
 import os
 import subprocess
 import shutil
@@ -10,26 +8,28 @@ from pathlib import Path
 import argparse
 import lxml.html
 
+_vprint = print
+
 def _copytree_and_overwrite(src, dst):
-    # helper function
-    # copy the entire tree  from src,
-    # overwriting the ENTIRE destination if it exists
+    '''Removes `dst`, then copies the entirety of src to dst'''
     if os.path.exists(dst):
         shutil.rmtree(dst)
     shutil.copytree(src, dst)
 
+
 def makedirs_if_not_exist(path):
     """
-    Wraps os.makedirs to prevent errors
+    Wraps os.makedirs to prevent errors when path does not exist.
 
     :param path: Path of folders to make
     """
     if not os.path.exists(path):
         os.makedirs(path)
 
+
 def remove_if_exists(path):
     """
-    Wraps os.remove to prevent rerrors.
+    Removes a file or directory if it exists at the path.
 
     :param path: Path to remove
     """
@@ -42,19 +42,19 @@ def remove_if_exists(path):
 
 def get_title(filename, default="Untitled post"):
     """
-    Read an HTML file for the title, returning 'default' if it doesn't work.
+    Read an HTML file, returning the <title>, or `default` if not found.
 
     :param filename: String or Path, pointing to a Markdown file to be parsed.
     :param default: String. Return this if no attribute is found.
     :returns: String. Title of post.
     """
-
     post_text = lxml.html.parse(str(filename)).find(f".//title")
 
     if post_text is not None:
         return post_text.text
     else:
         return default
+
 
 def get_date(filename, default="    -  -  "):
     """
@@ -99,7 +99,6 @@ def _get_and_sort_posts(target_folder = "./site/posts/", newest_first=True):
     return dates_and_posts
     
    
-
 def generate_index(out_file = "source/index.md", target_folder = "./site/posts/"):
     """
     Generates an index Markdown file at `out_file`, to later be compiled by pandoc.
@@ -125,18 +124,21 @@ def generate_index(out_file = "source/index.md", target_folder = "./site/posts/"
         for date, post in _get_and_sort_posts(target_folder=target_folder):
             link_to_post = "./" + "/".join(post.parts[1:])
             year, month, _ = date.split('-')
-            month_str = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'][int(month)]
+            month_str = ['','jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'][int(month)]
             link_to_post = "./" + "/".join(post.parts[1:])
             #get post title
             post_title = get_title(post)
             f.write(f"`{year} {month_str}`\t::\t[{post_title}]({link_to_post})\n\n")
 
 
-def _get_rss(entries, updated=None):
-    '''From list of dict 'entries', generate RSS.
+def _generate_rss():
+    # TODO
+    '''Read from 
+    From list of dict 'entries', generate RSS
 
     Each entry has keys 'title', 'link', 'updated'.
     '''
+    pass
     
     rss_out = (
         "<feed xmlns=\"http://www.w3.org/2005/Atom\" xml:lang=\"en\">\n"
@@ -155,6 +157,7 @@ def _get_rss(entries, updated=None):
         )
     
     return rss_out
+
 
 # Main
 def main(
@@ -196,8 +199,7 @@ def main(
     makedirs_if_not_exist("site/fonts")
 
     # copy over theme files.
-    _vprint("Copying over style and fonts!")
-    _vprint(f"... Using {style}")
+    _vprint("Copying over style and fonts! Copying {style} to site/style.css")
     shutil.copy(style, "site/style.css")
     _copytree_and_overwrite("fonts/", "site/fonts/")
     # cludge to get the screenshot used in README.md
@@ -212,33 +214,34 @@ def main(
         shutil.copy(f"source/images/{filename}", f"site/images/{filename}")
 
     # Build header, footer, body preamble, to be put in each document
-    # header is the top of the document
     _vprint("Building extra files.")
     # bodybar, footer, header
-    subprocess.call(["pandoc", "-c", "style.css",
-                     "./source/header.md",
-                     "-o", "./site/header.html"])
-    subprocess.call(["pandoc", "-c", "style.css",
-                     "./source/bodybar.md",
-                     "-o", "./site/bodybar.html"])
-    subprocess.call(["pandoc", "-c", "style.css",
-                     "./source/footer.md",
-                     "-o", "./site/footer.html"])
+    for element in ("header", "bodybar", "footer"):
+        subprocess.call(
+            [
+                "pandoc",
+                "-c", "style.css",
+                f"./source/{element}.md",
+                "-o", f"./site/{element}.html"
+            ]
+        )
 
     # Build any post ending in .md
-    # TODO: FROM HERE
     _vprint("Building posts!")
     for filename in os.listdir("source/posts/"):
         _vprint(f"... Building {filename}")
         if filename[-3:] == ".md":
-            subprocess.call(["pandoc", "-c", "../style.css",
-                             "-H", "site/header.html",
-                             "-B", "site/bodybar.html",
-                             "-A", "site/footer.html",
-                             "--mathjax", f"./source/posts/{filename}",
-                             "--template", f"{template}",
-                             "-o", f"site/posts/{filename[:-3]}.html",
-                             ])
+            subprocess.call(
+                [
+                    "pandoc", "-c", "../style.css",
+                    "-H", "site/header.html",
+                    "-B", "site/bodybar.html",
+                    "-A", "site/footer.html",
+                    "--mathjax", f"./source/posts/{filename}",
+                    "--template", f"{template}",
+                    "-o", f"site/posts/{filename[:-3]}.html",
+                ]
+            )
 
     # Create the index.html file
     if build_index:
@@ -246,32 +249,45 @@ def main(
         generate_index()
 
         # build index.html
-        subprocess.call(["pandoc", "-s", "-c", "style.css",
-                         "-H", "site/header.html",
-                         "-B", "site/bodybar.html",
-                         "-A", "site/footer.html",
-                         "./source/index.md",
-                         "--template", f"{template}",
-                         "-o", "site/index.html"])
+        subprocess.call(
+            [
+                "pandoc", "-s", "-c", "style.css",
+                "-H", "site/header.html",
+                "-B", "site/bodybar.html",
+                "-A", "site/footer.html",
+                "./source/index.md",
+                "--template", f"{template}",
+                "-o", "site/index.html"
+            ]
+        )
+    
     # Build about page
     _vprint("Building about...")
-    subprocess.call(["pandoc", "-s", "-c", "style.css",
-                     "-H", "site/header.html",
-                     "-B", "site/bodybar.html",
-                     "-A", "site/footer.html",
-                     "./source/about.md",
-                     "--template", f"{template}",
-                     "-o", "site/about.html"])
+    subprocess.call(
+        [
+            "pandoc", "-s", "-c", "style.css",
+            "-H", "site/header.html",
+            "-B", "site/bodybar.html",
+            "-A", "site/footer.html",
+            "./source/about.md",
+            "--template", f"{template}",
+            "-o", "site/about.html"
+        ]
+    )
                      
     # Build projects page
     _vprint("Building projects...")
-    subprocess.call(["pandoc", "-s", "-c", "style.css",
-                     "-H", "site/header.html",
-                     "-B", "site/bodybar.html",
-                     "-A", "site/footer.html",
-                     "./source/projects.md",
-                     "--template", f"{template}",
-                     "-o", "site/projects.html"])
+    subprocess.call(
+        [
+            "pandoc", "-s", "-c", "style.css",
+            "-H", "site/header.html",
+            "-B", "site/bodybar.html",
+            "-A", "site/footer.html",
+            "./source/projects.md",
+            "--template", f"{template}",
+            "-o", "site/projects.html"
+        ]
+    )
     
     # Copy every 'favicon' item to 
     _vprint("Copying favicon...")
@@ -283,39 +299,59 @@ def main(
     # 6. Cleanup: Remove header.html, bodybar.html, footer.html
     if cleanup:
         _vprint("Cleaning up!")
-        os.remove("./site/header.html")
-        os.remove("./site/bodybar.html")
-        os.remove("./site/footer.html")
-
+        for element in ("header", "bodybar", "footer"):
+            os.remove(f"./site/{element}.html")
+    
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Build your blog from what's in `source/`")
 
     # Add arguments
-    parser.add_argument("--style", "-c", default=["source/themes/colorful.css"],
-                        help="Source for the CSS file to use for this site.",
-                        type=str, nargs=1)
-    parser.add_argument("--template", "-D", default=["source/themes/layout.html"],
-                        help="Source for the Pandoc layout to use for this site.",
-                        type=str, nargs=1)
-    parser.add_argument("--ignore_index", default=False,
-                        help="Do not build the index from source/index.md",
-                        action="store_true")
-    parser.add_argument("--no_cleanup", default=False,
-                        help="Do not remove intermediary files (footer.md, etc.)",
-                        action="store_true")
-    parser.add_argument("--copy_readme", "-r", default=False,
-                        help="Build `README.md` as a post; site/posts/README.html",
-                        action="store_true")
-    parser.add_argument("--verbose", "-v", default=False,
-                        help="Print extra information.", action="store_true")
+    parser.add_argument(
+        "--style", "-c",
+        default=["source/themes/colorful.css"],
+        help="Source for the CSS file to use for this site.",
+        type=str, nargs=1
+    )
+    parser.add_argument(
+        "--template", "-D",
+        default=["source/themes/layout.html"],
+        help="Source for the Pandoc layout to use for this site.",
+        type=str, nargs=1
+    )
+    parser.add_argument(
+        "--ignore_index",
+        default=False,
+        help="Do not build the index from source/index.md",
+        action="store_true"
+    )
+    parser.add_argument(
+        "--no_cleanup",
+        default=False,
+        help="Do not remove intermediary files (footer.md, etc.)",
+        action="store_true"
+    )
+    parser.add_argument(
+        "--copy_readme", "-r",
+        default=False,
+        help="Build `README.md` as a post; site/posts/README.html",
+        action="store_true"
+    )
+    parser.add_argument(
+        "--verbose", "-v",
+        default=False,
+        help="Print extra information.", action="store_true"
+    )
     
     args = parser.parse_args()
 
+    # Verbose print function redefined here. Horrible scope graph! Bad code here!
     _vprint = print if args.verbose else lambda *a, **k: None
     
-    main(style=args.style[0],
-         template=args.template[0],
-         build_index=not args.ignore_index,
-         cleanup=not args.no_cleanup,
-         copy_readme=args.copy_readme)
+    main(
+        style=args.style[0],
+        template=args.template[0],
+        build_index=not args.ignore_index,
+        cleanup=not args.no_cleanup,
+        copy_readme=args.copy_readme
+    )
