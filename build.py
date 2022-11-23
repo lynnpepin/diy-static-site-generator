@@ -76,6 +76,16 @@ def _get_and_sort_posts(target_folder = "./site/posts/", newest_first=True):
     # html_posts: list of posix_path
     
     returns a list of tuple of string (date), PosixPath
+
+    e.g. 
+
+    >>> build._get_and_sort_posts()
+    [('2022-5-22', PosixPath('site/posts/python_mobile.html')),
+     ('2022-1-7', PosixPath('site/posts/linear_sorting.html')),
+     ('2021-5-15', PosixPath('site/posts/reso_intro.html')),
+     ('2021-04-30', PosixPath('site/posts/seo_dating_spam.html')),
+     ('2020-12-31', PosixPath('site/posts/gimp_and_python.html'))
+    ]
     """
     # get List of Posix Path
     html_posts = list(reversed(list(Path(target_folder).iterdir())))
@@ -115,11 +125,36 @@ def generate_index(out_file = "source/index.md", target_folder = "./site/posts/"
         for date, post in _get_and_sort_posts(target_folder=target_folder):
             link_to_post = "./" + "/".join(post.parts[1:])
             year, month, _ = date.split('-')
-            month_str = ['','jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'][int(month)]
+            month_str = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'][int(month)]
             link_to_post = "./" + "/".join(post.parts[1:])
             #get post title
             post_title = get_title(post)
             f.write(f"`{year} {month_str}`\t::\t[{post_title}]({link_to_post})\n\n")
+
+
+def _get_rss(entries, updated=None):
+    '''From list of dict 'entries', generate RSS.
+
+    Each entry has keys 'title', 'link', 'updated'.
+    '''
+    
+    rss_out = (
+        "<feed xmlns=\"http://www.w3.org/2005/Atom\" xml:lang=\"en\">\n"
+        "  <title>lynndotpy cyberadobe weblog</title>\n"
+        "  <id>https://lynndotpy.xyz</id>\n"
+        "  <updated>TODO</updated>\n"
+    )
+    for entry in entries:
+        rss_out += (
+            f"  <entry>\n"
+            f"    <title>{1}</title>\n"
+            f"    <link href=\"{1}\" rel=\"alternate\"/>\n"
+            f"    <updated>{1}</updated>\n"
+            f"    <id>{1}</id>\n"
+            f"  </entry>\n"
+        )
+    
+    return rss_out
 
 # Main
 def main(
