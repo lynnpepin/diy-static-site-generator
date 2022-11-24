@@ -1,14 +1,18 @@
-# DIY Static Site Generator
+# lynndotpy.xyz static site generator
 
-A DIY approach to static site generation, using Pandoc.
+In 2020 I made a static site generator for a personal blog. Three big components:
+
+ - an UGLY ad-hoc python script `build.py`.
+
+ - pandoc for markdown-> html + custom template
+
+ - hand rolled CSS.
 
 ![Screenshot of a this README, without the screenshot, rendered using this blog.](/images/screenshot.png)
 
 ## How to use this
 
-**Step 1: Don't use this.** I made this for my own education. It's unfinished and lacks features! I'm not a web developer!
-
-Also, it's full of cludges! *This is not a good piece of software engineering!* Marvel at the lack of tests! See how it is not properly portable!
+**Step 1: Don't use this.** I made this for my own education. It's isn't good! It's not supposed to be and isn't going to be! It's full of ugly cludges that I could but won't fix. 
 
 ### But seriously, how can I use this?
 
@@ -37,51 +41,4 @@ Also, it's full of cludges! *This is not a good piece of software engineering!* 
     * `about.md` -- Custom "about" page.
     * `posts/`-- Markdown posts go here! (Most important directory.)
  * `site/` -- The site files are placed here. (Point your HTTP server here!)
-
-## Improvements and TODOs
-
-### Things to style:
-* `<aside>`
-* `<abbr>`
-* `<cite>`
-* `<del>`
-* `<ins>`
-* `<sub>`
-* `<sup>`
-* `<var>`
-* `<mark>`
-* `<kbd>`
-
-### Improve `build.py`:
-
-I want to replace `build.sh` entirely with a Python script, `build.py`.
-
-* Make all paths, etc. as parameters. (`source`, `site`, etc.)
-* Should raise descriptive errors.
-* Plus an extra "verbosity" command.
-* Use OS-agnostic path handling.
-
-### Improve `index.html`
-
-* Parse dates and titles without `lxml`; draw from Markdown instead!
-   * Would require refactoring the workflow...
-* Index page should organize by category too...
-* And then list the top 10 posts.
-* Build a by-category page.
-   * Modify generate_index to first sort by category
-   * Then sort those by date
-   * And also list the 10 latest posts.
-* List tags under post title?
-
-### Other
-
- * Make this pretty for "public release".
- * RSS feed generator
- * Make optional "table of contents" jump in posts.
- * More themes!
-    * Make CSS + Pandoc-template packs
- * Less fragile theming?
- * Code boxes in CSS should scroll when overwidth.
- * Make a "sanity check" test 
- * This codebase is about 300 lines long. Might consider rewriting it from a TDD approach!
 
