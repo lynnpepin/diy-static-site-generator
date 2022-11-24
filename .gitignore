@@ -9,3 +9,4 @@ secret/
 *checkpoints*
 cards_sm.zip
 .DS_Store
+*.vscode
