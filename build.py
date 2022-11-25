@@ -178,7 +178,7 @@ def generate_rss(out_file = "./site/atom.xml", target_folder = "./site/posts/", 
 
 # Main
 def main(
-    style="source/themes/colorful.css",
+    style="source/themes/nord.css",
     template="source/themes/layout.html",
     build_index=True,
     cleanup=True,
@@ -329,7 +329,7 @@ if __name__ == '__main__':
     # Add arguments
     parser.add_argument(
         "--style", "-c",
-        default=["source/themes/colorful.css"],
+        default=["source/themes/nord.css"],
         help="Source for the CSS file to use for this site.",
         type=str, nargs=1
     )
