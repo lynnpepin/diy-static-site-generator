@@ -1,12 +1,12 @@
 Other licenses:
 
-Fonts in `site/fonts` are downloaded from fonts.google.com and are licensed under the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL). I didn't make any of those fonts.
+ - Fonts in `site/fonts` are downloaded from fonts.google.com or from [Libertinus](https://github.com/alerque/libertinus) and are licensed under the [Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL). I didn't make any of those fonts.
 
-The example posts have a license in the footer. You can change that license.
+ - The colors used in `source/themes/colorful.css` use heeyeun's MIT-licensed [Open Color](https://yeun.github.io/open-color/) palette. 
 
-The colors used in `source/themes/colorful.css` use heeyeun's MIT-licensed [Open Color](https://yeun.github.io/open-color/) palette. 
+ - This static site generator and its style are licensed under the [MIT license](https://choosealicense.com/licenses/mit/). This code compiles your posts to a static website, and is not bound to this license.
 
-This static site generator and its style are licensed under the [MIT license](https://choosealicense.com/licenses/mit/). This code compiles your posts to a static website, and is not bound to this license.
+ - This site uses the [https://github.com/aFarkas/html5shiv/](HTML5Shiv) with the MIT license.
 
 Repository license:
 
