@@ -1,15 +1,36 @@
 /* TODOs
- - linux b font
- - privacypolicy: fonts are selfhosted!
- - 
- - multiresolution favicon
- - update about me
  - format tables. (center, header, by row)
 */
-/*Import Lato*/
+/*Import fonts*/
 @import url('fonts/lato.css');
 @import url('fonts/montserrat.css');
 @import url('fonts/Libertinus/libertinus.css');
+
+:root {
+  /* polar night */
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a;
+
+  /* snow storm */
+  --nord4: #d8dee9;
+  --nord5: #e5e9f0;
+  --nord6: #eceff4;
+
+  /* frost */
+  --nord7: #8fbcbb;
+  --nord8: #88c0d0;
+  --nord9: #81a1c1;
+  --norda: #5e81ac;
+
+  /* aurora */
+  --nordb: #bf616a;
+  --nordc: #d08770;
+  --nordd: #ebcb8b;
+  --norde: #a3be8c;
+  --nordf: #b48ead;
+}
 
 h1, h2, h3, h4, h5, h6, #blog-title, h1.title  {
   font-family: 'Libertinus Sans', sans-serif;
@@ -29,17 +50,17 @@ html {
 
 body {
   margin: auto;
-  color: #321;
+  color: var(--nord2);
   line-height: 1.5;
   margin-bottom: 1em;
   background: linear-gradient(
-    #fff, #f3f0ff, #fff0f6, #fff4e6, #fff
+    var(--nord4), var(--nord5), var(--nord6), var(--nord4)
   );
 }
 
 
 p.date {
-  color: #777;
+  color: var(--nord3);
   font-size: 0.6em;
   padding: 0em;
   margin: 0em;
@@ -60,90 +81,91 @@ p.date {
 }
 
 #blog-title{
-  color: #4c6ef5;
+  color: var(--norda);
   font-size: 1.8em;
   font-weight: 400;
   padding: 0.2em;
   border-radius: 4px;
 }
 #blog-title:hover{ 
-  background: linear-gradient(-90deg, #0b7285, #1864ab, #5f3dc4, #862e9c);
-  color: #e3fafc;
+  background: linear-gradient(30deg, var(--norda), var(--nordb), var(--nordc), var(--nordd));
+  color: var(--nord6);
   box-shadow: 0px 4px 8px #0004;
 }
 #blog-title:active{
-  background: linear-gradient(-90deg, #0b7285, #1864ab, #5f3dc4, #862e9c);
-  color: #e3fafc;
+  background: linear-gradient(30deg, var(--norda), var(--nordb), var(--nordc), var(--nordd));
+  color: var(--nord6);
 }
 
 h1.title {
-  color: #4c6ef5;
+  color: var(--nord1);
   font-size: 2.4rem;
   font-weight: 400;
 }
 h1 {
-  color: #e64980;
+  color: var(--nord2);
   font-size: 2.4rem;
 }
 h2 {
-  color: #be4bdb;
+  color: var(--nord2);
   font-size: 2.1rem;
 }
 h3 {
-  color: #7950f2;
+  color: var(--nord2);
   font-size: 1.8rem;
 }
 h4 {
-  color: #4c6ef5;
+  color: var(--nord2);
   font-size: 1.5rem;
 }
 h5 {
-  color: #228be6;
+  color: var(--nord2);
   font-size: 1.35rem;
 }
 h6 {
-  color: #1864ab;
+  color: var(--nord2);
   font-size: 1.2rem;
 }
 
 a {
-  color: #a61e4d;
+  color: var(--norda);
   text-decoration: none;
   border-radius: 2px;
 }
 a:hover{
-  background: #364fc7;
-  color: #e3fafc;
+  background: var(--norda);
+  color: var(--nord6);
 }
 a:active{
-  background: #5f3dc4;
-  color: #e3fafc;
+  background: var(--norda);
+  color: var(--nord6);
 }
+
 body::selection, p::selection,
 h1::selection, h1.title::selection,
 h2::selection, h3::selection, h4::selection, h5::selection,
 em::selection {
   /*background-color: linear-gradient(#5f3dc4, #364fc7);*/
-  background-color: #364fc7;
-  color: #e3fafc;
+  background-color: var(--norda);
+  color: var(--nord5);
 }
 strong::selection {
-  background-color: #09325b;
-  color: #ffffff;
+  background-color: var(--nord0);
+  color: var(--nord6);
 }
 code, pre {
 }
 code::selection, pre::selection {
   /*background-color: linear-gradient(#5f3dc4, #364fc7);*/
-  background-color: #212529;
-  color: #51Ef66;
+  background-color: var(--nord1);
+  color: var(--norde);
 }
 pre {
-  border-left: 2px solid #1864ab80;
+  border-left: 2px solid var(--nordd);
   margin-left: .25em;
   padding: 1ch;
   border-radius: .25em;
-  background: #c5f6fa80;
+  background: var(--nord5);
 }
 a::selection {
   /*background-color: linear-gradient(#5f3dc4, #364fc7);*/
