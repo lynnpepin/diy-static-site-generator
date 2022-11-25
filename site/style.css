@@ -20,7 +20,7 @@ html, body, a {
 
 html {
   max-width: 70ch;
-  padding: 3em 1em;
+  padding: 1em 1em;
   margin: auto;
   line-height: 1.75;
   font-size: 1.2em;
@@ -46,27 +46,19 @@ p.date {
   font-style: italic;
 }
 
-
 #blog-title, h1.title, h1,h2,h3,h4,h5,h6 {
-  font-weight: 300;
   line-height: 1;
   font-weight: bold;
   text-shadow: 0px -2px 0px #0001, 0px 2px 0px #fff8;
+  margin: 0.3em;
+  padding: 0.3em;
 }
 
-#blog-title, h1.title, h1, h2 {
-  margin-left: -1.2em;
-  padding-left: 0.6em;
-}
-h3, h4 {
-  margin-left: -0.6em;
-  padding-left: 0.3em;
-}
 #blog-title{
   color: #4c6ef5;
   font-size: 1.8em;
+  font-weight: 400;
   padding: 0.2em;
-  font-weight: 500;
   border-radius: 4px;
 }
 #blog-title:hover{ 
@@ -82,7 +74,7 @@ h3, h4 {
 h1.title {
   color: #4c6ef5;
   font-size: 2.4rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 h1 {
   color: #e64980;
