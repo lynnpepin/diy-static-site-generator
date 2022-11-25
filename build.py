@@ -313,8 +313,10 @@ def main(
     _copytree_and_overwrite("source/favicon_package/", "site/favicon_package/")
     shutil.copy("source/favicon_package/favicon.ico", "site/favicon.ico")
 
+    # Also copy 'html5shiv-printshiv.js"
+    shutil.copy("source/html5shiv-printshiv.js", "site/htm5shiv-printshiv.js")
 
-    # 6. Cleanup: Remove header.html, bodybar.html, footer.html
+    # Cleanup: Remove header.html, bodybar.html, footer.html
     if cleanup:
         _vprint("Cleaning up!")
         for element in ("header", "bodybar", "footer"):
