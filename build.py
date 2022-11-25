@@ -131,33 +131,50 @@ def generate_index(out_file = "source/index.md", target_folder = "./site/posts/"
             f.write(f"`{year} {month_str}`\t::\t[{post_title}]({link_to_post})\n\n")
 
 
-def _generate_rss():
-    # TODO
-    '''Read from 
-    From list of dict 'entries', generate RSS
+def sanitize_string_for_xml(
+    ss,
+    replacements=[("&", "&amp;"), ("<", "&lt;"), (">", "&gt;"), ("'", "&apos;"), ('"', "&quot;")]
+):
+    """
+    Sanitize a string for XML, replacing characters with their XML entities.
 
-    Each entry has keys 'title', 'link', 'updated'.
-    '''
-    pass
+    :param ss: String to sanitize.
+    :returns: String, with XML entities.
+    """
+    for char, sanitized in replacements:
+        ss = ss.replace(char, sanitized)
+
+    return ss
+
+def generate_rss(out_file = "./site/atom.xml", target_folder = "./site/posts/"):
     
     rss_out = (
+        "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
         "<feed xmlns=\"http://www.w3.org/2005/Atom\" xml:lang=\"en\">\n"
         "  <title>lynndotpy cyberadobe weblog</title>\n"
         "  <id>https://lynndotpy.xyz</id>\n"
         "  <updated>TODO</updated>\n"
     )
-    for entry in entries:
+    for date, post in _get_and_sort_posts(target_folder=target_folder):
+        link_to_post = "./" + "/".join(post.parts[1:])
+        year, month, day = date.split('-')
+        link_to_post = "./" + "/".join(post.parts[1:])
+        #get post title
+        post_title = get_title(post)
+
         rss_out += (
             f"  <entry>\n"
-            f"    <title>{1}</title>\n"
-            f"    <link href=\"{1}\" rel=\"alternate\"/>\n"
-            f"    <updated>{1}</updated>\n"
-            f"    <id>{1}</id>\n"
+            f"    <title>{sanitize_string_for_xml(post_title)}</title>\n"
+            f"    <link href=\"{link_to_post}\" rel=\"alternate\"/>\n"
+            f"    <updated>{year}-{month:>02}-{day:>02}T00:00:00Z</updated>\n"
+            f"    <id>{link_to_post}</id>\n"
             f"  </entry>\n"
         )
-    
-    return rss_out
 
+    rss_out += "</feed>"
+
+    with open(out_file, "w") as ff:
+        ff.write(rss_out)
 
 # Main
 def main(
@@ -184,7 +201,7 @@ def main(
     # empty out "site/"
     remove_if_exists("site")
 
-    # copy readme file over as a post
+    # copy readme file over as a post, to render later
     if copy_readme:
         _vprint("Copying README to build as post.")
         shutil.copy("README.md", "./source/posts/README.md")
@@ -245,8 +262,9 @@ def main(
 
     # Create the index.html file
     if build_index:
-        _vprint("Building index...")
+        _vprint("Building index and atom.xml...")
         generate_index()
+        generate_rss()
 
         # build index.html
         subprocess.call(
