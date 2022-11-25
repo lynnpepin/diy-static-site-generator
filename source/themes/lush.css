@@ -1,4 +1,4 @@
-/*nord mesa theme (nord RGB -> BGR)*/
+/*green theme (nord RGB -> RBG)*/
 /*Import fonts*/
 @import url('fonts/lato.css');
 @import url('fonts/montserrat.css');
@@ -6,28 +6,28 @@
 
 :root {
   /* polar night */
-  --mesa0: #40342e;
-  --mesa1: #52423b;
-  --mesa2: #5e4c43;
-  --mesa3: #6a564c;
+  --mesa0: #2e4034;
+  --mesa1: #3b5242;
+  --mesa2: #435e4c;
+  --mesa3: #4c6a56;
 
   /* snow storm */
-  --mesa4: #e9ded8;
-  --mesa5: #f0e9e5;
-  --mesa6: #f4efec;
+  --mesa4: #d8e9de;
+  --mesa5: #e5f0e9;
+  --mesa6: #ecf4ef;
 
   /* frost */
-  --mesa7: #bbbc8f;
-  --mesa8: #d0c088;
-  --mesa9: #c1a181;
-  --mesaa: #ac815e;
+  --mesa7: #8fbbbc;
+  --mesa8: #88d0c0;
+  --mesa9: #81c1a1;
+  --mesaa: #5eac81;
 
   /* aurora */
-  --mesab: #6a61bf;
-  --mesac: #7087d0;
-  --mesad: #8bcbeb;
-  --mesae: #8cbea3;
-  --mesaf: #ad8eb4;
+  --mesab: #bf6a61;
+  --mesac: #d07087;
+  --mesad: #eb8bcb;
+  --mesae: #a38cbe;
+  --mesaf: #b4ad8e;
 }
 
 h1, h2, h3, h4, h5, h6, #blog-title, h1.title  {
