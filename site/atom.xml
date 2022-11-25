@@ -5,32 +5,32 @@
   <updated>TODO</updated>
   <entry>
     <title>Python on your phone sucks less with ooo.py and the -i flag.</title>
-    <link href="./posts/python_mobile.html" rel="alternate"/>
+    <link href="https://lynndotpy.xyz/posts/python_mobile.html" rel="alternate"/>
     <updated>2022-05-22T00:00:00Z</updated>
-    <id>./posts/python_mobile.html</id>
+    <id>https://lynndotpy.xyz/posts/python_mobile.html</id>
   </entry>
   <entry>
     <title>You can sort in linear time!</title>
-    <link href="./posts/linear_sorting.html" rel="alternate"/>
+    <link href="https://lynndotpy.xyz/posts/linear_sorting.html" rel="alternate"/>
     <updated>2022-01-07T00:00:00Z</updated>
-    <id>./posts/linear_sorting.html</id>
+    <id>https://lynndotpy.xyz/posts/linear_sorting.html</id>
   </entry>
   <entry>
     <title> reso, a colorful pixel-art circuit simulator</title>
-    <link href="./posts/reso_intro.html" rel="alternate"/>
+    <link href="https://lynndotpy.xyz/posts/reso_intro.html" rel="alternate"/>
     <updated>2021-05-15T00:00:00Z</updated>
-    <id>./posts/reso_intro.html</id>
+    <id>https://lynndotpy.xyz/posts/reso_intro.html</id>
   </entry>
   <entry>
     <title>Oh no, dating spam sites are abusing improperly-configured internal search engines</title>
-    <link href="./posts/seo_dating_spam.html" rel="alternate"/>
+    <link href="https://lynndotpy.xyz/posts/seo_dating_spam.html" rel="alternate"/>
     <updated>2021-04-30T00:00:00Z</updated>
-    <id>./posts/seo_dating_spam.html</id>
+    <id>https://lynndotpy.xyz/posts/seo_dating_spam.html</id>
   </entry>
   <entry>
     <title>GIMP &lt;3 Python! Let’s make a YuGiOh rip off</title>
-    <link href="./posts/gimp_and_python.html" rel="alternate"/>
+    <link href="https://lynndotpy.xyz/posts/gimp_and_python.html" rel="alternate"/>
     <updated>2020-12-31T00:00:00Z</updated>
-    <id>./posts/gimp_and_python.html</id>
+    <id>https://lynndotpy.xyz/posts/gimp_and_python.html</id>
   </entry>
 </feed>

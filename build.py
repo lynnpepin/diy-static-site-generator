@@ -146,7 +146,7 @@ def sanitize_string_for_xml(
 
     return ss
 
-def generate_rss(out_file = "./site/atom.xml", target_folder = "./site/posts/"):
+def generate_rss(out_file = "./site/atom.xml", target_folder = "./site/posts/", domain="https://lynndotpy.xyz/"):
     
     rss_out = (
         "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
@@ -158,7 +158,7 @@ def generate_rss(out_file = "./site/atom.xml", target_folder = "./site/posts/"):
     for date, post in _get_and_sort_posts(target_folder=target_folder):
         link_to_post = "./" + "/".join(post.parts[1:])
         year, month, day = date.split('-')
-        link_to_post = "./" + "/".join(post.parts[1:])
+        link_to_post = domain + "/".join(post.parts[1:])
         #get post title
         post_title = get_title(post)
 
