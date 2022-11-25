@@ -9,13 +9,14 @@
 /*Import Lato*/
 @import url('fonts/lato.css');
 @import url('fonts/montserrat.css');
+@import url('fonts/Libertinus/libertinus.css');
 
 h1, h2, h3, h4, h5, h6, #blog-title, h1.title  {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Libertinus Sans', sans-serif;
 }
 
 html, body, a {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Libertinus Sans', sans-serif;
 }
 
 html {
@@ -44,6 +45,10 @@ p.date {
   margin: 0em;
   line-height: 1;
   font-style: italic;
+}
+
+#footer{
+  font-size: 0.9em;
 }
 
 #blog-title, h1.title, h1,h2,h3,h4,h5,h6 {
