@@ -41,8 +41,8 @@ html, body, a {
 }
 
 html {
-  max-width: 70ch;
-  padding: 1em 1em;
+  max-width: 72ch;
+  padding: 1em;
   margin: auto;
   line-height: 1.75;
   font-size: 1.2em;
@@ -56,6 +56,7 @@ body {
   background: linear-gradient(
     var(--nord4), var(--nord5), var(--nord6), var(--nord4)
   );
+  background-color: var(--nord4);
 }
 
 
@@ -69,14 +70,13 @@ p.date {
 }
 
 #footer{
-  font-size: 0.9em;
+  font-size: 0.6em;
 }
 
 #blog-title, h1.title, h1,h2,h3,h4,h5,h6 {
   line-height: 1;
   font-weight: bold;
   text-shadow: 0px -2px 0px #0001, 0px 2px 0px #fff8;
-  margin: 0.3em;
   padding: 0.3em;
 }
 
@@ -153,15 +153,13 @@ strong::selection {
   background-color: var(--nord0);
   color: var(--nord6);
 }
-code, pre {
-}
 code::selection, pre::selection {
   /*background-color: linear-gradient(#5f3dc4, #364fc7);*/
   background-color: var(--nord1);
   color: var(--norde);
 }
 pre {
-  border-left: 2px solid var(--nordd);
+  border-left: 2px solid var(--nord8);
   margin-left: .25em;
   padding: 1ch;
   border-radius: .25em;
@@ -169,29 +167,9 @@ pre {
 }
 a::selection {
   /*background-color: linear-gradient(#5f3dc4, #364fc7);*/
-  background-color: #212529;
-  color: #faa2c1;
+  background-color: var(--nord1);
+  color: var(--nord6);
 }
-
-/*
-img {
-  max-width: 100%;
-  margin: auto;
-  background: repeating-linear-gradient(
-    -60deg,
-    #49505720,
-    #495057820 8px,
-    #21252920 8px,
-    #21252920 16px
-  ), repeating-linear-gradient(
-    30deg,
-    #49505720,
-    #49505720 8px,
-    #21252920 8px,
-    #21252920 16px
-  );
-}
-*/
 
 img {
   border: 1px solid #ffffff80;
@@ -199,27 +177,27 @@ img {
   margin: auto;
 }
 img:hover {
-  border: 1px solid #9775fa;
+  border: 1px solid var(--nord9);
   box-shadow: 3px 6px 0px 2px #343a4020;
 }
 img:active {
-  border: 1px solid #1864ab;
-  box-shadow: 0px 0px 0px 2px #4dabf7;
+  border: 1px solid var(--norda);
+  box-shadow: 0px 0px 0px 2px ;
 }
 
 
 blockquote {
-  border-left: 2px solid #c2255c;
+  border-left: 2px solid var(--nord8);
   padding-left: .8em;
   margin-left: .2em;
 }
 /* color nested blockquotes */
 /* One can use jquery to make this pattern extend past 6. */
-blockquote blockquote { border-left: 2px solid #9c36b5; }
-blockquote blockquote blockquote { border-left: 2px solid #6741d9; }
-blockquote blockquote blockquote blockquote { border-left: 2px solid #3b5bdb; }
-blockquote blockquote blockquote blockquote blockquote { border-left: 2px solid #1971c2; }
-blockquote blockquote blockquote blockquote blockquote blockquote { border-left: 2px solid #0c8599; }
+blockquote blockquote { border-left: 2px solid var(--nord9); }
+blockquote blockquote blockquote { border-left: 2px solid var(--norda); }
+blockquote blockquote blockquote blockquote { border-left: 2px solid var(--nord7); }
+blockquote blockquote blockquote blockquote blockquote { border-left: 2px solid var(--nordb); }
+blockquote blockquote blockquote blockquote blockquote blockquote { border-left: 2px solid var(--nordc); }
 
 figcaption {
   display: none;
