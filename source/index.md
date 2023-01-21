@@ -6,6 +6,8 @@ lang:  en-US
 
 `2022 jan`	::	[You can sort in linear time!](./posts/linear_sorting.html)
 
+`2021 may`	::	[reso, a colorful pixel-art circuit simulator](./posts/example.html)
+
 `2021 may`	::	[ reso, a colorful pixel-art circuit simulator](./posts/reso_intro.html)
 
 `2021 apr`	::	[Oh no, dating spam sites are abusing improperly-configured internal search engines](./posts/seo_dating_spam.html)

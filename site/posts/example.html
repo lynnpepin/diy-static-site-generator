@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>reso, a colorful pixel-art circuit simulator</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../style.css" />
+  <!--[if lt IE 9]>
+    <script src="/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <a href="/index.html">
+  <h1 id="blog-title">
+  lynn pepin //<code>lynndotpy</code>
+  </h1>
+  <p></a></p>
+  <p id="header">
+  <a href="/index.html">Index</a> | <a href="/about.html">About</a> | <a
+  href="/projects.html">Projects</a>
+  </p>
+
+<!-- favicons, code ty https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_package/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_package/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_package/favicon-16x16.png">
+<link rel="manifest" href="favicon_package/site.webmanifest">
+<link rel="mask-icon" href="favicon_package/safari-pinned-tab.svg" color="#5bbad5"> 
+<link rel="shortcut icon" href="favicon_package/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+<body>
+<hr />
+
+<time datetime=2021-5-15>
+<p class="date">2021-5-15</p>
+
+<header>
+<h1 class="title">reso, a colorful pixel-art circuit simulator</h1>
+
+</header>
+
+<p>This is an example! Courtesy of
+https://jaspervdj.be/lorem-markdownum/</p>
+<figure>
+<img src="../images/reso_logo.gif"
+title="Reso logo, incrementing over a truth table in an artistically-crafted circuit. Outputting AND, OR, and XOR to the diamonds."
+alt="Reso logo, incrementing over a truth table in an artistically-crafted circuit. Outputting AND, OR, and XOR to the diamonds." />
+<figcaption aria-hidden="true">Reso logo, incrementing over a truth
+table in an artistically-crafted circuit. Outputting AND, OR, and XOR to
+the diamonds.</figcaption>
+</figure>
+<h1 id="caede-urbis">Caede urbis</h1>
+<h2 id="non-picae-ducit-temporis-procul-oeagrius-sepulti">Non picae
+ducit temporis procul Oeagrius sepulti</h2>
+<p><strong>Lorem</strong> markdownum currus placida vultibus cecidit
+nonam regia medias, cursu: tenuatus siqua continuere soror, auro. Imoque
+concepit latratu, afuit quaecumque non idque est secant quinque tecta;
+inplet, succrescere. Dubiam ab gaudet frondis longo, aequore rediere
+missum loci narravere ensis tua enim fuerunt restituit aper? Viribus
+sociis et Cinyran pastor.</p>
+<p>Timentem opem, ad dolens infelix in tamen tellus quam? Armarat et
+media ranas iactura cursu videre tura vestes domitis silenti gratissime
+aures. Hos nivea iugulatus ingratum ipsumque reges; hunc erant Apollinis
+nitorem ripa nova oculos?</p>
+<ol type="1">
+<li>Aera lurida inminet capere postera</li>
+<li>Pectora gelidas ipsa</li>
+<li>Pudor quae sonos orbem inpavidus debere Phoebique</li>
+<li>Totidem agitatis tollit</li>
+<li>Multa et se Graecia amictus</li>
+<li>Propiorque et coniuge</li>
+</ol>
+<h2 id="includite-nec-mea">Includite nec mea</h2>
+<p>Spatio quoque, per inque periturus induruit rursus vada sponsa captus
+<strong>in partim mortis</strong> visendae horrida arabat. In exitus
+promissaque litore, etiamnum ira, et sed fateor.</p>
+<p>Caede sanguine et currus huius nudare; Coniugis in sed. Tamen
+contigerant amoris Atlante matre visus tenebit genitor solum, quoque
+certe, quid. Nec se mutat vix <a href="http://crouton.net/">oscula</a>,
+conspicuus. Qui amans, ego doloris, obumbrat et quoque, mota quidem
+vultus quae qui alma est renovamine omnia.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(x,y):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> { <span class="st">&#39;sum&#39;</span> : x <span class="op">+</span> y }</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;We know that 3 + 2 is </span><span class="sc">{</span>add(<span class="dv">3</span>,<span class="dv">2</span>)<span class="sc">}</span><span class="ss">, right?&quot;</span>)</span></code></pre></div>
+<pre><code>file_lossless_card -= outboxNetworking;
+var word = downloadProtectorEncoding.dongle_netiquette(soft_hard_tweak);
+if (switch + -4 &lt;= mousePrinter(927407, parity_saas_art.bar(pppErrorKbps,
+        54, 1))) {
+    dlc_and = diskWidgetDisk(cpa_clock.typeface(booleanPrintMultiplatform,
+            4));
+    ping_interlaced_error -= tiffSnowIo;
+    modem_network = media;
+}</code></pre>
+<p>Ferunt Phiale vocatur <a href="http://verba.io/">coniuge natus</a>
+barbaque formosius et unus invidiosus fulvo est ingeniumque Iolen erunt
+vide. Honoris manusque legem. Erubuere Venusque <em>passim</em> haerent
+et vocat Echo, qui Dianae humus.</p>
+<p>Simul in causamque oblita Iuno futuri rabie patria in inguina. Cornua
+iungitur ille tempora cum faxo lumina affectibus emisit distamus
+volentem.</p>
+<h2 id="berecyntia-zephyro-notitiam">Berecyntia Zephyro notitiam</h2>
+<h3 id="telum-abdita-amor-viribus-semel-exsatiata-pluma">Telum abdita
+amor viribus semel exsatiata pluma</h3>
+<p>Lorem markdownum aduncis inque adhuc tecta; ter et sed, ad. Tanti
+voce villos, cum tamen! Aevi numine, lacrimis nodosaque pariter vires
+deterruit ferus sera auxilium carbasa. Volat de vinaque satelles illi,
+sed omnes longo ante <em>possit</em> Nerea? Nat nec nefas, et non summa
+et pectore gravitas caedis harenam, pater.</p>
+<h4 id="a-sed-vocavit-demissus-vultibus-spatio">A sed vocavit demissus
+vultibus spatio</h4>
+<p>Scabrae Perrhaebum ipse Pasiphaen Nileus tamen mortisque penatigero
+primo specie niveum <strong>risi</strong> Pyrrha. Illi bene
+<em>semper</em>, constitit urbem uno quatiebant crede, mitior. Lapides
+enim est. Caelumque ramis demittite quo ungues, magnumque cacumine casus
+oneratos Sidonius populisque aditus Eumolpo. Habent et Liber aenea
+cavis: in palmis graves volucri nemus invitum.</p>
+<blockquote>
+<p>Credere merito tabuerint amictu nec essem cernimus restat intus,
+instantes neutrumque sicut nebulis imperiis! Maiorque Seriphon fugiunt
+oneratur miratur inter; esse, oris mariti, mea coniunx Achilles lassaque
+Pelasga dixit.</p>
+<blockquote>
+<p>Ut umbrae fronte, praeterea orbe <strong>aliquid meo audetis</strong>
+rictus. Hospitis Haemonias iamque, tot in eum et Paris, tu. Dixerat
+regia torique venit, simus potes; damnosa tunicasque diffusa,
+<strong>sic bis</strong>. Est suos fuit gentibus se Meleagros perque
+omnia tamen draconem praecorrumpere <strong>innectens avertens</strong>
+quod <strong>haec cultoribus</strong> rauco rigidoque arbore. <a
+href="http://stagnum.net/praenuntia.aspx">Tempore dat</a> hic viscera
+Anguemque, qui nostram, robur in?</p>
+</blockquote>
+<blockquote>
+<p>Cadit tempora mox fuga arma defendere virgo. Testor undis exhalantia
+petendum, rapit <a
+href="http://www.quaequelesbi.net/atque-in.php">opesque et</a> nuntia
+revinctam animas. Ranas stabat populisque ad nutrix e suique illuc:
+domus.</p>
+<blockquote>
+<h2
+id="deucalioneas-aprica-es-scopulus-alcyonen-evincitque-suorum">Deucalioneas
+aprica es scopulus Alcyonen evincitque suorum</h2>
+<p>Carchesia illum harundine tenebras necemque rapuitque et
+<strong>artus</strong>, aether certe fata. Sunt per suo vixque gramen.
+Per vellera auras inplumes casus aquae est partitas manu quae pascua
+<strong>ortus blandita facibus</strong>. Cervina <strong>his prodere
+laetabitur</strong> virtutis posuere quodcumque Echo germanaeque orbem
+perfidiae patriamque dura gemelliparae torum.</p>
+<ul>
+<li>In rorantia Achillis quisque certaminis sinu momentaque</li>
+<li>Exhalantia tibi</li>
+<li>Nube idem autem</li>
+<li>Tegmina nulla nunc adclivis vicina</li>
+<li>Non clamantia nimbos virginibus medio</li>
+</ul>
+</blockquote>
+<p>Idemque nate raptaturque respicit <em>pisces</em>, o quaeque, sua
+ubi: prior latique. Nec illae! Suo tam Aegides; rerum tela fessam ituras
+guttur de sic acceptus cannis infelix sub ultor parentem: quia.</p>
+</blockquote>
+</blockquote>
+<hr />
+<p id="footer">
+<a href="https://gitlab.com/lynnpepin/">lynndotpy</a> since 2020 | <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/">cc
+by-nc-sa</a> unless specified | <a
+href="https://mastodon.social/@lynndotpy">mastodon</a> | <a
+href="https://twitter.com/lynndotpy">twitter</a> | <a
+href="https://gitlab.com/lynnpepin/diy-static-site-generator">gitlab</a>
+| <a
+href="https://github.com/lynnpepin/diy-static-site-generator">github</a>
+</p>
+</body>
+</html>

@@ -1,4 +1,4 @@
-/*nord theme. tbh this is ugly, let's look at https://github.com/enkia/tokyo-night-vscode-theme colors instead!*/
+/* colors from https://github.com/enkia/tokyo-night-vscode-theme */
 /*Import fonts*/
 @import url('fonts/lato.css');
 @import url('fonts/montserrat.css');
@@ -6,28 +6,27 @@
 
 :root {
   /* polar night */
-  --nord0: #2e3440;
-  --nord1: #3b4252;
-  --nord2: #434c5e;
-  --nord3: #4c566a;
+  --bgnight: #1a1b26;
+  --bgstorm: #24283b;
+  --bgterminal: #414868;
 
-  /* snow storm */
-  --nord4: #d8dee9;
-  --nord5: #e5e9f0;
-  --nord6: #eceff4;
+  --textcomments: #565f89;
+  --textparams: #cfc9c2;
+  --textmarkdown: #9aa5ce;
+  --textfg: #a9b1d6;
+  --textterminal: #c0caf5;
 
-  /* frost */
-  --nord7: #8fbcbb;
-  --nord8: #88c0d0;
-  --nord9: #81a1c1;
-  --norda: #5e81ac;
-
-  /* aurora */
-  --nordb: #bf616a;
-  --nordc: #d08770;
-  --nordd: #ebcb8b;
-  --norde: #a3be8c;
-  --nordf: #b48ead;
+  --red: #f7768e;
+  --orange: #ff9e64;
+  --yellow: #;e0af68
+  --green: #9ece6a;
+  --lime: #9ece6a;
+  --seagreen: #73daca;
+  --cyan: #b4f9f8;
+  --teal: #2ac3de;
+  --blue: #7dcfff;
+  --indigo: #7aa2f7;
+  --violet: #bb9af7;
 }
 
 h1, h2, h3, h4, h5, h6, #blog-title, h1.title  {
