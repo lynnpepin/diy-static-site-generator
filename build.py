@@ -251,6 +251,7 @@ def main(
             subprocess.call(
                 [
                     "pandoc", "-c", "../style.css",
+                    "-f", "markdown-smart",
                     "-H", "site/header.html",
                     "-B", "site/bodybar.html",
                     "-A", "site/footer.html",

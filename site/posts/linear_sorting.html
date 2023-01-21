@@ -47,9 +47,9 @@
 
 </header>
 
-<p><strong>TLDR:</strong> Yes– you can sort numbers in linear time. Yes,
-including floats! The proof that you can sort in O(n log n) time is
-still true, but that assumes you’re sorting on the infinite set of real
+<p><strong>TLDR:</strong> Yes-- you can sort numbers in linear time.
+Yes, including floats! The proof that you can sort in O(n log n) time is
+still true, but that assumes you're sorting on the infinite set of real
 numbers (or integers.) We can sort in linear time because we work with
 finite sets: Floats and ints. The algorithm is very simple, and is
 called counting sort (or bin sort or radix sort.)</p>
@@ -57,10 +57,10 @@ called counting sort (or bin sort or radix sort.)</p>
 <ul>
 <li>Counting sort is not a randomized algorithm, it always outputs the
 correct solution.</li>
-<li>Counting sort is not a parallelized algorithm. (And you can’t use
+<li>Counting sort is not a parallelized algorithm. (And you can't use
 parallelism to speed past a worst-case big-O run time anyway!)</li>
 <li>Counting sort is not an amortized algorithm. It is truly O(n), not
-‘expected’ or ‘amortized’ O(n).</li>
+'expected' or 'amortized' O(n).</li>
 <li>Counting sort is technically Θ(n), that is, the worst and best case
 running time is linear.</li>
 <li>This can be used in the real world.</li>
@@ -80,7 +80,7 @@ in <code>S</code> by one.</li>
 <li>Then, for each item <code>k in K</code>, output <code>k</code> a
 total of <code>L[k]</code> times each.</li>
 </ol>
-<p>Here’s a simple implementation in Python.</p>
+<p>Here's a simple implementation in Python.</p>
 <pre><code>
 set_of_numbers_to_sort = list(range(0, 256)) 
 counted_numbers = {kk : 0 for kk in set_of_numbers_to_sort}
@@ -95,7 +95,7 @@ for number in set_of_numbers_to_sort:
         print(number)</code></pre>
 <blockquote>
 <p>Note: This example implementation uses a dict for clarity and
-generality, so it’s technically not guaranteed Θ(k+n)!</p>
+generality, so it's technically not guaranteed Θ(k+n)!</p>
 </blockquote>
 <h1 id="a-real-world-example-of-counting-sort-on-integers">a real-world
 example of counting sort on integers</h1>
@@ -108,7 +108,7 @@ will be faster than the conventional O(n log n) sorting algorithms.</p>
 a very large list of values that belong to a relatively small set. This
 could be 8-bit or 16-bit floats or ints, or even smaller sets like the
 26-character alphabet.</p>
-<p>For this example, let’s say you wanted to see the frequency of
+<p>For this example, let's say you wanted to see the frequency of
 letters in a 1-billion-character English text. You can count each
 character to see how many of the 26 letters appear. This is equivalent
 to sorting.</p>
@@ -120,7 +120,7 @@ text, where <code>K = {A, B, C, ..., X, Y, Z}</code>.</p></li>
 <li><p>For each character in in <code>L</code>, increase the
 corresponding element in <code>S</code> by one.</p>
 <ul>
-<li><p>E.g. For ‘C’, we get
+<li><p>E.g. For 'C', we get
 <code>S = {A : 0, B : 0, C : 1, ..., Z : 0}</code>.</p></li>
 <li><p>E.g. And then if we get an A for the next, we get
 <code>S = {A : 1, B : 0, C : 1, ... }</code>.</p></li>
@@ -138,38 +138,38 @@ values.</p>
 <li>You know something about the distribution of values, or</li>
 <li>You know something about the application of the sort.</li>
 </ol>
-<p>If you’re sorting floats, but you know most of your values are NaN or
+<p>If you're sorting floats, but you know most of your values are NaN or
 0.0, you can use counting-sort for NaN and 0.0, and use a traditional
 sort on the rest.</p>
-<p>What if your sort doesn’t need to be super accurate? Say, for a very
+<p>What if your sort doesn't need to be super accurate? Say, for a very
 niche case, you want to sort a histogram on the logarithm of some list
 of values. Then, you can sort your float64s on the 11-bit exponent,
 which means k = 2^11 = 2048, which means you can use counting-sort!</p>
-<h1 id="okay-so-whats-the-take-away-here">okay so what’s the take-away
+<h1 id="okay-so-whats-the-take-away-here">okay so what's the take-away
 here</h1>
-<p>Well, I’ve only ever written sorting algorithms in job-interviews and
-university exams. I’m happy to say some of them were linear, and I’m
-very happy to say I’ve never had to performance-engineer things like
+<p>Well, I've only ever written sorting algorithms in job-interviews and
+university exams. I'm happy to say some of them were linear, and I'm
+very happy to say I've never had to performance-engineer things like
 this.</p>
 <p>There is a small rift between the model of computing used in
 computer-science and the actual computers we use. The space between that
-rift is really cool, and leads to fun facts like “you can sort in linear
-time”.</p>
+rift is really cool, and leads to fun facts like "you can sort in linear
+time".</p>
 <p>Remember to like, comment, and subscribe* for more fun blog-posts,
 such as:</p>
 <ol type="1">
-<li>“Sorry Amdahl, but parallel computing DOES give you superlinear
-speedup”</li>
-<li>“P and NP don’t matter if you’re not in aerospace because randomized
-algorithms are magic”</li>
-<li>“Moore’s Law isn’t exponential, and it’s not sigmoidal either. It’s
-a distribution, I’m afraid we’re nearing it’s peak, and I’m frightened
+<li>"Sorry Amdahl, but parallel computing DOES give you superlinear
+speedup"</li>
+<li>"P and NP don't matter if you're not in aerospace because randomized
+algorithms are magic"</li>
+<li>"Moore's Law isn't exponential, and it's not sigmoidal either. It's
+a distribution, I'm afraid we're nearing it's peak, and I'm frightened
 about the world beyond it: A Short Treatise on Why 640KB ought to be
-enough for anyone because you won’t have a choice in 200 years”</li>
+enough for anyone because you won't have a choice in 200 years"</li>
 </ol>
 <hr />
-<p>*This is a joke, I’m not actually writing these blogposts, and you
-can’t like, comment, or subscribe.</p>
+<p>*This is a joke, I'm not actually writing these blogposts, and you
+can't like, comment, or subscribe.</p>
 <hr />
 <p id="footer">
 <a href="https://gitlab.com/lynnpepin/">lynndotpy</a> since 2020 | <a

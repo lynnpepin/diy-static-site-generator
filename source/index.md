@@ -12,5 +12,5 @@ lang:  en-US
 
 `2021 apr`	::	[Oh no, dating spam sites are abusing improperly-configured internal search engines](./posts/seo_dating_spam.html)
 
-`2020 dec`	::	[GIMP <3 Python! Let’s make a YuGiOh rip off](./posts/gimp_and_python.html)
+`2020 dec`	::	[GIMP <3 Python! Let's make a YuGiOh rip off](./posts/gimp_and_python.html)
 
