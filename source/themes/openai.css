@@ -1,0 +1,119 @@
+
+
+/*
+Please provide a CSS stylesheet for my blog.
+
+I would like a light theme, with a refined yet playful style.
+
+Please consider all common style elements.
+
+Please also create style information for for `#blog-title`, `pre`, `code`, `p.date`, and `#footer`
+
+Here is some CSS to get you started:
+
+```css
+@import url('fonts/lato.css');
+@import url('fonts/montserrat.css');
+@import url('fonts/Libertinus/libertinus.css');
+
+html {
+  max-width: 70ch;
+  padding: 3em 1em;
+  margin: auto;
+  line-height: 1.75;
+  font-size: 1.25em;
+}
+```
+*/
+
+/* Importing Fonts */
+/* human-corrected to selfhosted fonts */
+@import url('fonts/lato.css');
+@import url('fonts/montserrat.css');
+@import url('fonts/Libertinus/libertinus.css');
+
+/* Global Styles */
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #fff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+pre {
+  font-family: 'Libertinus Mono', monospace;
+  background-color: #f7f7f7;
+  border-radius: 4px;
+  overflow: auto;
+  padding: 1em;
+}
+
+code {
+  font-family: 'Libertinus Mono', monospace;
+  background-color: #f7f7f7;
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Specific Styles */
+#blog-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+p.date {
+  font-size: 0.9rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#footer {
+  font-size: 0.8rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 1.125em;
+    max-width: none;
+  }
+
+  #blog-title {
+    font-size: 2rem;
+  }
+}
+

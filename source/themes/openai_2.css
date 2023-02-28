@@ -1,0 +1,170 @@
+
+
+/*
+Please provide a CSS stylesheet for my blog.
+
+I would like a light theme, with a refined yet playful style.
+
+Please consider all common style elements.
+
+Please also create style information for for `#blog-title`, `pre`, `code`, `p.date`, and `#footer`
+
+Here is some CSS to get you started:
+
+```css
+@import url('fonts/lato.css');
+@import url('fonts/montserrat.css');
+@import url('fonts/Libertinus/libertinus.css');
+
+html {
+  max-width: 70ch;
+  padding: 3em 1em;
+  margin: auto;
+  line-height: 1.75;
+  font-size: 1.25em;
+}
+```
+*/
+
+/* Importing Fonts */
+/* human-corrected to selfhosted fonts */
+@import url('fonts/lato.css');
+@import url('fonts/montserrat.css');
+@import url('fonts/Libertinus/libertinus.css');
+
+/* Global Styles */
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #fff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+pre {
+  font-family: 'Libertinus Mono', monospace;
+  background-color: #f7f7f7;
+  border-radius: 4px;
+  overflow: auto;
+  padding: 1em;
+}
+
+code {
+  font-family: 'Libertinus Mono', monospace;
+  background-color: #f7f7f7;
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Specific Styles */
+#blog-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+p.date {
+  font-size: 0.9rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#footer {
+  font-size: 0.8rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Centered Layout */
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+/* Refining Styles */
+header {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav li {
+  margin: 0 1rem;
+}
+
+header nav li a {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+main {
+  margin-top: 2rem;
+}
+
+.post {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.post h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.post p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.post a.read-more {
+  display: inline-block;
+  margin-top: 1rem;
+  padding
+} /* had to add closing bracket */

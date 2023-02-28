@@ -1,0 +1,142 @@
+/* Blog: Refined theme, light.
+
+Reminiscent of a newspaper.
+
+This is different from inked.css.
+*/
+
+/*Import fonts*/
+@import url('fonts/lato.css');
+@import url('fonts/montserrat.css');
+@import url('fonts/Libertinus/libertinus.css');
+
+
+h1, h2, h3, h4, h5, h6, #blog-title, h1.title  {
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+html, body {
+  font-family: 'Lato', sans-serif;
+  background-color: #fff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+
+  max-width: 80ch;
+  margin: 2ch;
+}
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+pre {
+  font-family: 'Libertinus Mono', monospace;
+  border-radius: 4px;
+  overflow: auto;
+  padding: 1em;
+}
+
+code {
+  font-family: 'Libertinus Mono', monospace;
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Specific Styles */
+#blog-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* element::selection styles for most elements */
+::selection {
+  background-color: #0077cc;
+  color: #fff;
+}
+
+pre::selection, code::selection {
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+a::selection {
+  background-color: #fff;
+  color: #0077cc;
+}
+
+img::selection {
+  background-color: #fff;
+  color: #333;
+}
+
+/* element::-moz-selection styles for Firefox */
+::-moz-selection {
+  background-color: #0077cc;
+  color: #fff;
+}
+
+pre::-moz-selection, code::-moz-selection {
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+a::-moz-selection {
+  background-color: #fff;
+  color: #0077cc;
+}
+
+img::-moz-selection {
+  background-color: #fff;
+  color: #333;
+}
+
+/* element::-webkit-selection styles for Chrome and Safari */
+::-webkit-selection {
+  background-color: #0077cc;
+  color: #fff;
+}
+
+pre::-webkit-selection, code::-webkit-selection {
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+a::-webkit-selection {
+  background-color: #fff;
+  color: #0077cc;
+}
+
+img::-webkit-selection {
+  background-color: #fff;
+  color: #333;
+}
+
+/* blog title hoverover shimmer */
+#blog-title {
+  background: linear-gradient(90deg, #0077cc, #fff, #0077cc);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2s infinite;
+}
