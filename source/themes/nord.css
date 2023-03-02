@@ -51,12 +51,24 @@ body {
   color: var(--nord1);
   line-height: 1.5;
   margin-bottom: 1em;
-  background: var(--nord6); /*linear-gradient(
-    var(--nord4), var(--nord5), var(--nord6), var(--nord4)
-  );*/
+  background: var(--nord6);
   background-color: var(--nord4);
 }
 
+
+/*
+html, body{
+  font-family: 'Libertinus Sans', sans-serif;
+  max-width: 80ch;
+  margin: auto;
+  color: var(--nord1);
+  background: var(--nord6);
+  background-color: var(--nord4);
+  text-shadow: 0px -1px 0px #2221, 0px 1px 0px #fff8;
+  line-height: 1.25;
+  font-size: 1.125em;
+}
+*/
 
 p.date {
   color: var(--nord3);
