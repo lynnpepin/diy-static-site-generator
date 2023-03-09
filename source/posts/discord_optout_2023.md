@@ -34,7 +34,7 @@ My stance is this: **Nobody should ever agree to arbitration. Every person with 
 	 - That is a 13.7x decrease.
 	 - This is also sourced from 2015. This disparity likely much greater now in 2023.
 
-
+But how can you opt out of Discord's arbitration clause?
 
 # You can opt out of Discord's arbitration clause by sending them an email
 
@@ -51,7 +51,9 @@ Here's the email I wrote. Go ahead and fill in your email and username below, wi
 > Specifically, I am referring to the new Discord terms of service posted at https://discord.com/terms on 2023 February 24, effective 2023 March 27. I am opting out of the arbitration clause, and I am stating my disagreement to the class-action waivers, per section 14 "Settling disputes between you and Discord"
 > 
 > Best regards,
-> ✨put whatever signature u want here lol✨
+> 
+> ✨signature here too✨.
+
 
 **You should do this every time Discord changes their Terms of Service.** This is an unjust world, and you are your best advocate! This is Discord's way of covering their own asses, for example, to avoid accountability for bots which scrape your messages from public channels to share them publicly ([since 2019 or earlier](https://gist.github.com/resynth1943/0185f55207dc4d84be99c8d74da9221d#file-dear_discord-txt)), or to avoid accountability when white supremacists Trump supporters organize deadly movements using Discord and commit mass shootings ([2017](https://www.nytimes.com/2017/08/15/technology/discord-chat-app-alt-right.html), [2018](https://slate.com/technology/2018/10/discord-safe-space-white-supremacists.html), [2019](https://unicornriot.ninja/2019/neo-nazi-hipsters-identity-evropa-exposed-in-discord-chat-leak/)), [2022](https://unicornriot.ninja/2022/highland-park-shooter-decried-commies-in-discord-chat/), or to avoid accountability for any other thing their corporation might do to you that you can't even imagine right now.)
 
