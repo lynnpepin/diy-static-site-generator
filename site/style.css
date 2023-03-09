@@ -21,7 +21,6 @@
   --nord8: #88c0d0;
   --nord9: #81a1c1;
   --norda: #5e81ac;
-  --nordaa: #306090; 
 
   /* aurora */
   --nordb: #bf616a;
@@ -33,9 +32,31 @@
 
 h1, h2, h3, h4, h5, h6, #blog-title, h1.title  {
   font-family: 'Libertinus Sans', sans-serif;
-  color: var(--nord1);
 }
 
+html, body, a {
+  font-family: 'Libertinus Sans', sans-serif;
+}
+
+html {
+  max-width: 72ch;
+  padding: 1em;
+  margin: auto;
+  line-height: 1.75;
+  font-size: 1.2em;
+}
+
+body {
+  margin: auto;
+  color: var(--nord1);
+  line-height: 1.5;
+  margin-bottom: 1em;
+  background: var(--nord6);
+  background-color: var(--nord4);
+}
+
+
+/*
 html, body{
   font-family: 'Libertinus Sans', sans-serif;
   max-width: 80ch;
@@ -47,10 +68,14 @@ html, body{
   line-height: 1.25;
   font-size: 1.125em;
 }
+*/
 
 p.date {
   color: var(--nord3);
   font-size: 0.6em;
+  padding: 0em;
+  margin: 0em;
+  line-height: 1;
   font-style: italic;
 }
 
@@ -59,25 +84,27 @@ p.date {
 }
 
 #blog-title, h1.title, h1,h2,h3,h4,h5,h6 {
+  line-height: 1;
+  font-weight: bold;
   text-shadow: 0px -2px 0px #0001, 0px 2px 0px #fff8;
+  padding: 0.3em;
 }
 
 #blog-title{
   color: var(--nord1);
+  font-size: 1.8em;
+  font-weight: 400;
+  padding: 0.2em;
   border-radius: 4px;
-  padding: .2em;
-  transition: .125;
 }
 #blog-title:hover{ 
   background: linear-gradient(30deg, var(--norda), var(--nordb), var(--nordc), var(--nordd));
   color: var(--nord6);
   box-shadow: 0px 4px 8px #0004;
-  transition: 0.125s;
 }
 #blog-title:active{
   background: linear-gradient(30deg, var(--norda), var(--nordb), var(--nordc), var(--nordd));
   color: var(--nord6);
-  transition: 0.125s;
 }
 
 h1.title {
@@ -85,9 +112,16 @@ h1.title {
   font-size: 2.4rem;
   font-weight: 400;
 }
+h1, h2, h3, h4, h5, h6 { color: var(--nord1); }
+h1 { font-size: 2.4rem; }
+h2 { font-size: 2.1rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.35rem; }
+h6 { font-size: 1.2rem; }
 
 a {
-  color: var(--nordaa);
+  color: var(--norda);
   text-decoration: none;
   border-radius: 2px;
   text-shadow: 0px -1px 0px #0002, 0px 1px 0px #fff8;
@@ -105,6 +139,7 @@ body::selection, p::selection,
 h1::selection, h1.title::selection,
 h2::selection, h3::selection, h4::selection, h5::selection,
 em::selection {
+  /*background-color: linear-gradient(#5f3dc4, #364fc7);*/
   background-color: var(--norda);
   color: var(--nord5);
 }
@@ -113,6 +148,7 @@ strong::selection {
   color: var(--nord6);
 }
 code::selection, pre::selection {
+  /*background-color: linear-gradient(#5f3dc4, #364fc7);*/
   background-color: var(--nord1);
   color: var(--norde);
 }

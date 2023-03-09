@@ -2,6 +2,8 @@
 title: "Blog index"
 lang:  en-US
 ---
+`2023 may`	::	[Hellsite stealin ur rights - Opt out of Discord's arbitration clause by sending a quick email](./posts/discord_optout_2023.html)
+
 `2023 feb`	::	[Things I read, 2022](./posts/reading_2022.html)
 
 `2022 may`	::	[Python on your phone sucks less with ooo.py and the -i flag.](./posts/python_mobile.html)
