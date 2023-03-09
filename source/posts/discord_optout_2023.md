@@ -40,7 +40,7 @@ But how can you opt out of Discord's arbitration clause?
 
 Send an email to [arbitration-opt-out@discord.com](mailto:arbitration-opt-out@discord.com), from the **email address you use for your account**, stating you wish to opt out of the arbitration clause. For good measure, I recommend adding your account ID!
 
-Here's the email I wrote. Go ahead and fill in your email and username below, with the numbers.
+**Here's a template you can use!** It's the email I wrote. Go ahead and fill in your email and username below, with the numbers.
 
 > To Discord,
 > 
